@@ -59,7 +59,7 @@ public class UnitsSpawner : MonoBehaviour
             Debug.LogWarning("The spawning of more than one type of humanoids has not been implemented");
         }
 
-        mapManager.SpawnMapElementsRandomly(
+        List<MapElement> spawned = mapManager.SpawnMapElementsRandomly(
             unitsToSpawn[0],
             unitsSeed,
             spawningHeightRange,
@@ -67,6 +67,11 @@ public class UnitsSpawner : MonoBehaviour
             this.transform,
             true
         );
+
+        foreach (MapElement mapElement in spawned)
+        {
+            mapElement.gameObject.GetComponentRequired<NavMeshAgent>().destination = Vector3.zero;
+        }
         
     }
 }
