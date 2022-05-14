@@ -1743,7 +1743,7 @@ MonoBehaviour:
     visibleDistanceThreshold: 600
   _terrainLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   _viewer: {fileID: 0}
   seaVisuals: {fileID: 4277335510071096542}
 --- !u!1 &6748902952405289939
