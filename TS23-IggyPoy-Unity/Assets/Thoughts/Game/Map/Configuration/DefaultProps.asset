@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f44868bf3229421e96ffa1650f4d1d49, type: 3}
-  m_Name: DefaultVegetation
+  m_Name: DefaultProps
   m_EditorClassIdentifier: 
   autoUpdate: 1
   mapElementsToSpawn:
