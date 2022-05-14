@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PropertyController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int team
     {
-        
+        get => _team;
+        private set { _team = value; }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private int _team = -1;
 }

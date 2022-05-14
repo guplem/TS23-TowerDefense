@@ -43,7 +43,7 @@ namespace Essentials
         /// <summary>
         /// Opens a web page containing the GitHub repository of the asset
         /// </summary>
-        [MenuItem("Help/Essentials/Scripting Documentation",false, 50)]
+        [MenuItem("Help/Essentials/GitHub repository",false, 50)]
         public static void OpenLinkGitHubRepository(){
             Application.OpenURL("https://github.com/guplem/UnityEssentials");
         }
