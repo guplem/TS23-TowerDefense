@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44868bf3229421e96ffa1650f4d1d49, type: 3}
+  m_Name: DefaultVegetation
+  m_EditorClassIdentifier: 
+  autoUpdate: 1
+  mapElementsToSpawn:
+  - mapElementPrefab: {fileID: 5743181967686818291, guid: b51d1027ccecb1a4d97bb15f69a7bd8e, type: 3}
+    noiseSettings:
+      scale: 30
+      octaves: 6
+      lacunarity: 5
+      persistance: 0.216
+      offset: {x: 0, y: 0}
+    spawningHeightRange: {x: 0.05, y: 0.44}
+    probability: 0.04
+    density: 0.15
+  - mapElementPrefab: {fileID: 1780549905785368090, guid: a2704999d2555a44b9488aa271fbf7b1, type: 3}
+    noiseSettings:
+      scale: 30
+      octaves: 7
+      lacunarity: 4
+      persistance: 0.216
+      offset: {x: 23.37, y: 0}
+    spawningHeightRange: {x: 0, y: 0.3}
+    probability: 0
+    density: 0.01
+  - mapElementPrefab: {fileID: 3607978565810473918, guid: bed19fb76f991954ea876b7ddefca3b2, type: 3}
+    noiseSettings:
+      scale: 35
+      octaves: 5
+      lacunarity: 5
+      persistance: 0.216
+      offset: {x: 0, y: 0}
+    spawningHeightRange: {x: 0.1, y: 0.75}
+    probability: 0.1
+    density: 0.03
+  - mapElementPrefab: {fileID: 9008769734846615515, guid: 8f3d057d48f944a4280dcfa4c87bd9af, type: 3}
+    noiseSettings:
+      scale: 54.29
+      octaves: 5
+      lacunarity: 0.6
+      persistance: 0.216
+      offset: {x: 0, y: 0}
+    spawningHeightRange: {x: 0.52502954, y: 0.75}
+    probability: 0.463
+    density: 0.1
+  - mapElementPrefab: {fileID: 3607978565810473918, guid: 3d4fdb23cd205a848affb3e48250b560, type: 3}
+    noiseSettings:
+      scale: 54.29
+      octaves: 5
+      lacunarity: 0.6
+      persistance: 0.216
+      offset: {x: 0, y: 0}
+    spawningHeightRange: {x: 0.1, y: 0.7}
+    probability: 0.35
+    density: 0.01
