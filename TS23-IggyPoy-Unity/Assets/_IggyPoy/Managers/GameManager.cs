@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
         }
 
         instance = this;
+
+        WorldManager.instance.Generate();
     }
 
     private void Start()
