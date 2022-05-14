@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,7 +8,7 @@ namespace Thoughts.Game.Map
 {
     public class MapNavigationManager : MonoBehaviour
     {
-        /*
+        
         private List<NavMeshSurface> generatedNavMeshSurfaces = new List<NavMeshSurface>();
 
         public GameObject environmentParent;
@@ -112,6 +113,6 @@ namespace Thoughts.Game.Map
                 }
             }
         }
-        */
+        
     }
 }
