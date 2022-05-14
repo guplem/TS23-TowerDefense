@@ -248,8 +248,7 @@ namespace Thoughts.Game.Map
         /// </summary>
         public void DeleteMap()
         {
-            Debug.Log("navigationManager.RemoveAllNavMesh");
-            //mapManager.navigationManager.RemoveAllNavMesh();
+            mapManager.navigationManager.RemoveAllNavMesh();
             terrainGenerator.Delete(true); // Must be the first one
         }
 

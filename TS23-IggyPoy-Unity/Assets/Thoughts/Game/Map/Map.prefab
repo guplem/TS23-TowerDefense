@@ -72,6 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3671224796910299689}
+  - component: {fileID: 1532978883509466272}
   m_Layer: 0
   m_Name: Units
   m_TagString: Untagged
@@ -94,6 +95,23 @@ Transform:
   m_Father: {fileID: 6748902952122449123}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1532978883509466272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410647033281191235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44beecf180b17004182d8eb20d16da9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapManager: {fileID: 6748902952817831956}
+  navigationManager: {fileID: 6748902952817831958}
+  spawningHeightRange: {x: 0.19, y: 0.6390049}
+  unitsToSpawn:
+  - {fileID: 7331151817010863944, guid: 39009ebc5250b064abfd79c21affb3c9, type: 3}
 --- !u!1 &6748902950867179249
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,6 +2071,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea618615d97f6ab40bc7dfcd58edc910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  environmentParent: {fileID: 6748902952699530123}
+  usedLayers:
+    serializedVersion: 2
+    m_Bits: 72
 --- !u!114 &6748902952817831962
 MonoBehaviour:
   m_ObjectHideFlags: 0
