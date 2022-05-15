@@ -29,7 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6753566475038569636}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7821593190574619090
 PrefabInstance:
@@ -121,9 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691d841a38ea0ce40a17a7891ab43500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onHealthUpdate:
-    m_PersistentCalls:
-      m_Calls: []
   visuals: {fileID: 3584904110779811015}
   blueprint: {fileID: 54911899161403688}
   range: 10
