@@ -15,6 +15,7 @@ public class DamagerUnitController : UnitController
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("OnTriggerEnter " + other.gameObject.name, this);
         PropertyController property = other.GetComponent<PropertyController>();
         if (property == null) return;
         if (property.team != Team.Player) 
@@ -29,6 +30,7 @@ public class DamagerUnitController : UnitController
     
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("OnTriggerEnter", this);
         PropertyController property = other.GetComponent<PropertyController>();
         if (property == null) return;
         if (property.team != Team.Player) 
@@ -45,6 +47,7 @@ public class DamagerUnitController : UnitController
     {
         while (true)
         {
+            Debug.Log($"Attack end of cooldown. Enemies in range = {attackables.Count}", this);
             if (attackables.Count > 0) 
                 PerformAttack(attackables[0]);
             yield return new WaitForSeconds(cooldown);
@@ -54,6 +57,7 @@ public class DamagerUnitController : UnitController
 
     private void PerformAttack(PropertyController attackable)
     {
+        Debug.Log($"Going to attack {attackable.gameObject}.");
         HealthController hpController = attackable.GetComponent<HealthController>();
         if (hpController == null)
         {
