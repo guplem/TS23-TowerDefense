@@ -1700,6 +1700,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapManager: {fileID: 6748902952817831956}
   nextCreationStep: {fileID: 0}
+  isLastStep: 1
+  unitsSpawner: {fileID: 1532978883509466272}
+  mainStructureParent: {fileID: 6084204391893870574}
+  mainStructure: {fileID: 8254475048019625467, guid: 411b6cecbf3684048824f37ea69afeae, type: 3}
 --- !u!1 &6748902952329811190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,6 +1750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapManager: {fileID: 6748902952817831956}
   nextCreationStep: {fileID: 6748902952244263178}
+  isLastStep: 0
   chunkPrefab: {fileID: 6722031976689303917, guid: 13db533c0f13c36439e8fab54d7bc8c7, type: 3}
   colliderLODIndex: 1
   detailLevels:
@@ -2059,6 +2064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrainGenerator: {fileID: 6748902952329811184}
   propsGenerator: {fileID: 6748902952244263178}
+  isGenerated: 0
 --- !u!114 &6748902952817831958
 MonoBehaviour:
   m_ObjectHideFlags: 0

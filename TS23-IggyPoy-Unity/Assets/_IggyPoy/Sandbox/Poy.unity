@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 912594384}
   - component: {fileID: 912594383}
   - component: {fileID: 912594382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}

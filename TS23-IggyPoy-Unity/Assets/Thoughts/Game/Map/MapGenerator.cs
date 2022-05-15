@@ -59,6 +59,8 @@ namespace Thoughts.Game.Map
         [TitleGroup("Editor Generators")] [HorizontalGroup("Editor Generators/EditorStep")] [ShowInInspector]
         private CreationStep editorRegenerationStep;
 
+        public bool isGenerated; // TODO: Add to thoughts
+
         [HorizontalGroup("Editor Generators/EditorStep")]
         [Button("Regenerate step")]
         private void EditorRegenerate()
@@ -408,7 +410,7 @@ namespace Thoughts.Game.Map
         /// <param name="requireNavMesh">Must the location require a valid NavMeshSurface?</param>
         /// <param name="spawnablePosition">If the given position allows an spawn, this is the 3D position (including the height at which it can be spawned) so there is no need to recalculate it again.</param>
         /// <returns>True if the location allows the spawn of the MapElement, false otherwise.</returns>
-        private bool IsSpawnablePositionOnTerrain(Vector2 positionCheck, Vector2 spawningHeightRange,
+        public bool IsSpawnablePositionOnTerrain(Vector2 positionCheck, Vector2 spawningHeightRange,
             bool requireNavMesh, out Vector3 spawnablePosition)
         {
             spawnablePosition = Vector3.zero;

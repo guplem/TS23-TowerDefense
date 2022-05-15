@@ -50,9 +50,7 @@ public class UnitsSpawner : MonoBehaviour
         if (deletePreviousUnits)
             DestroyAllUnits();
 
-        NavMeshSurface navMeshSurface = navigationManager.SetupNewNavMeshFor(
-            unitsToSpawn[0].GetComponentRequired<NavMeshAgent>(),
-            mapManager.mapConfiguration, false);
+        RegenerateNavMeshForUnits();
 
         if (unitsToSpawn.Length > 1)
         {
@@ -73,5 +71,12 @@ public class UnitsSpawner : MonoBehaviour
             mapElement.gameObject.GetComponentRequired<NavMeshAgent>().destination = Vector3.zero;
         }
         
+    }
+
+    public void RegenerateNavMeshForUnits()
+    {
+        NavMeshSurface navMeshSurface = navigationManager.SetupNewNavMeshFor(
+            unitsToSpawn[0].GetComponentRequired<NavMeshAgent>(),
+            mapManager.mapConfiguration, false);
     }
 }

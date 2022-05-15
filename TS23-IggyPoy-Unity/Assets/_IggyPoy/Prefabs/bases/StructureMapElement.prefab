@@ -86,9 +86,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5103278079739647021, guid: 133b554db2c2d9946804a3033fbeb60f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722681116665199893, guid: 133b554db2c2d9946804a3033fbeb60f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9144614437451166654, guid: 133b554db2c2d9946804a3033fbeb60f, type: 3}
       propertyPath: m_Name
       value: StructureMapElement
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144614437451166654, guid: 133b554db2c2d9946804a3033fbeb60f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 133b554db2c2d9946804a3033fbeb60f, type: 3}
@@ -109,6 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691d841a38ea0ce40a17a7891ab43500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onHealthUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   visuals: {fileID: 3584904110779811015}
   blueprint: {fileID: 54911899161403688}
   range: 10

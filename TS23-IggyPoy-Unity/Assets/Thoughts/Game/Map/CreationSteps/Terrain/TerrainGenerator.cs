@@ -111,12 +111,15 @@ namespace Thoughts.Game.Map.CreationSteps.Terrain
         /// </summary>
         private void Update()
         {
-            viewerPosition = viewer != null ? new Vector2(viewer.position.x, viewer.position.z) : Vector2.zero;
-        
-            if ((viewerPositionOld - viewerPosition).sqrMagnitude > sqrViewerMoveThresholdForChunkUpdate)
+            if (mapManager.mapGenerator.isGenerated) // TODO: Add int thoughts too to avoid updating the chunks before finishing the generation
             {
-                viewerPositionOld = viewerPosition;
-                UpdateChunks(false);
+                viewerPosition = viewer != null ? new Vector2(viewer.position.x, viewer.position.z) : Vector2.zero;
+        
+                if ((viewerPositionOld - viewerPosition).sqrMagnitude > sqrViewerMoveThresholdForChunkUpdate)
+                {
+                    viewerPositionOld = viewerPosition;
+                    UpdateChunks(false);
+                }
             }
         }
 
@@ -126,8 +129,13 @@ namespace Thoughts.Game.Map.CreationSteps.Terrain
         /// <param name="clearPreviousTerrain">If existent, should the previously created terrain be deleted?</param>
         private void UpdateChunks(bool clearPreviousTerrain)
         {
-            //Debug.Log($"Creating and/or updating TerrainChunks {(clearPreviousTerrain? "previously deleting" : "without destroying")} the existing ones.");
             
+            // Debug.Log($"Creating and/or updating TerrainChunks {(clearPreviousTerrain? "previously deleting" : "without destroying")} the existing ones.");
+            if (loadingChunks > 0) // TODO: Check possible error in Thoughts. Use this Debug message to find it and debug it
+            {
+                Debug.LogWarning($"Chunk Update called while there are still {loadingChunks} loading chunks. May be normal while updating the LOD of the chunks.");
+            }
+
             if (clearPreviousTerrain)
             {
                 Delete();
@@ -170,6 +178,7 @@ namespace Thoughts.Game.Map.CreationSteps.Terrain
         private void CompletionRegisterer()
         {
             loadingChunks -= 1;
+            
             //Debug.Log($"COMPETITION REGISTER. REMAINING: {loadingChunks}");
             if (loadingChunks > 0)
                 return;

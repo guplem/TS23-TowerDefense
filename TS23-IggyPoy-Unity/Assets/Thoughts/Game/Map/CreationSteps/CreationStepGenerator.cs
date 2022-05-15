@@ -12,6 +12,7 @@ namespace Thoughts.Game.Map.CreationSteps
         [SerializeField] protected MapManager mapManager;
     
         [SerializeField] private CreationStepGenerator nextCreationStep;
+        [SerializeField] private bool isLastStep = false; // TODO: Thoughts add
     
         protected bool clearPreviousBeforeGeneration;
         protected bool generateNextStepOnFinishGeneration = false;
@@ -121,8 +122,15 @@ namespace Thoughts.Game.Map.CreationSteps
             Debug.Log($"Triggering the generation of the step after {this.name}: {(nextCreationStep != null? nextCreationStep.name : "null")}", nextCreationStep);
             if (nextCreationStep != null)
                 nextCreationStep.Generate(clearPrevious, generateNextOnFinish);
-            else
+            
+            // TODO: Thoughts update method \/
+            else if (!isLastStep)
                 Debug.LogWarning($"Trying to generate the next step of {this.name}, with no 'nextCreationStepGenerator' defined", this);
+            else
+            {
+                mapManager.mapGenerator.isGenerated = true;
+                Debug.Log(" ====== Finished map generation ====== ");
+            }
         }
     
         private void DeleteNextStep(bool deleteOnFinish)
