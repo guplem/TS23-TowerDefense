@@ -6,11 +6,10 @@ using Console = System.Console;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-    public GameData gameData; //{ get; private set; }
-    public GameObject selectedStructureToConstruct;
-    public GameConfiguration gameConfiguration; //{ get; private set; }
-
+    public static GameManager instance { get; private set; }
+    public GameData gameData;
+    public GameConfiguration gameConfiguration;
+    
     public GamePhase currentGamePhase
     {
         get => _currentGamePhase;
@@ -64,6 +63,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         
         _unitsSpawner = mapManager.gameObject.GetComponentInChildren<UnitsSpawner>();
+        //constructionController = this.gameObject.GetComponentRequired<ConstructionController>();
     }
 
     private void Start()
@@ -109,18 +109,7 @@ public class GameManager : MonoBehaviour
         Defense,
     }
 
-    public void Build(GameObject structure)
-    {
-        selectedStructureToConstruct = structure;
-        if (selectedStructureToConstruct == null)
-            Debug.LogWarning($"Structure {structure.ToString()} to build is null.", this);
-
-    }
     
-    [Serializable]
-    public enum Structure
-    {
-        MainBuilding,
-        Turret,
-    }
+
+
 }

@@ -3,5 +3,12 @@ using UnityEngine;
 [System.Serializable]
 public class GameConfiguration
 {
-    [SerializeField] public SerializableDictionary<GameManager.Structure, GameObject> structures;
+    // [Serializable]
+    // public enum Structure
+    // {
+    //     MainBuilding,
+    //     Turret,
+    // }
+    //
+    //[SerializeField] public SerializableDictionary<GameManager.Structure, GameObject> structures;
 }

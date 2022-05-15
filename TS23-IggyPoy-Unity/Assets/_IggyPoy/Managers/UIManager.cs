@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
+    public static UIManager instance { get; private set; }
     [SerializeField] private TMP_Text currentGamePhase;
     [SerializeField] private GameObject constructionMenu;
     

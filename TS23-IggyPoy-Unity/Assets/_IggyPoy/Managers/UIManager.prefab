@@ -663,6 +663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGamePhase: {fileID: 5184566665413479823}
+  constructionMenu: {fileID: 7404431392031027373}
 --- !u!1 &7340973597035192208
 GameObject:
   m_ObjectHideFlags: 0
