@@ -1,3 +1,5 @@
+using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class HealthController : PropertyController
@@ -5,10 +7,19 @@ public class HealthController : PropertyController
     public int health
     {
         get => _health;
-        set { _health = value; }
+        set
+        {
+            _health = value;
+            onHealthUpdate?.Invoke();
+            if (_health <= 0)
+            {
+                Debug.LogWarning($"Death of {this.gameObject} not implemented", this);
+                Destroy(this.gameObject);
+            }
+        }
     }
 
     private int _health = 10;
 
-    public UnityEvent onHealthUpdate;
+    [NonSerialized] public UnityEvent onHealthUpdate = new();
 }

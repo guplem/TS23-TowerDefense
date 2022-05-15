@@ -14,7 +14,7 @@
         {
             T component = self.GetComponent<T>();
 
-            if (component == null) Debug.LogError("Could not find " + typeof(T) + " on " + self.name);
+            if (component == null) Debug.LogError("Could not find " + typeof(T) + " on " + self.name, self);
 
             return component;
         }

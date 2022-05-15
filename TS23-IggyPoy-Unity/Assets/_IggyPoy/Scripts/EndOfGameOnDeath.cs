@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EndOfGameOnDeath : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class EndOfGameOnDeath : MonoBehaviour
     
     private void Awake()
     {
+        if (healthController.onHealthUpdate == null)
+            healthController.onHealthUpdate = new UnityEvent();
         healthController.onHealthUpdate.AddListener(CheckDeath);
     }
 
-    private void CheckDeath()
+    public void CheckDeath()
     {
         if (healthController.health >= 0) 
             return;

@@ -19,8 +19,7 @@ namespace Thoughts.Game.Map
         /// Sets up the NavMesh the given NavMeshAgent
         /// </summary>
         /// <returns>The generated NavMeshSurface ig it has been created. Null if it has not been possible (maybe a mesh for the given agent already exists).</returns>
-        public NavMeshSurface SetupNewNavMeshFor(NavMeshAgent navMeshAgent, MapConfiguration mapConfiguration,
-            bool updateIfAlreadyCalculated = true)
+        public NavMeshSurface SetupNewNavMeshFor(NavMeshAgent navMeshAgent, MapConfiguration mapConfiguration, bool updateIfAlreadyCalculated = true)
         {
             Debug.Log($"SetupNewNavMeshFor agent {navMeshAgent.ToString()}");
             if (navMeshAgent == null)

@@ -314,10 +314,12 @@ namespace Thoughts.Game.Map
         /// <param name="rotation">Orientation of the new object.</param>
         /// <param name="parent">The transform that must be the parent of the spawned MapElement</param>
         /// <returns></returns>
-        public MapElement SpawnAsMapElement(GameObject objectToSpawn, Vector3 position, Quaternion rotation,
-            Transform parent)
+        public MapElement SpawnAsMapElement(GameObject objectToSpawn, Vector3 position, Quaternion rotation, Transform parent)
         {
             GameObject spawnedMapElement = Instantiate(objectToSpawn, position, rotation, parent);
+            if (spawnedMapElement == null)
+                Debug.LogWarning("spawnedMapElement is null", this);
+
             spawnedMapElement.name = objectToSpawn.name;
             MapElement spawnedElement = spawnedMapElement.GetComponent<MapElement>();
             if (spawnedElement == null)

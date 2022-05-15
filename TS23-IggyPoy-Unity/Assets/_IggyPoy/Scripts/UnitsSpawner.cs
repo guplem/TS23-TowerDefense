@@ -68,7 +68,9 @@ public class UnitsSpawner : MonoBehaviour
 
         foreach (MapElement mapElement in spawned)
         {
-            mapElement.gameObject.GetComponentRequired<NavMeshAgent>().destination = Vector3.zero;
+            NavMeshAgent nmAgent = mapElement.gameObject.GetComponentRequired<NavMeshAgent>();
+            nmAgent.destination = Vector3.zero;
+            nmAgent.isStopped = false;
         }
         
     }
@@ -77,6 +79,6 @@ public class UnitsSpawner : MonoBehaviour
     {
         NavMeshSurface navMeshSurface = navigationManager.SetupNewNavMeshFor(
             unitsToSpawn[0].GetComponentRequired<NavMeshAgent>(),
-            mapManager.mapConfiguration, false);
+            mapManager.mapConfiguration, true);
     }
 }
