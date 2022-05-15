@@ -71,6 +71,7 @@ public class UnitsSpawner : MonoBehaviour
             NavMeshAgent nmAgent = mapElement.gameObject.GetComponentRequired<NavMeshAgent>();
             nmAgent.destination = Vector3.zero;
             nmAgent.isStopped = false;
+            mapElement.GetComponentRequired<PropertyController>().team = PropertyController.Team.Enemy;
         }
         
     }

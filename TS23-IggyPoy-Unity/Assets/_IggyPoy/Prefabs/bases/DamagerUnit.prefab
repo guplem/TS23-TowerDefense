@@ -74,3 +74,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06fa8d2c2c7d4d7448b31503e812d1dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 1
+  effect: 1

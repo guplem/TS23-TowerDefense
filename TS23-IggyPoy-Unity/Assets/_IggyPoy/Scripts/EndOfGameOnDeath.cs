@@ -17,9 +17,15 @@ public class EndOfGameOnDeath : MonoBehaviour
 
     public void CheckDeath()
     {
-        if (healthController.health >= 0) 
+        //Debug.Log($"Checking death. Remaining health = {healthController.health}");
+        if (healthController.health > 0) 
             return;
         GameManager.instance.GameOver();
         healthController.onHealthUpdate.RemoveListener(CheckDeath);
+    }
+
+    private void OnDestroy()
+    {
+        CheckDeath();
     }
 }
