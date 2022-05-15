@@ -312,12 +312,15 @@ namespace Thoughts.Game.Map
         /// <param name="rotation">Orientation of the new object.</param>
         /// <param name="parent">The transform that must be the parent of the spawned MapElement</param>
         /// <returns></returns>
-        public MapElement SpawnMapElement(GameObject objectToSpawn, Vector3 position, Quaternion rotation,
+        public MapElement SpawnAsMapElement(GameObject objectToSpawn, Vector3 position, Quaternion rotation,
             Transform parent)
         {
             GameObject spawnedMapElement = Instantiate(objectToSpawn, position, rotation, parent);
             spawnedMapElement.name = objectToSpawn.name;
-            MapElement spawnedElement = spawnedMapElement.GetComponentRequired<MapElement>();
+            MapElement spawnedElement = spawnedMapElement.GetComponent<MapElement>();
+            if (spawnedElement == null)
+                spawnedElement = spawnedMapElement.AddComponent<MapElement>();
+
             mapManager.existentMapElements.Add(spawnedElement);
             return spawnedElement;
         }
@@ -389,7 +392,7 @@ namespace Thoughts.Game.Map
                         new Vector2(x - mapManager.mapConfiguration.mapRadius,
                             y - mapManager.mapConfiguration.mapRadius), spawningHeightRange, requireNavMesh,
                         out Vector3 spawnablePosition))
-                        spawnedMapElements.Add(SpawnMapElement(objectToSpawn, spawnablePosition, Quaternion.identity,
+                        spawnedMapElements.Add(SpawnAsMapElement(objectToSpawn, spawnablePosition, Quaternion.identity,
                             parent));
                 }
             }
@@ -499,7 +502,7 @@ namespace Thoughts.Game.Map
                 if (IsSpawnablePositionOnTerrain(checkPosition, spawningHeightRange, requireNavMesh,
                     out Vector3 spawnablePosition))
                 {
-                    spawnedMapElements.Add(SpawnMapElement(objectToSpawn, spawnablePosition, Quaternion.identity,
+                    spawnedMapElements.Add(SpawnAsMapElement(objectToSpawn, spawnablePosition, Quaternion.identity,
                         parent));
                     spawnedCount++;
                 }

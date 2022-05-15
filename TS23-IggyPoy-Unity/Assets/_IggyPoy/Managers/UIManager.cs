@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
     [SerializeField] private TMP_Text currentGamePhase;
+    [SerializeField] private GameObject constructionMenu;
     
     private void Awake()
     {
@@ -16,8 +17,9 @@ public class UIManager : MonoBehaviour
         instance = this;
     }
 
-    public void Refresh()
+    public void FullRefresh()
     {
         currentGamePhase.text = GameManager.instance.currentGamePhase.ToString();
+        constructionMenu.SetActive(GameManager.instance.currentGamePhase == GameManager.GamePhase.Construction);
     }
 }

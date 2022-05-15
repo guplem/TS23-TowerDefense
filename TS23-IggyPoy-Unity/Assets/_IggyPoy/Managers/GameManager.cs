@@ -1,11 +1,15 @@
 using System;
+using System.Linq;
 using Thoughts.Game.Map;
 using UnityEngine;
+using Console = System.Console;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameData gameData = new GameData(); //{ get; private set; }
+    public GameData gameData; //{ get; private set; }
+    public GameObject selectedStructureToConstruct;
+    public GameConfiguration gameConfiguration; //{ get; private set; }
 
     public GamePhase currentGamePhase
     {
@@ -15,7 +19,7 @@ public class GameManager : MonoBehaviour
             if (value != _currentGamePhase)
             {
                 _currentGamePhase = value;
-                UIManager.instance.Refresh();
+                UIManager.instance.FullRefresh();
             }
         }
     }
@@ -64,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        UIManager.instance.Refresh();
+        UIManager.instance.FullRefresh();
         StartNewGame();
     }
 
@@ -103,5 +107,20 @@ public class GameManager : MonoBehaviour
     {
         Construction,
         Defense,
+    }
+
+    public void Build(GameObject structure)
+    {
+        selectedStructureToConstruct = structure;
+        if (selectedStructureToConstruct == null)
+            Debug.LogWarning($"Structure {structure.ToString()} to build is null.", this);
+
+    }
+    
+    [Serializable]
+    public enum Structure
+    {
+        MainBuilding,
+        Turret,
     }
 }

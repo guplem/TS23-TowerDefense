@@ -3,8 +3,9 @@ using UnityEngine;
 [SelectionBase]
 public class MapElement : MonoBehaviour
 {
-    [SerializeField] private string Name = "No name";
+    [SerializeField] private bool showInformationInGame = false;
+    [SerializeField] private string Name;
     [TextArea]
     [SerializeField]
-    private string Description = "No description";
+    private string Description;
 }

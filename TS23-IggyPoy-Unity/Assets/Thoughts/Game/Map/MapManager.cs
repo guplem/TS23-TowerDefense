@@ -109,7 +109,7 @@ namespace Thoughts.Game.Map
         
         public MapElement SpawnMapElement(GameObject objectToSpawn, Vector3 position, Quaternion rotation, Transform parent)
         {
-            return mapGenerator.SpawnMapElement(objectToSpawn, position, rotation, parent);
+            return mapGenerator.SpawnAsMapElement(objectToSpawn, position, rotation, parent);
         }
 
         public List<MapElement> SpawnMapElementsWithPerlinNoiseDistribution(GameObject objectToSpawn, int seed, Vector2 spawningHeightRange, float probability, float density, Transform parent, NoiseMapSettings noiseMapSettings, bool requireNavMesh)

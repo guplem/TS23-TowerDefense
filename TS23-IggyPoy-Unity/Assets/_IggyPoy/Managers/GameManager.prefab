@@ -47,9 +47,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameData:
     resources: 100
-  fullyGenerateMapOnPlay: 1
-  mapManager: {fileID: 0}
+  selectedStructureToConstruct: {fileID: 0}
+  gameConfiguration:
+    structures:
+      list:
+      - Key: 0
+        Value: {fileID: 1932553094402948, guid: 33938ce237397e34e921bda724fb624b, type: 3}
+      - Key: 1
+        Value: {fileID: 1442160774557540, guid: c4f78ff501084af4cb85dfc30db4a8c6, type: 3}
   _currentGamePhase: 0
+  mapManager: {fileID: 0}
+  fullyGenerateMapOnPlay: 1
 --- !u!1001 &5895648012702303346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61,6 +69,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8284982356102304683}
+    - target: {fileID: 3569892944587765391, guid: 31aeab7cffae0264f882fdd5be7ff4aa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569892944587765391, guid: 31aeab7cffae0264f882fdd5be7ff4aa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8284982356102304683}
+    - target: {fileID: 3569892944587765391, guid: 31aeab7cffae0264f882fdd5be7ff4aa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Build
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569892944587765391, guid: 31aeab7cffae0264f882fdd5be7ff4aa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1932553094402948, guid: 33938ce237397e34e921bda724fb624b, type: 3}
+    - target: {fileID: 3569892944587765391, guid: 31aeab7cffae0264f882fdd5be7ff4aa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6010425637845134671, guid: 31aeab7cffae0264f882fdd5be7ff4aa, type: 3}
       propertyPath: m_RootOrder
       value: 0
