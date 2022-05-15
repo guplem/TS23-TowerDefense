@@ -2,11 +2,20 @@ using UnityEngine;
 
 public class PropertyController : MonoBehaviour
 {
-    public int team
+    public Team team
     {
         get => _team;
-        private set { _team = value; }
+        set { _team = value; }
     }
 
-    private int _team = -1;
+    private Team _team = Team.Neutral;
+
+    public enum Team
+    {
+        Neutral,
+        Player, 
+        Enemy
+    }
+    
+    
 }

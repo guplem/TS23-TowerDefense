@@ -63,7 +63,9 @@ public class ConstructionController : MonoBehaviour
         MapElement instantiated = GameManager.instance.mapManager.SpawnMapElement(selectedStructureToConstruct.gameObject, buildingPlacement, Quaternion.identity,
             structuresParent);
         UnselectStructure();
-        instantiated.gameObject.GetComponentRequired<StructureController>().ShowVisuals();
+        StructureController instantiatedStructure = instantiated.gameObject.GetComponentRequired<StructureController>();
+        instantiatedStructure.ShowVisuals();
+        instantiatedStructure.team = PropertyController.Team.Player;
         Debug.Log($"Built structure '{instantiated.ToString()}'.", this);
     }
 
