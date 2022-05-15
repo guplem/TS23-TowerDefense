@@ -109,7 +109,9 @@ public class GameManager : MonoBehaviour
         Defense,
     }
 
-    
 
-
+    public void GameOver()
+    {
+        Debug.Log("GAME OVER");
+    }
 }

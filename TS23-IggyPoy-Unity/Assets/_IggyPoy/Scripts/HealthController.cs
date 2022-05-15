@@ -1,3 +1,5 @@
+using UnityEngine.Events;
+
 public class HealthController : PropertyController
 {
     public int health
@@ -7,4 +9,6 @@ public class HealthController : PropertyController
     }
 
     private int _health = 10;
+
+    public UnityEvent onHealthUpdate;
 }
