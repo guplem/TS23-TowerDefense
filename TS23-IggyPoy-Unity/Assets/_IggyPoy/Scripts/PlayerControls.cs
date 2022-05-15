@@ -62,6 +62,33 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateL"",
+                    ""type"": ""Button"",
+                    ""id"": ""7e9a1e02-7eb8-4963-a1de-a70798c0ced9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateR"",
+                    ""type"": ""Button"",
+                    ""id"": ""1a9ff882-6101-4852-a67b-d165d87be3d8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Zoom"",
+                    ""type"": ""Value"",
+                    ""id"": ""0934a00c-d82f-4cb0-8b7d-3a86e557b326"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -240,6 +267,39 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b2e4fabd-8322-4f6a-8634-1294153e36b2"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ccd63963-9872-49bc-ab2a-a8d8253e9be6"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateR"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fbc216c3-fa8a-4776-b7c8-a215be8aee8b"",
+                    ""path"": ""*/{ScrollVertical}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -252,6 +312,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
         m_Player_Cancel = m_Player.FindAction("Cancel", throwIfNotFound: true);
+        m_Player_RotateL = m_Player.FindAction("RotateL", throwIfNotFound: true);
+        m_Player_RotateR = m_Player.FindAction("RotateR", throwIfNotFound: true);
+        m_Player_Zoom = m_Player.FindAction("Zoom", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -315,6 +378,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_MousePosition;
     private readonly InputAction m_Player_Cancel;
+    private readonly InputAction m_Player_RotateL;
+    private readonly InputAction m_Player_RotateR;
+    private readonly InputAction m_Player_Zoom;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -323,6 +389,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
         public InputAction @Cancel => m_Wrapper.m_Player_Cancel;
+        public InputAction @RotateL => m_Wrapper.m_Player_RotateL;
+        public InputAction @RotateR => m_Wrapper.m_Player_RotateR;
+        public InputAction @Zoom => m_Wrapper.m_Player_Zoom;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -344,6 +413,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Cancel.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel;
                 @Cancel.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel;
                 @Cancel.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel;
+                @RotateL.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateL;
+                @RotateL.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateL;
+                @RotateL.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateL;
+                @RotateR.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateR;
+                @RotateR.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateR;
+                @RotateR.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateR;
+                @Zoom.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZoom;
+                @Zoom.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZoom;
+                @Zoom.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZoom;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -360,6 +438,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Cancel.started += instance.OnCancel;
                 @Cancel.performed += instance.OnCancel;
                 @Cancel.canceled += instance.OnCancel;
+                @RotateL.started += instance.OnRotateL;
+                @RotateL.performed += instance.OnRotateL;
+                @RotateL.canceled += instance.OnRotateL;
+                @RotateR.started += instance.OnRotateR;
+                @RotateR.performed += instance.OnRotateR;
+                @RotateR.canceled += instance.OnRotateR;
+                @Zoom.started += instance.OnZoom;
+                @Zoom.performed += instance.OnZoom;
+                @Zoom.canceled += instance.OnZoom;
             }
         }
     }
@@ -370,5 +457,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
+        void OnRotateL(InputAction.CallbackContext context);
+        void OnRotateR(InputAction.CallbackContext context);
+        void OnZoom(InputAction.CallbackContext context);
     }
 }

@@ -1,0 +1,53 @@
+using UnityEngine;
+
+namespace Thoughts.Participants.ControlSystems.Manual
+{
+    /// <summary>
+    /// A local manual control of a participant.
+    /// </summary>
+    [RequireComponent(typeof(CameraController))]
+    [RequireComponent(typeof(InputHandler))]
+    public class Manual : MonoBehaviour
+    {
+        /// <summary>
+        /// The map element selected by the participant using this ControlSystem.
+        /// </summary>
+        public MapElement selectedMapElement
+        {
+            get => _selectedMapElement;
+            set
+            {
+                if (selectedMapElement != value)
+                {
+                    _selectedMapElement = value;
+                    cameraController.FollowMapElement(selectedMapElement);
+                    Debug.Log($"New Map Element Selected: {selectedMapElement}");
+                    //cameraController.SwitchCamera(selectedMapElement == null? CameraController.CameraView.overworld : CameraController.CameraView.pov, selectedMapElement != null ? selectedMapElement.povCameraPosition.transform : null);
+                }
+                    
+            }
+        }
+        private MapElement _selectedMapElement;
+        
+
+        /// <summary>
+        /// The CameraController used by this ControlSystem.
+        /// </summary>
+        public CameraController cameraController { get; private set; }
+        
+        /// <summary>
+        /// The InputHandler used by this ControlSystem.
+        /// </summary>
+        public InputHandler inputHandler { get; private set; }
+
+        /// <summary>
+        /// Initial setup of the ControlSystem
+        /// </summary>
+        private void Awake()
+        {
+            cameraController = this.GetComponentRequired<CameraController>();
+            inputHandler = this.GetComponentRequired<InputHandler>();
+        }
+
+    }
+}
