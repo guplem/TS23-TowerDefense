@@ -55,7 +55,7 @@ public class DamagerUnitController : UnitController
     {
         while (true)
         {
-            Debug.Log($"Attack end of cooldown. Enemies in range = {attackables.Count}", this);
+            // Debug.Log($"Attack end of cooldown. Enemies in range = {attackables.Count}", this);
             if (attackables.Count > 0)
                 PerformAttack(attackables[0]);
             yield return new WaitForSeconds(cooldown);

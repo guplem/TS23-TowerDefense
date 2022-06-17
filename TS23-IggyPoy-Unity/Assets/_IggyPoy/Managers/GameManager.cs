@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Linq;
 using Thoughts.Game.Map;
 using UnityEngine;
@@ -9,31 +10,18 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     public GameData gameData;
     public GameConfiguration gameConfiguration;
-    
-    public GamePhase currentGamePhase
-    {
-        get => _currentGamePhase;
-        set
-        {
-            if (value != _currentGamePhase)
-            {
-                _currentGamePhase = value;
-                UIManager.instance.FullRefresh();
-            }
-        }
-    }
-
-    public GamePhase _currentGamePhase = GamePhase.Construction;
 
     private UnitsSpawner unitsSpawner
     {
         get
         {
-            if (_unitsSpawner == null) 
+            if (_unitsSpawner == null)
                 _unitsSpawner = mapManager.gameObject.GetComponentInChildren<UnitsSpawner>();
             return _unitsSpawner;
         }
     }
+
+    public String gameDataString => "This game is cool";
 
     private UnitsSpawner _unitsSpawner = null;
 
@@ -52,6 +40,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public bool fullyGenerateMapOnPlay = false;
 
+    [SerializeField] private float spawnClockInterval = 5f;
+    private bool gameOver = false;
+    [NonSerialized] public bool startedEnemiesSpawning = true;
+
     private void Awake()
     {
         if (instance != null)
@@ -61,15 +53,15 @@ public class GameManager : MonoBehaviour
         }
 
         instance = this;
-        
+
         _unitsSpawner = mapManager.gameObject.GetComponentInChildren<UnitsSpawner>();
         //constructionController = this.gameObject.GetComponentRequired<ConstructionController>();
     }
 
     private void Start()
     {
-        UIManager.instance.FullRefresh();
         StartNewGame();
+        UIManager.instance.FullRefresh();
     }
 
     /// <summary>
@@ -82,36 +74,37 @@ public class GameManager : MonoBehaviour
             mapManager.DeleteMap();
         else
             mapManager.RegenerateFullMap();
-    }
 
-    public void SwitchPhase()
-    {
-        if (currentGamePhase == GamePhase.Construction)
-            StartDefensePhase();
-        else
-            StartConstructionPhase();
-    }
-
-    public void StartDefensePhase()
-    {
-        currentGamePhase = GamePhase.Defense;
-        unitsSpawner.SpawnUnits(true); // TODO: change to false probably
-    }
-
-    public void StartConstructionPhase()
-    {
-        currentGamePhase = GamePhase.Construction;
-    }
-
-    public enum GamePhase
-    {
-        Construction,
-        Defense,
+        gameOver = false;
+        startedEnemiesSpawning = false;
+        StartCoroutine(UnitsSpawnClock());
     }
 
 
     public void GameOver()
     {
         Debug.LogWarning(" ====== GAME OVER ====== ");
+        gameOver = true;
+    }
+
+    public void StartSpawning()
+    {
+        GameManager.instance.startedEnemiesSpawning = true;
+        UIManager.instance.FullRefresh();
+    }
+    
+    IEnumerator UnitsSpawnClock()
+    {
+        while (!gameOver)
+        {
+            if (startedEnemiesSpawning)
+            {
+                Debug.Log("Spawning enemies");
+                unitsSpawner.SpawnUnits(false); // TODO: change to false probably
+            }
+
+            yield return new WaitForSeconds(spawnClockInterval);
+        }
+        Debug.Log("Stopping enemies spawn clock");
     }
 }

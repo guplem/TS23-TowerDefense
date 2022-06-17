@@ -6,8 +6,8 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance { get; private set; }
-    [SerializeField] private TMP_Text currentGamePhase;
-    [SerializeField] private GameObject constructionMenu;
+    [SerializeField] private GameObject startSpawningButton;
+    [SerializeField] private TMP_Text gameDataStringText;
     
     private void Awake()
     {
@@ -19,7 +19,8 @@ public class UIManager : MonoBehaviour
 
     public void FullRefresh()
     {
-        currentGamePhase.text = GameManager.instance.currentGamePhase.ToString();
-        constructionMenu.SetActive(GameManager.instance.currentGamePhase == GameManager.GamePhase.Construction);
+        startSpawningButton.SetActive(!GameManager.instance.startedEnemiesSpawning);
+        gameDataStringText.text = GameManager.instance.gameDataString;
     }
+    
 }

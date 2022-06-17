@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1826956882954227957}
   m_Layer: 5
-  m_Name: Data
+  m_Name: Data Section
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,7 +131,7 @@ RectTransform:
   m_Children:
   - {fileID: 1587969568315671861}
   m_Father: {fileID: 4437451779766946715}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.85}
   m_AnchorMax: {x: 1, y: 1}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 3523504534076358421}
   - component: {fileID: 816201121268342648}
   m_Layer: 5
-  m_Name: SwitchPhase - Button
+  m_Name: Start Spawning - Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,9 +435,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1808648142830065441}
   - {fileID: 1826956882954227957}
   - {fileID: 4424215075511105129}
+  - {fileID: 1808648142830065441}
   m_Father: {fileID: 152864191149842946}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -456,7 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1808648142830065441}
   m_Layer: 5
-  m_Name: Actions
+  m_Name: Actions Section
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,7 +476,7 @@ RectTransform:
   m_Children:
   - {fileID: 3495662019832930306}
   m_Father: {fileID: 4437451779766946715}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8, y: 0}
   m_AnchorMax: {x: 1, y: 0.2}
@@ -662,8 +662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ea27b1f93e58e41a60eb1bdd07def8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGamePhase: {fileID: 5184566665413479823}
-  constructionMenu: {fileID: 7404431392031027373}
+  startSpawningButton: {fileID: 1953248207966814882}
+  gameDataStringText: {fileID: 5184566665413479823}
 --- !u!1 &7340973597035192208
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +676,7 @@ GameObject:
   - component: {fileID: 6310720966778375029}
   - component: {fileID: 5184566665413479823}
   m_Layer: 5
-  m_Name: CurrentPhase - TMP
+  m_Name: GameDataString - TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -809,7 +809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4424215075511105129}
   m_Layer: 5
-  m_Name: Construction Menu
+  m_Name: Construction Section
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -829,7 +829,7 @@ RectTransform:
   m_Children:
   - {fileID: 4320253334676165037}
   m_Father: {fileID: 4437451779766946715}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.2, y: 0.2}
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SwitchPhase
+  m_text: Start Spawning
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
