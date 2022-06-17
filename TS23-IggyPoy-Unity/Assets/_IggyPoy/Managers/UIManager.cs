@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance { get; private set; }
     [SerializeField] private GameObject startSpawningButton;
     [SerializeField] private TMP_Text gameDataStringText;
+    [SerializeField] private TMP_Text resourcesText;
     
     private void Awake()
     {
@@ -21,6 +22,8 @@ public class UIManager : MonoBehaviour
     {
         startSpawningButton.SetActive(!GameManager.instance.startedEnemiesSpawning);
         gameDataStringText.text = GameManager.instance.gameDataString;
+        resourcesText.text = GameManager.instance.gameData.resources.ToString();
+        
     }
     
 }
