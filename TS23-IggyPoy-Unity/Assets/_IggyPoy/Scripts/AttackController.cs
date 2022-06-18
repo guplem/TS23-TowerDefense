@@ -10,13 +10,13 @@ public class AttackController : MonoBehaviour
     private float cooldown = 1;
 
     [Tooltip("Damage (or healing if negative)")] [SerializeField]
-    private int effect = 1;
+    private int damage = 1;
 
     [Tooltip("Attack range")] [SerializeField]
     public int range = 1;
 
-    private List<HealthController> attackables = new List<HealthController>();
-    
+    private List<HealthController> detectedAttackables = new();
+
     private bool running_attackCoroutine = false;
 
     [SerializeField] private StateController stateController;
@@ -25,21 +25,46 @@ public class AttackController : MonoBehaviour
 
     private void UpdateTarget()
     {
-        if (attackables.Contains(target) && target.health > 0)
+        if (detectedAttackables.Contains(target) && target.health > 0) // Keep the target if a valid one is selected
             return;
-        foreach (HealthController targetCandidate in attackables)
+
+        List<HealthController> toRemove = new();
+        bool targetFound = false;
+
+        foreach (HealthController targetCandidate in detectedAttackables)
         {
             if (targetCandidate.health <= 0)
             {
-                attackables.Remove(targetCandidate);
+                toRemove.Add(targetCandidate);
                 continue;
             }
 
-            target = targetCandidate;
+            if (target != targetCandidate)
+            {
+                target = targetCandidate;
+                stateController.SetNewState();
+            }
+
+            targetFound = true;
+            break;
         }
 
-        Debug.LogWarning($"No targets found. attackables list length = {attackables.Count}");
-        target = null;
+        foreach (HealthController element in toRemove)
+        {
+            detectedAttackables.Remove(element);
+        }
+
+        if (!targetFound)
+        {
+            Debug.LogWarning($"No targets found. attackables list length = {detectedAttackables.Count}");
+            if (target != null)
+            {
+                target = null;
+                stateController.SetNewState();
+            }
+        }
+
+        return;
     }
 
 
@@ -50,14 +75,14 @@ public class AttackController : MonoBehaviour
         if (property == null) return;
         if (property.team != PropertyController.Team.Player)
             return;
-        if (!attackables.Contains(property))
+        if (!detectedAttackables.Contains(property))
         {
-            attackables.Add(property);
+            detectedAttackables.Add(property);
             Debug.Log($"{other.gameObject.name} added to attackables list", this);
             UpdateTarget();
         }
 
-        if (!attackables.IsNullOrEmpty() && !running_attackCoroutine)
+        if (!detectedAttackables.IsNullOrEmpty() && !running_attackCoroutine)
         {
             StartCoroutine(AttackCoroutine());
         }
@@ -70,11 +95,10 @@ public class AttackController : MonoBehaviour
         if (exitElement == null) return;
         if (exitElement.team != PropertyController.Team.Player)
             return;
-        attackables.Remove(exitElement);
-        if (exitElement == target || attackables.Count <= 0)
+        detectedAttackables.Remove(exitElement);
+        if (exitElement == target || detectedAttackables.Count <= 0)
         {
             UpdateTarget();
-            stateController.SetNewState();
         }
     }
 
@@ -82,7 +106,7 @@ public class AttackController : MonoBehaviour
     {
         running_attackCoroutine = true;
 
-        while (!attackables.IsNullOrEmpty())
+        while (!detectedAttackables.IsNullOrEmpty())
         {
             UpdateTarget();
             // Debug.Log($"Attack end of cooldown. Enemies in range = {attackables.Count}", this);
@@ -92,7 +116,7 @@ public class AttackController : MonoBehaviour
             }
             else
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(target != null? 0.5f : 1f); // Mode delay if there is no target
             }
         }
 
@@ -101,13 +125,16 @@ public class AttackController : MonoBehaviour
 
     private bool PerformAttack(HealthController target)
     {
+        if (target == null)
+            return false;
+        
         if (Vector3.Distance(target.transform.position, this.transform.position) > range)
         {
             return false;
         }
 
-        target.health -= effect;
-        Debug.Log($"ATTACKED {target.gameObject} with {effect} effect. {target.health} hp remaining. (Should be... {(target.health - effect)}?) ");
+        target.health -= damage;
+        Debug.Log($"ATTACKED {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.");
         return true;
     }
 

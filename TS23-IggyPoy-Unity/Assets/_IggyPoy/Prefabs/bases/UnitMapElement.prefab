@@ -184,7 +184,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 10
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!195 &378182963409608289
 NavMeshAgent:
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   effect: 1
-  range: 3
+  range: 2
   stateController: {fileID: 7739219691465835837}
 --- !u!114 &7739219691465835837
 MonoBehaviour:

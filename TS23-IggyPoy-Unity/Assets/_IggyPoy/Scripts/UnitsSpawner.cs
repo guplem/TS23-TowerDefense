@@ -44,6 +44,14 @@ public class UnitsSpawner : MonoBehaviour
     {
         mapManager.mapGenerator.DestroyAllMapElementsChildOf(this.transform);
     }
+    
+    
+    // TODO: Delete, only used to debug in inspector
+    [ContextMenu("Spawn New Units")]
+    public void InspectorSpawnUnits()
+    {
+        SpawnUnits(false);
+    }
 
     public void SpawnUnits(bool deletePreviousUnits)
     {
@@ -61,7 +69,7 @@ public class UnitsSpawner : MonoBehaviour
             unitsToSpawn[0],
             unitsSeed,
             spawningHeightRange,
-            10, // TODO: Proper quantity and spawning
+            1, // TODO: Proper quantity and spawning
             this.transform,
             true
         );
