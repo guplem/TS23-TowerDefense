@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 public class AttackController : MonoBehaviour
 {
+    [SerializeField] private PropertyController.Team teamToAttack = PropertyController.Team.Player;
+    
     [Tooltip("In seconds")] [SerializeField]
     private float cooldown = 1;
 
@@ -22,6 +24,19 @@ public class AttackController : MonoBehaviour
     [SerializeField] private StateController stateController;
 
     public HealthController target { get; private set; }
+
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private Transform projectileSpawnLocation;
+    [SerializeField] private float projectileSpeed = 1;
+    private bool attacksWithProjectile => projectile != null && projectileSpawnLocation != null && projectileSpeed > 0;
+
+    private PoolEssentials projectilePool;
+    
+    private void Start()
+    {
+        if (attacksWithProjectile)
+            projectilePool = new PoolEssentials(projectile, 100);
+    }
 
     private void UpdateTarget()
     {
@@ -56,7 +71,7 @@ public class AttackController : MonoBehaviour
 
         if (!targetFound)
         {
-            Debug.LogWarning($"No targets found. attackables list length = {detectedAttackables.Count}");
+            Debug.LogWarning($"No targets found. attackables list length = {detectedAttackables.Count}", this);
             target = null;
             stateController.SetNewState();
         }
@@ -70,7 +85,7 @@ public class AttackController : MonoBehaviour
         //Debug.Log("OnTriggerEnter " + other.gameObject.name, this);
         HealthController property = other.GetComponent<HealthController>();
         if (property == null) return;
-        if (property.team != PropertyController.Team.Player)
+        if (property.team != teamToAttack)
             return;
         if (!detectedAttackables.Contains(property))
         {
@@ -90,7 +105,7 @@ public class AttackController : MonoBehaviour
         //Debug.Log("OnTriggerExit", this);
         HealthController exitElement = other.GetComponent<HealthController>();
         if (exitElement == null) return;
-        if (exitElement.team != PropertyController.Team.Player)
+        if (exitElement.team != teamToAttack)
             return;
         detectedAttackables.Remove(exitElement);
         if (exitElement == target || detectedAttackables.Count <= 0)
@@ -130,9 +145,22 @@ public class AttackController : MonoBehaviour
             return false;
         }
 
-        target.health -= damage;
-        Debug.Log($"ATTACKED {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.");
-        return true;
+        switch (attacksWithProjectile)
+        {
+            case false:
+            {
+                target.health -= damage;
+                Debug.Log($"ATTACKED (mele) {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.", this);
+                return true;
+            }
+            case true:
+            {
+                Debug.Log($"ATTACKED (projectile) {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.", this);
+                GameObject spawnedGO = projectilePool.Spawn(projectileSpawnLocation.position, Quaternion.identity, Vector3.one, projectileSpawnLocation);
+                spawnedGO.GetComponentRequired<Projectile>().SetTarget(target, projectileSpeed, damage, projectilePool);
+                return true;
+            }
+        }
     }
 
     private void OnDrawGizmosSelected()
