@@ -82,26 +82,33 @@ public class AttackController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("OnTriggerEnter " + other.gameObject.name, this);
-        HealthController property = other.GetComponent<HealthController>();
-        if (property == null) return;
-        if (property.team != teamToAttack)
+        if (!enabled)
             return;
-        if (!detectedAttackables.Contains(property))
+        
+        //Debug.Log("OnTriggerEnter " + other.gameObject.name, this);
+        HealthController healthController = other.GetComponent<HealthController>();
+        if (healthController == null || healthController.enabled == false || !healthController.canBeDamaged) return; // El check de "can be damage" puede provocar errores, pues cuando el placeholder de la estructura se empiece a construir (es decir que se posicione en algun lado), se podrá dañar la estructura pero no se encontrará en la lista de potenciales targets
+        if (healthController.team != teamToAttack)
+            return;
+        if (!detectedAttackables.Contains(healthController))
         {
-            detectedAttackables.Add(property);
+            detectedAttackables.Add(healthController);
             Debug.Log($"{other.gameObject.name} added to attackables list", this);
             UpdateTarget();
         }
 
         if (!detectedAttackables.IsNullOrEmpty() && !running_attackCoroutine)
         {
+            //Debug.Log("On Trigger Enter. AttackController enabled? " + this.enabled, this);
             StartCoroutine(AttackCoroutine());
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        if (!enabled)
+            return;
+        
         //Debug.Log("OnTriggerExit", this);
         HealthController exitElement = other.GetComponent<HealthController>();
         if (exitElement == null) return;

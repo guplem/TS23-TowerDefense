@@ -33,6 +33,7 @@ public class StructureController : StateController
 
     private void Awake()
     {
+        SetNewState();
         if (!isPlaced || constructionTime > 0)
         {
             attackController.enabled = false;
@@ -64,12 +65,14 @@ public class StructureController : StateController
     {
         if (!isPlaced)
         {
+            canBeDamaged = false;
             visuals.SetActive(false);
             blueprint.SetActive(true);
             attackController.enabled = false;
         }
         else
         {
+            canBeDamaged = true;
             blueprint.SetActive(false);
             if (constructionTime < 0)
             {

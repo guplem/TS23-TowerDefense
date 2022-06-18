@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public class HealthController : PropertyController
 {
+    [NonSerialized] public bool canBeDamaged = true; 
     public int health
     {
         get => _health;
