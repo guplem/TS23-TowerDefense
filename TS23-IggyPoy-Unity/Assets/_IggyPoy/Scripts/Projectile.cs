@@ -8,8 +8,21 @@ public class Projectile : MonoBehaviour
     private HealthController target;
     private int damage;
     private PoolEssentials projectilePool;
+    private Vector3 lastTargetPosition;
 
-    private Vector3 targetPosition => target.transform.position + Vector3.up * 1.5f;
+
+    private Vector3 targetPosition
+    {
+        get {
+            if (target == null)
+            {
+                return lastTargetPosition;
+            }
+            lastTargetPosition = target.transform.position + Vector3.up * 1.5f;
+            return lastTargetPosition;
+        }
+    }
+
     private float maxDetonationDistance => 0.01f;
 
     public void SetTarget(HealthController target, float speed, int damage, PoolEssentials projectilePool)
@@ -26,8 +39,11 @@ public class Projectile : MonoBehaviour
         
         if (Vector3.Distance(transform.position, targetPosition) < maxDetonationDistance)
         {
-            target.health -= damage;
-            Debug.Log($"ATTACKED {target.gameObject} with a projectile causing {damage} damage. Now {target.health} hp are still remaining.");
+            if (target != null)
+            {
+                target.health -= damage;
+                Debug.Log($"ATTACKED {target.gameObject} with a projectile causing {damage} damage. Now {target.health} hp are still remaining.");
+            }
             projectilePool.Disable(gameObject);
         }
     }
