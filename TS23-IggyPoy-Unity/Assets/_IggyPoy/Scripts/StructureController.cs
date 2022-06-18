@@ -17,13 +17,25 @@ public class StructureController : StateController
     [Tooltip("The time it takes to build the structure")] [SerializeField]
     private float constructionTime = 3;
 
+    public bool isPlaced
+    {
+        get => _isPlaced;
+        set
+        {
+            if (value == _isPlaced) return;
+            _isPlaced = value;
+            SetNewState();
+        }
+    }
+    private bool _isPlaced = false;
+
     [SerializeField] private AttackController attackController;
 
     private void Awake()
     {
-        if (constructionTime > 0)
+        if (!isPlaced || constructionTime > 0)
         {
-            attackController.enabled = true;
+            attackController.enabled = false;
             StartCoroutine(ConstructionCoroutine());
         }
     }
@@ -38,20 +50,9 @@ public class StructureController : StateController
             yield return new WaitForSeconds(steps);
         }
 
+        SetNewState();
     }
-
-
-    public void ShowBlueprint()
-    {
-        visuals.SetActive(false);
-        blueprint.SetActive(true);
-    }
-
-    public void ShowVisuals()
-    {
-        visuals.SetActive(true);
-        blueprint.SetActive(false);
-    }
+    
 
     private void OnDrawGizmosSelected()
     {
@@ -61,11 +62,28 @@ public class StructureController : StateController
 
     public override void SetNewState()
     {
-        if (constructionTime < 0)
+        if (!isPlaced)
         {
-            visuals.SetActive(true);
-            construction.SetActive(false);
-            attackController.enabled = true;
+            visuals.SetActive(false);
+            blueprint.SetActive(true);
+            attackController.enabled = false;
         }
+        else
+        {
+            blueprint.SetActive(false);
+            if (constructionTime < 0)
+            {
+                visuals.SetActive(true);
+                construction.SetActive(false);
+                attackController.enabled = true;
+            }
+            else
+            {
+                visuals.SetActive(false);
+                construction.SetActive(true);
+                attackController.enabled = false;
+            }
+        }
+
     }
 }

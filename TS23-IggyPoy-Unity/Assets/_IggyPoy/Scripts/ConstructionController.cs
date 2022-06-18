@@ -51,7 +51,7 @@ public class ConstructionController : MonoBehaviour
             return;
 
         placeHolderBuilding = Instantiate(selectedStructureToConstruct.gameObject, Vector3.one*10000, Quaternion.identity, this.transform);
-        placeHolderBuilding.GetComponentRequired<StructureController>().ShowBlueprint();
+        // placeHolderBuilding.GetComponentRequired<StructureController>().isPlaced = false; // Not necessary, default isPlaced is false.
         Debug.Log($"Selected structure '{structure.ToString()}' to build.", this);
     }
 
@@ -64,7 +64,7 @@ public class ConstructionController : MonoBehaviour
             structuresParent);
         UnselectStructure();
         StructureController instantiatedStructure = instantiated.gameObject.GetComponentRequired<StructureController>();
-        instantiatedStructure.ShowVisuals();
+        instantiatedStructure.isPlaced = true;
         instantiatedStructure.team = PropertyController.Team.Player;
         Debug.Log($"Built structure '{instantiated.ToString()}'.", this);
     }

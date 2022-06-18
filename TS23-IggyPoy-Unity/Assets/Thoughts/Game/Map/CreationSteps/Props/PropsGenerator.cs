@@ -48,7 +48,7 @@ namespace Thoughts.Game.Map.CreationSteps.Vegetation
                 MapElement mainStructureSpawned = mapManager.mapGenerator.SpawnAsMapElement(mainStructure, spawnablePosition, Quaternion.identity, mainStructureParent);
                 StructureController mainStructureSpawnedStructureController = mainStructureSpawned.GetComponentRequired<StructureController>();
                 mainStructureSpawnedStructureController.team = PropertyController.Team.Player;
-                mainStructureSpawnedStructureController.ShowVisuals();
+                mainStructureSpawnedStructureController.isPlaced = true;
             }
             else
             {
