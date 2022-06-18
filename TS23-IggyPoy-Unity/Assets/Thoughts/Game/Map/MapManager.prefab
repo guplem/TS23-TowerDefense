@@ -111,7 +111,7 @@ MonoBehaviour:
   navigationManager: {fileID: 6748902952817831958}
   spawningHeightRange: {x: 0.19, y: 0.6390049}
   unitsToSpawn:
-  - {fileID: 7331151817010863944, guid: 39009ebc5250b064abfd79c21affb3c9, type: 3}
+  - {fileID: 8128732154038855203, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
 --- !u!1 &6748902950867179249
 GameObject:
   m_ObjectHideFlags: 0

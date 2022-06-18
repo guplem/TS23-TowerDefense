@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData:
-    resources: 100
+    _resources: 100
   mapManager: {fileID: 150588866}
   fullyGenerateMapOnPlay: 1
   spawnClockInterval: 5
@@ -524,11 +524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2852758819577862408, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.49886122
+      value: 0.49886128
       objectReference: {fileID: 0}
     - target: {fileID: 2852758819577862408, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.19666144
+      value: 0.19666146
       objectReference: {fileID: 0}
     - target: {fileID: 2852758819577862408, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.y
@@ -536,7 +536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2852758819577862408, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.30956522
+      value: -0.3095652
       objectReference: {fileID: 0}
     - target: {fileID: 3125571015461873091, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_SizeDelta.y
@@ -812,7 +812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5982301041292961629, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.33629805
+      value: -0.33629802
       objectReference: {fileID: 0}
     - target: {fileID: 6152385923736035460, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_AnchorMax.x
