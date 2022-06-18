@@ -57,11 +57,8 @@ public class AttackController : MonoBehaviour
         if (!targetFound)
         {
             Debug.LogWarning($"No targets found. attackables list length = {detectedAttackables.Count}");
-            if (target != null)
-            {
-                target = null;
-                stateController.SetNewState();
-            }
+            target = null;
+            stateController.SetNewState();
         }
 
         return;
