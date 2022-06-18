@@ -52,7 +52,7 @@ public class ConstructionController : MonoBehaviour
 
         placeHolderBuilding = Instantiate(selectedStructureToConstruct.gameObject, Vector3.one*10000, Quaternion.identity, this.transform);
         placeHolderBuilding.GetComponentRequired<StructureController>().ShowBlueprint();
-        Debug.LogWarning($"Selected structure '{structure.ToString()}' to build.", this);
+        Debug.Log($"Selected structure '{structure.ToString()}' to build.", this);
     }
 
     public void BuildSelectedStructure()

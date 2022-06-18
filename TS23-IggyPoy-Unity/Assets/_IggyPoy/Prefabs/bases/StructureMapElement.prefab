@@ -109,6 +109,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9144614437451166654, guid: 133b554db2c2d9946804a3033fbeb60f, type: 3}
   m_PrefabInstance: {fileID: 7821593190574619090}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &284363118947755037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325135749665720940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85ec2db0206e8d47bc493d87ffe817a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 1
+  effect: 1
+  range: 1
+  stateController: {fileID: 7690321064448338955}
 --- !u!114 &7690321064448338955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,9 +139,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visuals: {fileID: 3584904110779811015}
   blueprint: {fileID: 54911899161403688}
-  range: 10
+  construction: {fileID: 0}
   exclusionArea: 2
   cost: 20
+  constructionTime: 3
+  attackController: {fileID: 284363118947755037}
 --- !u!1 &3584904110779811015 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6722681116665199893, guid: 133b554db2c2d9946804a3033fbeb60f, type: 3}

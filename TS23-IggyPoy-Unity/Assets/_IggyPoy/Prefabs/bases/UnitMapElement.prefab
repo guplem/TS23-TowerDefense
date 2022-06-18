@@ -208,6 +208,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 3
+--- !u!114 &6231532637389738966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128732154038855203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85ec2db0206e8d47bc493d87ffe817a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 1
+  effect: 1
+  range: 3
+  stateController: {fileID: 7739219691465835837}
 --- !u!114 &7739219691465835837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,5 +236,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27501b4323041e4fa2a81b0c379f6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 1
-  effect: 1
+  attackController: {fileID: 6231532637389738966}
