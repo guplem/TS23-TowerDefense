@@ -42,7 +42,7 @@ public class Projectile : MonoBehaviour
             if (target != null)
             {
                 target.health -= damage;
-                Debug.Log($"ATTACKED {target.gameObject} with a projectile causing {damage} damage. Now {target.health} hp are still remaining.");
+                // Debug.Log($"ATTACKED {target.gameObject} with a projectile causing {damage} damage. Now {target.health} hp are still remaining.");
             }
             projectilePool.Disable(gameObject);
         }

@@ -12,17 +12,17 @@ public class UnitController : StateController
     {
         if (attackController.target == null)
         {
-            Debug.Log("Unit state: to center");
+            // Debug.Log("Unit state: to center");
             SetDestination(Vector3.zero); // TODO: Change for the precise location of the main structure
         }
         else if (Vector3.Distance(attackController.target.transform.position, this.transform.position) <= attackController.range)
         {
-            Debug.Log("Unit state: stop");
+            // Debug.Log("Unit state: stop");
             StopMovement();
         }
         else
         {
-            Debug.Log("Unit state: to target on the way");
+            // Debug.Log("Unit state: to target on the way");
             SetDestination(attackController.target.transform.position);
         }
     }

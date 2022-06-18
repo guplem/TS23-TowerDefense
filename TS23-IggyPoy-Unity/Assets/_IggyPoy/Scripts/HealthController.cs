@@ -14,7 +14,6 @@ public class HealthController : PropertyController
             onHealthUpdate?.Invoke();
             if (_health <= 0)
             {
-                Debug.LogWarning($"Death of {this.gameObject} not implemented", this);
                 Destroy(this.gameObject);
             }
         }

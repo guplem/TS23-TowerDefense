@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        if (gameOver) Debug.LogError("Game over already set!");
         Debug.LogWarning(" ====== GAME OVER ====== ");
         gameOver = true;
     }

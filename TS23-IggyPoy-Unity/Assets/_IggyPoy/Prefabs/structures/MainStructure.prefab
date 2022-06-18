@@ -251,8 +251,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: cost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: exclusionArea
-      value: 500
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: constructionTime
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}

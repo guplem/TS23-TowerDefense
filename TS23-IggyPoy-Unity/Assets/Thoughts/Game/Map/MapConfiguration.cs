@@ -12,9 +12,9 @@ namespace Thoughts.Game.Map
     /// Holds all the configuration/settings used to generate the Map
     /// </summary>
     [CreateAssetMenu(fileName = "MapConfiguration", menuName = "Thoughts/Map/Map Configuration", order = -50)]
-#pragma warning disable 660,661
+#pragma warning disable 660,661,659
     public class MapConfiguration : UpdatableData, IEquatable<MapConfiguration>
-#pragma warning restore 660,661
+#pragma warning restore 660,661,659
     {
 
         /// <summary>

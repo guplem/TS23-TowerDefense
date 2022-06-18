@@ -71,7 +71,7 @@ public class AttackController : MonoBehaviour
 
         if (!targetFound)
         {
-            Debug.LogWarning($"No targets found. attackables list length = {detectedAttackables.Count}", this);
+            // Debug.LogWarning($"No targets found. attackables list length = {detectedAttackables.Count}", this);
             target = null;
             stateController.SetNewState();
         }
@@ -93,7 +93,7 @@ public class AttackController : MonoBehaviour
         if (!detectedAttackables.Contains(healthController))
         {
             detectedAttackables.Add(healthController);
-            Debug.Log($"{other.gameObject.name} added to attackables list", this);
+            // Debug.Log($"{other.gameObject.name} added to attackables list", this);
             UpdateTarget();
         }
 
@@ -157,12 +157,12 @@ public class AttackController : MonoBehaviour
             case false:
             {
                 target.health -= damage;
-                Debug.Log($"ATTACKED (mele) {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.", this);
+                // Debug.Log($"ATTACKED (mele) {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.", this);
                 return true;
             }
             case true:
             {
-                Debug.Log($"ATTACKED (projectile) {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.", this);
+                // Debug.Log($"ATTACKED (projectile) {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.", this);
                 GameObject spawnedGO = projectilePool.Spawn(projectileSpawnLocation.position, Quaternion.identity, Vector3.one, projectileSpawnLocation);
                 spawnedGO.GetComponentRequired<Projectile>().SetTarget(target, projectileSpeed, damage, projectilePool);
                 return true;

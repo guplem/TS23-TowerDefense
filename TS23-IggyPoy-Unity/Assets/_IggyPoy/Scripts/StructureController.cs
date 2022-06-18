@@ -74,7 +74,7 @@ public class StructureController : StateController
         {
             canBeDamaged = true;
             blueprint.SetActive(false);
-            if (constructionTime < 0)
+            if (constructionTime <= 0)
             {
                 visuals.SetActive(true);
                 construction.SetActive(false);

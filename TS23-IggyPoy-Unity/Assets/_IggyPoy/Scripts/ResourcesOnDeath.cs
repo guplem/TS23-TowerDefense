@@ -4,31 +4,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EndOfGameOnDeath : MonoBehaviour
+public class ResourcesOnDeath : MonoBehaviour
 {
     [SerializeField] private HealthController healthController;
+    [SerializeField] private int resourcesDelta;
     private bool done = false;
-    
+
     private void Awake()
     {
         if (healthController.onHealthUpdate == null)
             healthController.onHealthUpdate = new UnityEvent();
-        healthController.onHealthUpdate.AddListener(CheckDeath);
+        healthController.onHealthUpdate.AddListener(AddResources);
     }
 
-    public void CheckDeath()
+    public void AddResources()
     {
         if (done) return;
         //Debug.Log($"Checking death. Remaining health = {healthController.health}");
         if (healthController.health > 0) 
             return;
-        GameManager.instance.GameOver();
-        healthController.onHealthUpdate.RemoveListener(CheckDeath);
+        GameManager.instance.gameData.resources += resourcesDelta;
+        healthController.onHealthUpdate.RemoveListener(AddResources);
         done = true;
     }
 
     private void OnDestroy()
     {
-        CheckDeath();
+        AddResources();
     }
 }
