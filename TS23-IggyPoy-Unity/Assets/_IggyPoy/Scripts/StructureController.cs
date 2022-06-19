@@ -23,6 +23,8 @@ public class StructureController : StateController
         set
         {
             if (value == _isPlaced) return;
+            if (_isPlaced == false && value == true)
+                StartCoroutine(ConstructionCoroutine());
             _isPlaced = value;
             SetNewState();
         }
@@ -60,13 +62,12 @@ public class StructureController : StateController
         if (!isPlaced || constructionTime > 0)
         {
             attackController.enabled = false;
-            StartCoroutine(ConstructionCoroutine());
         }
     }
 
     private IEnumerator ConstructionCoroutine()
     {
-        float steps = 0.1f; // Every X seconds will be called
+        float steps = 0.25f; // Every X seconds will be called
 
         while (constructionTime > 0)
         {

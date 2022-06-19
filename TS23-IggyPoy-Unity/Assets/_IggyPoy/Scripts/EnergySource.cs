@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.Utilities;
 using UnityEngine;
 
 public class EnergySource : MonoBehaviour
 {
-    private static HashSet<EnergySource> energySources = new() ;
+    private static HashSet<EnergySource> energySources = new();
     [SerializeField] private float range = 5;
-    private HashSet<StructureController> attatchedStructures = new() ;
+    private HashSet<StructureController> attatchedStructures = new();
 
     private void OnEnable()
     {
@@ -17,7 +18,9 @@ public class EnergySource : MonoBehaviour
     private void OnDisable()
     {
         energySources.Remove(this);
-        foreach (StructureController structureController in attatchedStructures)
+        HashSet<StructureController> cachedAttatchedStructures = new();
+        cachedAttatchedStructures.AddRange(attatchedStructures);
+        foreach (StructureController structureController in cachedAttatchedStructures)
         {
             structureController.energySource = null;
         }
@@ -30,7 +33,7 @@ public class EnergySource : MonoBehaviour
         foreach (EnergySource candidate in energySources)
         {
             float candidateDistance = Vector3.Distance(location, candidate.transform.position);
-            if (candidateDistance > candidate.range) 
+            if (candidateDistance > candidate.range)
                 continue;
             if (candidateDistance < bestDistance)
             {
@@ -46,12 +49,12 @@ public class EnergySource : MonoBehaviour
     {
         attatchedStructures.Remove(structure);
     }
-    
+
     public void Attatch(StructureController structure)
     {
         attatchedStructures.Add(structure);
     }
-    
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
