@@ -12,7 +12,7 @@ public class StructureController : StateController
     private float exclusionArea = 2;
 
     [Tooltip("The cost to build the structure")] [SerializeField]
-    private float cost = 20;
+    public int cost = 20;
 
     [Tooltip("The time it takes to build the structure")] [SerializeField]
     private float constructionTime = 3;

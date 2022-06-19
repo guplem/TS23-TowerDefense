@@ -7,24 +7,25 @@ using UnityEngine.UIElements;
 public class ConstructionController : MonoBehaviour
 {
     public static ConstructionController instance { get; private set; }
-    private StructureController selectedStructureToConstruct
+
+    private StructureController placeHolderBuilding
     {
-        get => _selectedStructureToConstruct;
+        get => _placeHolderBuilding;
         set
         {
-            if (_selectedStructureToConstruct != value)
+            if (_placeHolderBuilding != value)
             {
-                _selectedStructureToConstruct = value;
+                _placeHolderBuilding = value;
                 UIManager.instance.FullRefresh();
             }
         }
     }
-    private StructureController _selectedStructureToConstruct;
-    public bool hasSelectedStructureToBuild => selectedStructureToConstruct != null;
+
+    private StructureController _placeHolderBuilding;
+    public bool hasSelectedStructureToBuild => placeHolderBuilding != null;
     [SerializeField] private Transform structuresParent;
-    private GameObject placeHolderBuilding;
-    public LayerMask buildingLayers ;
-    private bool isValidBuildingPlacement = true; // TODO: Update
+    public LayerMask buildingLayers;
+    private bool isValidBuildingPlacement = true;
     private Vector3 buildingPlacement;
 
     private void Awake()
@@ -46,23 +47,38 @@ public class ConstructionController : MonoBehaviour
             return;
         }
 
-        selectedStructureToConstruct = structure.gameObject.GetComponentRequired<StructureController>();
-        if (selectedStructureToConstruct == null)
+        StructureController structureController = structure.gameObject.GetComponentRequired<StructureController>();
+        if (structureController == null)
             return;
 
-        placeHolderBuilding = Instantiate(selectedStructureToConstruct.gameObject, Vector3.one*10000, Quaternion.identity, this.transform);
+        placeHolderBuilding = Instantiate(structure, Vector3.one * 10000, Quaternion.identity, this.transform).GetComponentRequired<StructureController>();
         // placeHolderBuilding.GetComponentRequired<StructureController>().isPlaced = false; // Not necessary, default isPlaced is false.
-        Debug.Log($"Selected structure '{structure.ToString()}' to build.", this);
+        Debug.Log($"Selected structure '{placeHolderBuilding.ToString()}' to build.", this);
     }
 
     public void BuildSelectedStructure()
     {
-        if (!hasSelectedStructureToBuild || !isValidBuildingPlacement)
+        if (!hasSelectedStructureToBuild)
+        {
+            Debug.Log($"Structure could not be build. No structure is selected");
             return;
+        }
+        else if (!isValidBuildingPlacement)
+        {
+            Debug.Log($"Structure could not be build. Invalid placement");
+            return;
+        }
+        else if (GameManager.instance.gameData.resources < placeHolderBuilding.cost)
+        {
+            Debug.Log($"Structure could not be build. Could not afford the cost ({placeHolderBuilding.cost} needed, player has {GameManager.instance.gameData.resources})");
+            return;
+        }
 
-        MapElement instantiated = GameManager.instance.mapManager.SpawnMapElement(selectedStructureToConstruct.gameObject, buildingPlacement, Quaternion.identity,
+        MapElement instantiated = GameManager.instance.mapManager.SpawnMapElement(placeHolderBuilding.gameObject, buildingPlacement, Quaternion.identity,
             structuresParent);
+        GameManager.instance.gameData.resources -= placeHolderBuilding.cost;
         UnselectStructure();
+
         StructureController instantiatedStructure = instantiated.gameObject.GetComponentRequired<StructureController>();
         instantiatedStructure.isPlaced = true;
         instantiatedStructure.team = PropertyController.Team.Player;
@@ -71,7 +87,7 @@ public class ConstructionController : MonoBehaviour
 
     private void Update()
     {
-        if (placeHolderBuilding != null)
+        if (hasSelectedStructureToBuild)
         {
             Ray ray = Camera.main.ScreenPointToRay(InputManager.instance.playerControls.Player.MousePosition.ReadValue<Vector2>());
 
@@ -79,11 +95,11 @@ public class ConstructionController : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 5000, ConstructionController.instance.buildingLayers))
             {
                 buildingPlacement = hit.point;
-                isValidBuildingPlacement = true; // TODO: Proper check
+                isValidBuildingPlacement = true; // TODO: Proper check with NavMesh
             }
             else
             {
-                buildingPlacement = Vector3.one*10000;
+                buildingPlacement = Vector3.one * 10000;
                 isValidBuildingPlacement = false;
             }
 
@@ -91,7 +107,7 @@ public class ConstructionController : MonoBehaviour
         }
         else
         {
-            buildingPlacement = Vector3.one*10000;
+            buildingPlacement = Vector3.one * 10000;
             isValidBuildingPlacement = false;
         }
     }
@@ -101,6 +117,5 @@ public class ConstructionController : MonoBehaviour
         if (placeHolderBuilding != null)
             Destroy(placeHolderBuilding);
         placeHolderBuilding = null;
-        selectedStructureToConstruct = null;
     }
 }
