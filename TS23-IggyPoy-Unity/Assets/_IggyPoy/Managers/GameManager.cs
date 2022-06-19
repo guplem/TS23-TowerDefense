@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public bool fullyGenerateMapOnPlay = false;
 
-    [SerializeField] private float spawnClockInterval = 5f;
+    [SerializeField] private float spawnClockInterval = 5f; // In seconds
     private bool gameOver = false;
     [NonSerialized] public bool startedEnemiesSpawning = true;
 
@@ -101,10 +101,11 @@ public class GameManager : MonoBehaviour
             if (startedEnemiesSpawning)
             {
                 Debug.Log("Spawning enemies");
-                unitsSpawner.SpawnUnits(false); // TODO: change to false probably
+                unitsSpawner.SpawnUnits(false);
             }
 
             yield return new WaitForSeconds(spawnClockInterval);
+            gameData.timeSinceSpawnStarted += spawnClockInterval;
         }
         Debug.Log("Stopping enemies spawn clock");
     }
