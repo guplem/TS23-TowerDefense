@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3069382967569673921, guid: cb6856a0528153044a148bab034713fb, type: 3}
+      propertyPath: m_Radius
+      value: 0.26
+      objectReference: {fileID: 0}
     - target: {fileID: 4128010822326650260, guid: cb6856a0528153044a148bab034713fb, type: 3}
       propertyPath: m_Name
       value: Tree 1
@@ -117,5 +121,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 136934784186368300, guid: e377b882a13405d4b9d5c3e8e747595e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e377b882a13405d4b9d5c3e8e747595e, type: 3}

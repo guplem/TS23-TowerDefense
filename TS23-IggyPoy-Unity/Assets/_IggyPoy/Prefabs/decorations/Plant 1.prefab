@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4128010822326650260, guid: cb6856a0528153044a148bab034713fb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8544187091845233500, guid: cb6856a0528153044a148bab034713fb, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,6 +57,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8544187091845233500, guid: cb6856a0528153044a148bab034713fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031598227783731225, guid: cb6856a0528153044a148bab034713fb, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
