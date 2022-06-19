@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
         {
             if (startedEnemiesSpawning)
             {
-                Debug.Log("Spawning enemies");
+                // Debug.Log("Spawning enemies");
                 unitsSpawner.SpawnUnits(false);
             }
 
