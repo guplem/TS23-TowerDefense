@@ -125,7 +125,7 @@ public class AttackController : MonoBehaviour
     {
         running_attackCoroutine = true;
 
-        while (!detectedAttackables.IsNullOrEmpty())
+        while (!detectedAttackables.IsNullOrEmpty() && this.enabled)
         {
             UpdateTarget();
             // Debug.Log($"Attack end of cooldown. Enemies in range = {attackables.Count}", this);

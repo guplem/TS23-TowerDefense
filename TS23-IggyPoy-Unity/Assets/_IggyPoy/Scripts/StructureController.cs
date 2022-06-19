@@ -47,6 +47,8 @@ public class StructureController : StateController
             
             if (_energySource != null) 
                 _energySource.Attatch(this);
+            
+            SetNewState();
         }
     }
 
@@ -100,7 +102,7 @@ public class StructureController : StateController
             {
                 visuals.SetActive(true);
                 construction.SetActive(false);
-                attackController.enabled = true;
+                attackController.enabled = energySource != null;
             }
             else
             {
