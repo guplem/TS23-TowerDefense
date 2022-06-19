@@ -11,9 +11,9 @@ public class EndOfGameOnDeath : MonoBehaviour
     
     private void Awake()
     {
-        if (healthController.onHealthUpdate == null)
-            healthController.onHealthUpdate = new UnityEvent();
-        healthController.onHealthUpdate.AddListener(CheckDeath);
+        if (healthController.onDeath == null)
+            healthController.onDeath = new UnityEvent();
+        healthController.onDeath.AddListener(CheckDeath);
     }
 
     public void CheckDeath()
@@ -23,7 +23,7 @@ public class EndOfGameOnDeath : MonoBehaviour
         if (healthController.health > 0) 
             return;
         GameManager.instance.GameOver();
-        healthController.onHealthUpdate.RemoveListener(CheckDeath);
+        healthController.onDeath.RemoveListener(CheckDeath);
         done = true;
     }
 

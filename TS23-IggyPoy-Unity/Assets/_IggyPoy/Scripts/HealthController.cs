@@ -14,12 +14,14 @@ public class HealthController : PropertyController
             onHealthUpdate?.Invoke();
             if (_health <= 0)
             {
+                onDeath?.Invoke();
                 Destroy(this.gameObject);
             }
         }
     }
 
-    private int _health = 10;
+    [SerializeField] private int _health = 10;
 
+    [NonSerialized] public UnityEvent onDeath = new();
     [NonSerialized] public UnityEvent onHealthUpdate = new();
 }

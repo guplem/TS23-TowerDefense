@@ -55,7 +55,7 @@ namespace Thoughts.Game.Map
             
             if (repeatedAgent && updateIfAlreadyCalculated) // Updated code --> TODO: Code should be copied/updated in Thoughts 
             {
-                Debug.Log($"\\-- Recreating a NavMeshSurface for agent {navMeshAgent.ToString()}.", this);
+                Debug.Log($"  \\-- Recreating a NavMeshSurface for agent {navMeshAgent.ToString()}.", this);
 
                 Bounds bounds = new Bounds(center, size);
 

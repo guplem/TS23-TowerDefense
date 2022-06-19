@@ -12,9 +12,9 @@ public class ResourcesOnDeath : MonoBehaviour
 
     private void Awake()
     {
-        if (healthController.onHealthUpdate == null)
-            healthController.onHealthUpdate = new UnityEvent();
-        healthController.onHealthUpdate.AddListener(AddResources);
+        if (healthController.onDeath == null)
+            healthController.onDeath = new UnityEvent();
+        healthController.onDeath.AddListener(AddResources);
     }
 
     public void AddResources()
@@ -24,7 +24,7 @@ public class ResourcesOnDeath : MonoBehaviour
         if (healthController.health > 0) 
             return;
         GameManager.instance.gameData.resources += resourcesDelta;
-        healthController.onHealthUpdate.RemoveListener(AddResources);
+        healthController.onDeath.RemoveListener(AddResources);
         done = true;
     }
 
