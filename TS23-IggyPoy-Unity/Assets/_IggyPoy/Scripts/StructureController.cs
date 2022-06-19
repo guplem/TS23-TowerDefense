@@ -54,14 +54,14 @@ public class StructureController : StateController
         }
     }
 
-    public EnergySource _energySource;
+    [NonSerialized] public EnergySource _energySource;
 
     private void Awake()
     {
         SetNewState();
         if (!isPlaced || constructionTime > 0)
         {
-            attackController.enabled = false;
+            if (attackController != null) attackController.enabled = false;
         }
     }
 
@@ -93,7 +93,7 @@ public class StructureController : StateController
             visuals.SetActive(false);
             blueprint.SetActive(true);
             construction.SetActive(false);
-            attackController.enabled = false;
+            if (attackController != null) attackController.enabled = false;
         }
         else
         {
@@ -103,13 +103,13 @@ public class StructureController : StateController
             {
                 visuals.SetActive(true);
                 construction.SetActive(false);
-                attackController.enabled = energySource != null;
+                if (attackController != null) attackController.enabled = energySource != null;
             }
             else
             {
                 visuals.SetActive(false);
                 construction.SetActive(true);
-                attackController.enabled = false;
+                if (attackController != null) attackController.enabled = false;
             }
         }
     }

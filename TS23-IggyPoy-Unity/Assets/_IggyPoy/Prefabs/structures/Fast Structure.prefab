@@ -257,12 +257,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: range
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: cooldown
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: attackCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 7563019817647299217, guid: b3d9db2645cb0694a801a1abf6e5b937, type: 3}
+    - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: projectileSpeed
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1325135749665720940, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_Name
-      value: Structure Variant
+      value: Fast Structure
       objectReference: {fileID: 0}
     - target: {fileID: 6753566475038569636, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_RootOrder
@@ -307,6 +327,18 @@ PrefabInstance:
     - target: {fileID: 6753566475038569636, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: cost
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: _health
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: constructionTime
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
