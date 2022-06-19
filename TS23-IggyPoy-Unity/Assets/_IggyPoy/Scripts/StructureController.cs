@@ -23,27 +23,51 @@ public class StructureController : StateController
         set
         {
             if (value == _isPlaced) return;
+            if (_isPlaced == false && value == true)
+                StartCoroutine(ConstructionCoroutine());
             _isPlaced = value;
             SetNewState();
         }
     }
+
     private bool _isPlaced = false;
 
     [SerializeField] private AttackController attackController;
+
+    public EnergySource energySource
+    {
+        get => _energySource;
+        set
+        {
+            if (energySource == value && value != null)
+                return;
+
+            if (_energySource != null) 
+                _energySource.Detach(this);
+
+            _energySource = value == null ? EnergySource.GetBestFor(transform.position, GetComponent<EnergySource>()) : value;
+            
+            if (_energySource != null) 
+                _energySource.Attatch(this);
+            
+            SetNewState();
+        }
+    }
+
+    [NonSerialized] public EnergySource _energySource;
 
     private void Awake()
     {
         SetNewState();
         if (!isPlaced || constructionTime > 0)
         {
-            attackController.enabled = false;
-            StartCoroutine(ConstructionCoroutine());
+            if (attackController != null) attackController.enabled = false;
         }
     }
-    
+
     private IEnumerator ConstructionCoroutine()
     {
-        float steps = 0.1f; // Every X seconds will be called
+        float steps = 0.25f; // Every X seconds will be called
 
         while (constructionTime > 0)
         {
@@ -53,7 +77,7 @@ public class StructureController : StateController
 
         SetNewState();
     }
-    
+
 
     private void OnDrawGizmosSelected()
     {
@@ -69,7 +93,7 @@ public class StructureController : StateController
             visuals.SetActive(false);
             blueprint.SetActive(true);
             construction.SetActive(false);
-            attackController.enabled = false;
+            if (attackController != null) attackController.enabled = false;
         }
         else
         {
@@ -79,15 +103,14 @@ public class StructureController : StateController
             {
                 visuals.SetActive(true);
                 construction.SetActive(false);
-                attackController.enabled = true;
+                if (attackController != null) attackController.enabled = energySource != null;
             }
             else
             {
                 visuals.SetActive(false);
                 construction.SetActive(true);
-                attackController.enabled = false;
+                if (attackController != null) attackController.enabled = false;
             }
         }
-
     }
 }

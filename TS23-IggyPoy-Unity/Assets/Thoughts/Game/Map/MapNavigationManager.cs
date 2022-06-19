@@ -49,7 +49,7 @@ namespace Thoughts.Game.Map
             }
 
             float walkableAreaHeight = mapConfiguration.terrainHeightSettings.maxHeight - mapConfiguration.seaHeightAbsolute;
-            float walkableHeightUnderSea = navMeshAgent.height * 0.5f; // I want the agents to be able to submerge up to half of its height
+            float walkableHeightUnderSea = 0;//OLD: navMeshAgent.height * 0.5f; // I want the agents to be able to submerge up to half of its height
             Vector3 size = new Vector3(mapConfiguration.mapRadius * 2, walkableAreaHeight + walkableHeightUnderSea * 2, mapConfiguration.mapRadius * 2);
             Vector3 center = new Vector3(0, mapConfiguration.seaHeightAbsolute + walkableAreaHeight / 2, 0);
             

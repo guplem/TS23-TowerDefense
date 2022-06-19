@@ -257,8 +257,9 @@ MonoBehaviour:
   cooldown: 1
   damage: 1
   range: 5
+  attackCost: 1
   stateController: {fileID: 7690321064448338955}
-  projectile: {fileID: 4588526828919500218, guid: 9bcf3290429afba48952569a7ee0b58c, type: 3}
+  projectile: {fileID: 7563019817647299217, guid: b3d9db2645cb0694a801a1abf6e5b937, type: 3}
   projectileSpawnLocation: {fileID: 5765151399186714460}
   projectileSpeed: 2
 --- !u!114 &7690321064448338955

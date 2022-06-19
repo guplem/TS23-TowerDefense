@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UIElements;
 
 public class ConstructionController : MonoBehaviour
@@ -27,6 +28,7 @@ public class ConstructionController : MonoBehaviour
     public LayerMask buildingLayers;
     private bool isValidBuildingPlacement = true;
     private Vector3 buildingPlacement;
+    private EnergySource placeHolderEnergySource;
 
     private void Awake()
     {
@@ -73,6 +75,11 @@ public class ConstructionController : MonoBehaviour
             Debug.Log($"Structure could not be build. Could not afford the cost ({placeHolderBuilding.cost} needed, player has {GameManager.instance.gameData.resources})");
             return;
         }
+        else if (placeHolderEnergySource == null)
+        {
+            Debug.Log($"Structure could not be build. Energy source not in range");
+            return;
+        }
 
         MapElement instantiated = GameManager.instance.mapManager.SpawnMapElement(placeHolderBuilding.gameObject, buildingPlacement, Quaternion.identity,
             structuresParent);
@@ -83,6 +90,7 @@ public class ConstructionController : MonoBehaviour
         StructureController instantiatedStructure = instantiated.gameObject.GetComponentRequired<StructureController>();
         instantiatedStructure.isPlaced = true;
         instantiatedStructure.team = PropertyController.Team.Player;
+        instantiatedStructure.energySource = placeHolderEnergySource;
         Debug.Log($"Built structure '{instantiated.ToString()}'.", this);
     }
 
@@ -95,8 +103,17 @@ public class ConstructionController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 5000, ConstructionController.instance.buildingLayers))
             {
-                buildingPlacement = hit.point;
-                isValidBuildingPlacement = true; // TODO: Proper check with NavMesh
+                NavMeshHit navMeshHit;
+                if (NavMesh.SamplePosition(hit.point, out navMeshHit, 1.0f, NavMesh.AllAreas))
+                {
+                    buildingPlacement = navMeshHit.position;
+                    isValidBuildingPlacement = true;
+                }
+                else
+                {
+                    buildingPlacement = hit.point;
+                    isValidBuildingPlacement = false;
+                }
             }
             else
             {
@@ -105,6 +122,7 @@ public class ConstructionController : MonoBehaviour
             }
 
             placeHolderBuilding.transform.position = buildingPlacement;
+            placeHolderEnergySource = EnergySource.GetBestFor(buildingPlacement, placeHolderBuilding.GetComponent<EnergySource>());
         }
         else
         {
