@@ -49,6 +49,7 @@ namespace Thoughts.Game.Map.CreationSteps.Vegetation
                 StructureController mainStructureSpawnedStructureController = mainStructureSpawned.GetComponentRequired<StructureController>();
                 mainStructureSpawnedStructureController.team = PropertyController.Team.Player;
                 mainStructureSpawnedStructureController.isPlaced = true;
+                mainStructureSpawnedStructureController.energySource = mainStructureSpawned.GetComponentRequired<EnergySource>();
             }
             else
             {

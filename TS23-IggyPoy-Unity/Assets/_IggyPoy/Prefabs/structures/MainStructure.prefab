@@ -303,3 +303,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthController: {fileID: 745232353983701916}
+--- !u!114 &8533639748423069451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254475048019625467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f9c1c7ac744b364485f4ae6ee4f7344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 10

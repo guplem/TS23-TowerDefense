@@ -27,9 +27,30 @@ public class StructureController : StateController
             SetNewState();
         }
     }
+
     private bool _isPlaced = false;
 
     [SerializeField] private AttackController attackController;
+
+    public EnergySource energySource
+    {
+        get => _energySource;
+        set
+        {
+            if (energySource == value && value != null)
+                return;
+
+            if (_energySource != null) 
+                _energySource.Detach(this);
+
+            _energySource = value == null ? EnergySource.GetBestFor(transform.position) : value;
+            
+            if (_energySource != null) 
+                _energySource.Attatch(this);
+        }
+    }
+
+    public EnergySource _energySource;
 
     private void Awake()
     {
@@ -40,7 +61,7 @@ public class StructureController : StateController
             StartCoroutine(ConstructionCoroutine());
         }
     }
-    
+
     private IEnumerator ConstructionCoroutine()
     {
         float steps = 0.1f; // Every X seconds will be called
@@ -53,7 +74,7 @@ public class StructureController : StateController
 
         SetNewState();
     }
-    
+
 
     private void OnDrawGizmosSelected()
     {
@@ -88,6 +109,5 @@ public class StructureController : StateController
                 attackController.enabled = false;
             }
         }
-
     }
 }
