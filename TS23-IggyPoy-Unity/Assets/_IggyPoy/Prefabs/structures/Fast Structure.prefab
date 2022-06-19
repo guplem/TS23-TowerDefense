@@ -272,14 +272,6 @@ PrefabInstance:
       propertyPath: attackCost
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 7563019817647299217, guid: b3d9db2645cb0694a801a1abf6e5b937, type: 3}
-    - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
-      propertyPath: projectileSpeed
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 1325135749665720940, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_Name
       value: Fast Structure
