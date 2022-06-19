@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UIElements;
 
 public class ConstructionController : MonoBehaviour
@@ -102,8 +103,17 @@ public class ConstructionController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 5000, ConstructionController.instance.buildingLayers))
             {
-                buildingPlacement = hit.point;
-                isValidBuildingPlacement = true; // TODO: Proper check with NavMesh
+                NavMeshHit navMeshHit;
+                if (NavMesh.SamplePosition(hit.point, out navMeshHit, 1.0f, NavMesh.AllAreas))
+                {
+                    buildingPlacement = navMeshHit.position;
+                    isValidBuildingPlacement = true;
+                }
+                else
+                {
+                    buildingPlacement = hit.point;
+                    isValidBuildingPlacement = false;
+                }
             }
             else
             {
