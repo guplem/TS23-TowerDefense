@@ -26,12 +26,14 @@ public class EnergySource : MonoBehaviour
         }
     }
 
-    public static EnergySource GetBestFor(Vector3 location)
+    public static EnergySource GetBestFor(Vector3 location, EnergySource exclude)
     {
         EnergySource best = null;
         float bestDistance = float.PositiveInfinity;
         foreach (EnergySource candidate in energySources)
         {
+            if (candidate == exclude)
+                continue;
             float candidateDistance = Vector3.Distance(location, candidate.transform.position);
             if (candidateDistance > candidate.range)
                 continue;

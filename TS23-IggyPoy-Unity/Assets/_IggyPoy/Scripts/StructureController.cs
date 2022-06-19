@@ -45,7 +45,7 @@ public class StructureController : StateController
             if (_energySource != null) 
                 _energySource.Detach(this);
 
-            _energySource = value == null ? EnergySource.GetBestFor(transform.position) : value;
+            _energySource = value == null ? EnergySource.GetBestFor(transform.position, GetComponent<EnergySource>()) : value;
             
             if (_energySource != null) 
                 _energySource.Attatch(this);

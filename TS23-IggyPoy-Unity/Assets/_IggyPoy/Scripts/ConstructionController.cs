@@ -112,7 +112,7 @@ public class ConstructionController : MonoBehaviour
             }
 
             placeHolderBuilding.transform.position = buildingPlacement;
-            placeHolderEnergySource = EnergySource.GetBestFor(buildingPlacement);
+            placeHolderEnergySource = EnergySource.GetBestFor(buildingPlacement, placeHolderBuilding.GetComponent<EnergySource>());
         }
         else
         {
