@@ -257,6 +257,7 @@ MonoBehaviour:
   cooldown: 1
   damage: 1
   range: 5
+  attackCost: 1
   stateController: {fileID: 7690321064448338955}
   projectile: {fileID: 4588526828919500218, guid: 9bcf3290429afba48952569a7ee0b58c, type: 3}
   projectileSpawnLocation: {fileID: 5765151399186714460}
@@ -281,6 +282,7 @@ MonoBehaviour:
   cost: 20
   constructionTime: 3
   attackController: {fileID: 284363118947755037}
+  _energySource: {fileID: 0}
 --- !u!1 &3584904110779811015 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6722681116665199893, guid: 133b554db2c2d9946804a3033fbeb60f, type: 3}

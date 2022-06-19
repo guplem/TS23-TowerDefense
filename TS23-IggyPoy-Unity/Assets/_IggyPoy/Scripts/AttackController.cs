@@ -17,6 +17,9 @@ public class AttackController : MonoBehaviour
     [Tooltip("Attack range")] [SerializeField]
     public int range = 1;
 
+    [Tooltip("The cost of the attack")]
+    [SerializeField] private int attackCost = 0;
+
     private List<HealthController> detectedAttackables = new();
 
     private bool running_attackCoroutine = false;
@@ -31,7 +34,7 @@ public class AttackController : MonoBehaviour
     private bool attacksWithProjectile => projectile != null && projectileSpawnLocation != null && projectileSpeed > 0;
 
     private PoolEssentials projectilePool;
-    
+
     private void Start()
     {
         if (attacksWithProjectile)
@@ -158,16 +161,19 @@ public class AttackController : MonoBehaviour
             {
                 target.health -= damage;
                 // Debug.Log($"ATTACKED (mele) {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.", this);
-                return true;
+                break;
             }
             case true:
             {
                 // Debug.Log($"ATTACKED (projectile) {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.", this);
                 GameObject spawnedGO = projectilePool.Spawn(projectileSpawnLocation.position, Quaternion.identity, Vector3.one, projectileSpawnLocation);
                 spawnedGO.GetComponentRequired<Projectile>().SetTarget(target, projectileSpeed, damage, projectilePool);
-                return true;
+                break;
             }
         }
+
+        GameManager.instance.gameData.resources -= attackCost;
+        return true;
     }
 
     private void OnDrawGizmosSelected()
