@@ -76,6 +76,7 @@ public class ConstructionController : MonoBehaviour
 
         MapElement instantiated = GameManager.instance.mapManager.SpawnMapElement(placeHolderBuilding.gameObject, buildingPlacement, Quaternion.identity,
             structuresParent);
+        GameManager.instance.unitsSpawner.RegenerateNavMeshForUnits();
         GameManager.instance.gameData.resources -= placeHolderBuilding.cost;
         UnselectStructure();
 
@@ -115,7 +116,7 @@ public class ConstructionController : MonoBehaviour
     public void UnselectStructure()
     {
         if (placeHolderBuilding != null)
-            Destroy(placeHolderBuilding);
+            Destroy(placeHolderBuilding.gameObject);
         placeHolderBuilding = null;
     }
 }

@@ -21,7 +21,7 @@ namespace Thoughts.Game.Map
         /// <returns>The generated NavMeshSurface ig it has been created. Null if it has not been possible (maybe a mesh for the given agent already exists).</returns>
         public NavMeshSurface SetupNewNavMeshFor(NavMeshAgent navMeshAgent, MapConfiguration mapConfiguration, bool updateIfAlreadyCalculated = true)
         {
-            Debug.Log($"SetupNewNavMeshFor agent {navMeshAgent.ToString()}");
+            Debug.Log($"Starting SetupNewNavMeshFor agent {navMeshAgent.ToString()}");
             if (navMeshAgent == null)
             {
                 Debug.LogWarning("Tying to create the NavMesh surface for a null navMeshAgent", this);
@@ -55,7 +55,7 @@ namespace Thoughts.Game.Map
             
             if (repeatedAgent && updateIfAlreadyCalculated) // Updated code --> TODO: Code should be copied/updated in Thoughts 
             {
-                Debug.Log($"Recreating a NavMeshSurface for agent {navMeshAgent.ToString()}.", this);
+                Debug.Log($"\\-- Recreating a NavMeshSurface for agent {navMeshAgent.ToString()}.", this);
 
                 Bounds bounds = new Bounds(center, size);
 

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public GameData gameData;
     public GameConfiguration gameConfiguration;
 
-    private UnitsSpawner unitsSpawner
+    public UnitsSpawner unitsSpawner
     {
         get
         {

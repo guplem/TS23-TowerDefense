@@ -58,8 +58,6 @@ public class UnitsSpawner : MonoBehaviour
         if (deletePreviousUnits)
             DestroyAllUnits();
 
-        RegenerateNavMeshForUnits(); // TODO: Shouldn't be done every time a unit is spawned but only when a map element that is an obstacle is removed or placed
-
         if (unitsToSpawn.Length > 1)
         {
             Debug.LogWarning("The spawning of more than one type has not been implemented"); // Warning from the game "Thoughts"

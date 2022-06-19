@@ -68,6 +68,7 @@ public class StructureController : StateController
             canBeDamaged = false;
             visuals.SetActive(false);
             blueprint.SetActive(true);
+            construction.SetActive(false);
             attackController.enabled = false;
         }
         else
