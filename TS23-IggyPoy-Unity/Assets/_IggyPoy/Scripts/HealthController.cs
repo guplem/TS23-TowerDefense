@@ -22,10 +22,11 @@ public class HealthController : PropertyController
         }
     }
     
-    [FormerlySerializedAs("_health")] [SerializeField] private int maxHealth = 10;
+    [FormerlySerializedAs("_health")] [SerializeField]
+    public int maxHealth = 10;
     private int _currentHealth = 1;
-    
-    private void Awake()
+
+    protected void Awake()
     {
         _currentHealth = maxHealth;
     }

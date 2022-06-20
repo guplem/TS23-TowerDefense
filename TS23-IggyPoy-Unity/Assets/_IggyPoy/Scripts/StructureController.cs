@@ -56,8 +56,9 @@ public class StructureController : StateController
 
     [NonSerialized] public EnergySource _energySource;
 
-    private void Awake()
+    protected new void Awake()
     {
+        base.Awake();
         SetNewState();
         if (!isPlaced || constructionTime > 0)
         {

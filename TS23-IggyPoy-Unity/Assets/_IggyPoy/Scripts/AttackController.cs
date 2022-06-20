@@ -35,8 +35,9 @@ public class AttackController : MonoBehaviour
 
     private PoolEssentials projectilePool;
 
-    private void Start()
+    protected void Start()
     {
+        //base.Start();
         if (attacksWithProjectile)
             projectilePool = new PoolEssentials(projectile, 100);
     }
