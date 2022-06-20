@@ -20,6 +20,8 @@ public class AttackController : MonoBehaviour
     [Tooltip("The cost of the attack")]
     [SerializeField] private int attackCost = 0;
 
+    [SerializeField] private bool targetOnlyEnergySources = false;
+
     private List<HealthController> detectedAttackables = new();
 
     private bool running_attackCoroutine = false;
@@ -58,7 +60,10 @@ public class AttackController : MonoBehaviour
                 continue;
             }
 
-            if (target != targetCandidate)
+            if (targetOnlyEnergySources && !targetCandidate.isEnergySource)
+                continue;
+            
+            if (target != targetCandidate )
             {
                 target = targetCandidate;
                 stateController.SetNewState();

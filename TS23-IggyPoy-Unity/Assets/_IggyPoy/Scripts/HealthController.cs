@@ -34,6 +34,34 @@ public class HealthController : PropertyController
     [NonSerialized] public UnityEvent onDeath = new();
     [NonSerialized] public UnityEvent onHealthUpdate = new();
 
+    #region Check To Know if this gameObject has the component "EnergySource"
+
+    public bool isEnergySource
+    {
+        get
+        {
+            if (_isEnergySource == HasSelfEnergySource.unknown)
+            {
+                EnergySource found = gameObject.GetComponent<EnergySource>();
+                if (found == null)
+                    _isEnergySource = HasSelfEnergySource.no;
+                else
+                    _isEnergySource = HasSelfEnergySource.yes;
+            }
+
+            return _isEnergySource == HasSelfEnergySource.yes;
+        }
+    }
+    private HasSelfEnergySource _isEnergySource = HasSelfEnergySource.unknown;
+    private enum HasSelfEnergySource
+    {
+        unknown, 
+        yes,
+        no
+    }
+
+    #endregion
+
     public void FullyHealOverTime(float healingDuration)
     {
         StartCoroutine(HealingCoroutine(healingDuration));
