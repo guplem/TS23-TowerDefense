@@ -9,6 +9,7 @@ public class EnergySource : MonoBehaviour
     private static HashSet<EnergySource> energySources = new();
     [SerializeField] private float range = 5;
     private HashSet<StructureController> attatchedStructures = new();
+    [NonSerialized] public StructureController structure;
 
     private void OnEnable()
     {
@@ -24,6 +25,11 @@ public class EnergySource : MonoBehaviour
         {
             structureController.energySource = null;
         }
+    }
+
+    private void Awake()
+    {
+        structure = gameObject.GetComponentRequired<StructureController>();
     }
 
     public static EnergySource GetBestFor(Vector3 location, EnergySource exclude)

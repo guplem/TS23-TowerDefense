@@ -97,7 +97,7 @@ public class StructureController : StateController
             {
                 visuals.SetActive(true);
                 construction.SetActive(false);
-                if (attackController != null) attackController.enabled = energySource != null;
+                if (attackController != null) attackController.enabled = energySource != null && energySource.structure.constructionTime <= 0;
             }
             else
             {

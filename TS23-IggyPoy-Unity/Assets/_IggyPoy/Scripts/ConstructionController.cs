@@ -80,6 +80,10 @@ public class ConstructionController : MonoBehaviour
         {
             Debug.Log($"Structure could not be build. Energy source not in range");
             return;
+        } else if (placeHolderEnergySource.structure.constructionTime > 0)
+        {
+            Debug.Log($"Structure could not be build. Energy source not built yet");
+            return;
         } else if (!placeHolderBuilding.exclusionArea.hasExclusionAreaFree)
         {
             Debug.Log($"Structure could not be build. Other structures are too close.");
