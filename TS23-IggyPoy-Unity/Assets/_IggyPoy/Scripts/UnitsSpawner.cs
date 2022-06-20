@@ -31,7 +31,7 @@ public class UnitsSpawner : MonoBehaviour
 
     [Space]
     [SerializeField] private float functionDelayBetweenWaves = 25; // Not in seconds, (25 is a wave every 2 minutes aprox) but it is the "t" in this formula: https://www.geogebra.org/classic/vyrqqpxh
-    [SerializeField] private UnitsSpawnConfiguration[] unitsToSpawn;
+    [SerializeField] public UnitsSpawnConfiguration[] unitsToSpawn;
 
     /// <summary>
     /// The seed used by the VegetationGenerator to generate vegetation. It is an alteration of the main map's seed. 
@@ -56,6 +56,19 @@ public class UnitsSpawner : MonoBehaviour
         SpawnUnits(false);
     }
 
+    public void SpawnUnit(GameObject unit)
+    {
+        List<MapElement> spawned = mapManager.SpawnMapElementsRandomly(
+            unit,
+            unitsSeed,
+            spawningHeightRange,
+            1,
+            this.transform,
+            true
+        );
+        SetupNewUnits(spawned);
+    }
+
     public void SpawnUnits(bool deletePreviousUnits)
     {
         if (deletePreviousUnits)
@@ -75,15 +88,20 @@ public class UnitsSpawner : MonoBehaviour
                 true
             );
 
-            foreach (MapElement mapElement in spawned)
-            {
-                NavMeshAgent nmAgent = mapElement.gameObject.GetComponentRequired<NavMeshAgent>();
-                nmAgent.destination = Vector3.zero;
-                nmAgent.isStopped = false;
-                mapElement.GetComponentRequired<PropertyController>().team = PropertyController.Team.Enemy;
-            }
+            SetupNewUnits(spawned);
         }
         
+    }
+
+    private static void SetupNewUnits(List<MapElement> spawned)
+    {
+        foreach (MapElement mapElement in spawned)
+        {
+            NavMeshAgent nmAgent = mapElement.gameObject.GetComponentRequired<NavMeshAgent>();
+            nmAgent.destination = Vector3.zero;
+            nmAgent.isStopped = false;
+            mapElement.GetComponentRequired<PropertyController>().team = PropertyController.Team.Enemy;
+        }
     }
 
     public void RegenerateNavMeshForUnits()
