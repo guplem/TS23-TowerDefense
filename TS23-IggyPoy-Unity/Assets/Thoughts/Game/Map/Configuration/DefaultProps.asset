@@ -24,6 +24,7 @@ MonoBehaviour:
     spawningHeightRange: {x: 0.05, y: 0.44}
     probability: 0.249
     density: 0.061
+    centralAreaToAvoid: 10
   - mapElementPrefab: {fileID: 7576368060138573393, guid: 8fc60cce11ff0e54b8151483bd4f449d, type: 3}
     noiseSettings:
       scale: 30
@@ -34,6 +35,7 @@ MonoBehaviour:
     spawningHeightRange: {x: 0, y: 0.3}
     probability: 0.249
     density: 0.084
+    centralAreaToAvoid: 10
   - mapElementPrefab: {fileID: 6791915637195987803, guid: 56be9341c95459c48bbaa19c00853251, type: 3}
     noiseSettings:
       scale: 35
@@ -44,6 +46,7 @@ MonoBehaviour:
     spawningHeightRange: {x: 0.1, y: 0.75}
     probability: 0.067
     density: 0.03
+    centralAreaToAvoid: 10
   - mapElementPrefab: {fileID: 2894364265702893213, guid: d10f9c4b0af6a894eb092da6c37ce4fe, type: 3}
     noiseSettings:
       scale: 54.29
@@ -54,6 +57,7 @@ MonoBehaviour:
     spawningHeightRange: {x: 0, y: 0.7}
     probability: 0.809
     density: 0.046
+    centralAreaToAvoid: 0
   - mapElementPrefab: {fileID: 4427495345491089616, guid: f43032e85d10f2d4ab7d713b4f214a82, type: 3}
     noiseSettings:
       scale: 54.29
@@ -64,6 +68,7 @@ MonoBehaviour:
     spawningHeightRange: {x: 0, y: 0.7}
     probability: 0.226
     density: 0.018
+    centralAreaToAvoid: 0
   - mapElementPrefab: {fileID: 5937032494066021447, guid: a4416051db845014796b4ddd22c908c6, type: 3}
     noiseSettings:
       scale: 54.29
@@ -74,6 +79,7 @@ MonoBehaviour:
     spawningHeightRange: {x: -0.5379116, y: 0.7}
     probability: 0.785
     density: 0.116
+    centralAreaToAvoid: 0
   - mapElementPrefab: {fileID: 7855864019797405661, guid: ebfa029dd47ce104795c4f3ba6576c43, type: 3}
     noiseSettings:
       scale: 54.29
@@ -84,6 +90,7 @@ MonoBehaviour:
     spawningHeightRange: {x: 0.1, y: 1}
     probability: 0.35
     density: 0.17
+    centralAreaToAvoid: 0
   - mapElementPrefab: {fileID: 2667721146327368077, guid: 2f97fc88e53210a4db7bacf16fcf66eb, type: 3}
     noiseSettings:
       scale: 54.29
@@ -94,6 +101,7 @@ MonoBehaviour:
     spawningHeightRange: {x: -0.2682254, y: 0.6999999}
     probability: 0.592
     density: 0.004
+    centralAreaToAvoid: 0
   - mapElementPrefab: {fileID: 437568688141545144, guid: 6a391f57a5c630944bce256670448769, type: 3}
     noiseSettings:
       scale: 54.29
@@ -104,6 +112,7 @@ MonoBehaviour:
     spawningHeightRange: {x: -0.39819604, y: 0.7}
     probability: 0.576
     density: 0.004
+    centralAreaToAvoid: 10
   - mapElementPrefab: {fileID: 4517388305982489450, guid: ecebd39bcc499374fb639005cc7a52a9, type: 3}
     noiseSettings:
       scale: 54.29
@@ -114,6 +123,7 @@ MonoBehaviour:
     spawningHeightRange: {x: 0.1, y: 0.7}
     probability: 0.387
     density: 0.004
+    centralAreaToAvoid: 10
   - mapElementPrefab: {fileID: 6761240704692044360, guid: c5c5a9495b935ab45aa698827c7572de, type: 3}
     noiseSettings:
       scale: 54.29
@@ -124,6 +134,7 @@ MonoBehaviour:
     spawningHeightRange: {x: 0.59, y: 1}
     probability: 0.648
     density: 0.228
+    centralAreaToAvoid: 10
   - mapElementPrefab: {fileID: 6916669989873085819, guid: f8a50b5c4ef64c842be531371da2fed7, type: 3}
     noiseSettings:
       scale: 54.29
@@ -134,3 +145,4 @@ MonoBehaviour:
     spawningHeightRange: {x: 0.59, y: 1}
     probability: 0.648
     density: 0.228
+    centralAreaToAvoid: 10

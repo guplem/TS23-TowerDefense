@@ -375,17 +375,21 @@ namespace Thoughts.Game.Map
         /// <param name="requireNavMesh">Must the locations where the MapElements will spawn require a valid NavMeshSurface?</param>
         public List<MapElement> SpawnMapElementsWithPerlinNoiseDistribution(GameObject objectToSpawn, int seed,
             Vector2 spawningHeightRange, float probability, float density, Transform parent,
-            NoiseMapSettings noiseMapSettings, bool requireNavMesh)
+            NoiseMapSettings noiseMapSettings, bool requireNavMesh, float centralAreaToAvoid = 0)
         {
             List<MapElement> spawnedMapElements = new List<MapElement>();
             RandomEssentials rng = new RandomEssentials(seed);
 
             float[,] noise = Noise.GenerateNoiseMap((int) mapManager.mapConfiguration.mapRadius * 2,
                 (int) mapManager.mapConfiguration.mapRadius * 2, noiseMapSettings, Vector2.zero, seed);
+            Vector2 noiseCenter = new Vector2(noise.GetLength(0) / 2f, noise.GetLength(1) / 2f);
             for (int x = 0; x < noise.GetLength(0); x++)
             {
                 for (int y = 0; y < noise.GetLength(1); y++)
                 {
+                    if (centralAreaToAvoid > 0 && Vector2.Distance(new Vector2(x, y), noiseCenter) < centralAreaToAvoid)
+                        continue;
+
                     if (!(noise[x, y] >= 1 - probability))
                         continue;
 

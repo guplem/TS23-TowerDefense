@@ -36,7 +36,8 @@ namespace Thoughts.Game.Map.CreationSteps.Vegetation
                     mapManager.mapConfiguration.propsSettings.mapElementsToSpawn[v].density,
                     this.transform,
                     mapManager.mapConfiguration.propsSettings.mapElementsToSpawn[v].noiseSettings,
-                    false
+                    false,
+                    mapManager.mapConfiguration.propsSettings.mapElementsToSpawn[v].centralAreaToAvoid
                 );
             }
 

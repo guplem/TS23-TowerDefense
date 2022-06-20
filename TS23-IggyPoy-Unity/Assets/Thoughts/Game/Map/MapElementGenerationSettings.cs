@@ -42,6 +42,11 @@ namespace Thoughts.Game.Map
         [Tooltip("Density of vegetation appearing at any given spot. Only used when the spawning uses the perlin noise distribution, not by count.")]
         [Range(0,1)]
         public float density = 0.5f;
-        
+
+        /// <summary>
+        /// Space in the middle of the map that can not be occupied by this MapElement
+        /// </summary>
+        [Tooltip("Space in the middle of the map that can not be occupied by this MapElement")]
+        public float centralAreaToAvoid = 0;
     }
 }
