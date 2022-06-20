@@ -280,6 +280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heavy Structure
       objectReference: {fileID: 0}
+    - target: {fileID: 2707569144857776497, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Radius
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 6753566475038569636, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_RootOrder
       value: 0
