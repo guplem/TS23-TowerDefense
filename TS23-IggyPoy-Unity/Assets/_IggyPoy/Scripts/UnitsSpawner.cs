@@ -36,7 +36,7 @@ public class UnitsSpawner : MonoBehaviour
     /// <summary>
     /// The seed used by the VegetationGenerator to generate vegetation. It is an alteration of the main map's seed. 
     /// </summary>
-    private int unitsSeed => _randomNumberToAlterMainSeed + mapManager.mapConfiguration.seed; //IT MUST NEVER CHANGE
+    private int unitsSeed => _randomNumberToAlterMainSeed + mapManager.mapConfiguration.seed + Mathf.CeilToInt(GameManager.instance.gameData.timeSinceSpawnStarted); //IT MUST NEVER CHANGE
 
     private const int
         _randomNumberToAlterMainSeed =
