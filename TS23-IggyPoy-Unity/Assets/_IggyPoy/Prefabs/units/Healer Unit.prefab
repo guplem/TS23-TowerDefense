@@ -175,7 +175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6231532637389738966, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: range
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6231532637389738966, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: damage
@@ -201,6 +201,10 @@ PrefabInstance:
       propertyPath: _health
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 7739219691465835837, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+      propertyPath: maxHealth
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 8128732154038855203, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: m_Name
       value: Healer Unit
@@ -212,6 +216,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4545717310700001515, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
   m_PrefabInstance: {fileID: 3539065407080601075}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4742932450104161232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8128732154038855203, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+  m_PrefabInstance: {fileID: 3539065407080601075}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4723352225973690526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4742932450104161232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f6ff37f1309594586390b2691eba29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayBetweenHeals: 2
+  healingPerSecondPerUnit: 10
+  healingRadius: 10
 --- !u!4 &9033001120250716215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5496330621621269956, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
