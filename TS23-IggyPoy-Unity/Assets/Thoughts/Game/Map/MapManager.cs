@@ -104,6 +104,7 @@ namespace Thoughts.Game.Map
 
         public List<MapElement> SpawnMapElementsRandomly(GameObject objectToSpawn, int seed, Vector2 spawningHeightRange, int quantity, Transform parent, bool requireNavMesh)
         {
+            Debug.Log($"Spawning x{quantity} '{objectToSpawn.gameObject.name}'");
             return mapGenerator.SpawnMapElementsRandomly(objectToSpawn, seed, spawningHeightRange, quantity, parent, requireNavMesh);
         }
         

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using GD.MinMaxSlider;
 using Thoughts.Game.Map;
 using Unity.AI.Navigation;
@@ -27,8 +28,10 @@ public class UnitsSpawner : MonoBehaviour
     [Tooltip("In which area of the map this is wanted to spawn. -1 means the bottom of the sea. 1 means the highest points in the world. 0 is the shoreline.")]
     [MinMaxSlider(-1,1)]
     public Vector2 spawningHeightRange;
-    
-    [SerializeField] private GameObject[] unitsToSpawn;
+
+    [Space]
+    [SerializeField] private float functionDelayBetweenWaves = 25; // Not in seconds, (25 is a wave every 2 minutes aprox) but it is the "t" in this formula: https://www.geogebra.org/classic/vyrqqpxh
+    [SerializeField] private UnitsSpawnConfiguration[] unitsToSpawn;
 
     /// <summary>
     /// The seed used by the VegetationGenerator to generate vegetation. It is an alteration of the main map's seed. 
@@ -58,26 +61,27 @@ public class UnitsSpawner : MonoBehaviour
         if (deletePreviousUnits)
             DestroyAllUnits();
 
-        if (unitsToSpawn.Length > 1)
+        foreach (UnitsSpawnConfiguration spawnConfiguration in unitsToSpawn)
         {
-            Debug.LogWarning("The spawning of more than one type has not been implemented"); // Warning from the game "Thoughts"
-        }
+            int qtty = spawnConfiguration.GetQuantity(functionDelayBetweenWaves, GameManager.instance.gameData.timeSinceSpawnStarted);
+            if (qtty <= 0)
+                continue;
+            List<MapElement> spawned = mapManager.SpawnMapElementsRandomly(
+                spawnConfiguration.unit,
+                unitsSeed,
+                spawningHeightRange,
+                qtty,
+                this.transform,
+                true
+            );
 
-        List<MapElement> spawned = mapManager.SpawnMapElementsRandomly(
-            unitsToSpawn[0],
-            unitsSeed,
-            spawningHeightRange,
-            1, // TODO: Proper quantity and spawning
-            this.transform,
-            true
-        );
-
-        foreach (MapElement mapElement in spawned)
-        {
-            NavMeshAgent nmAgent = mapElement.gameObject.GetComponentRequired<NavMeshAgent>();
-            nmAgent.destination = Vector3.zero;
-            nmAgent.isStopped = false;
-            mapElement.GetComponentRequired<PropertyController>().team = PropertyController.Team.Enemy;
+            foreach (MapElement mapElement in spawned)
+            {
+                NavMeshAgent nmAgent = mapElement.gameObject.GetComponentRequired<NavMeshAgent>();
+                nmAgent.destination = Vector3.zero;
+                nmAgent.isStopped = false;
+                mapElement.GetComponentRequired<PropertyController>().team = PropertyController.Team.Enemy;
+            }
         }
         
     }
@@ -85,7 +89,24 @@ public class UnitsSpawner : MonoBehaviour
     public void RegenerateNavMeshForUnits()
     {
         NavMeshSurface navMeshSurface = navigationManager.SetupNewNavMeshFor(
-            unitsToSpawn[0].GetComponentRequired<NavMeshAgent>(),
+            unitsToSpawn[0].unit.GetComponentRequired<NavMeshAgent>(),
             mapManager.mapConfiguration, true);
+    }
+}
+
+[System.Serializable]
+public class UnitsSpawnConfiguration
+{
+    public float difficultyIncrement = 0.1f; //a
+    public float spawnDelay = 0; //d
+    public GameObject unit;
+
+    // https://www.geogebra.org/classic/vyrqqpxh
+    public int GetQuantity(float delayBetweenWaves, float timeSinceStart)
+    {
+        //f(x)=sin(((x)/(t))) x a+a x-d
+        //f(x)=sin(((timeSinceStart)/(delayBetweenWaves))) timeSinceStart difficultyIncrement+difficultyIncrement timeSinceStart-spawnDelay
+        float functionResult = Mathf.Sin(((timeSinceStart) / (delayBetweenWaves))) * timeSinceStart * difficultyIncrement + difficultyIncrement * timeSinceStart - spawnDelay;
+        return Mathf.Max(0,Mathf.CeilToInt(functionResult));
     }
 }

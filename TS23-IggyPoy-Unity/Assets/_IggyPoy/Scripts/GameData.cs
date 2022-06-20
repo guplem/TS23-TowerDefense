@@ -6,5 +6,7 @@ public class GameData
         get => _resources;
         set { _resources = value; UIManager.instance.FullRefresh(); } // TODO: Change for a refresh only of the needed section
     }
-    private int _resources = 100;
+    private int _resources = 750;
+    
+    public float timeSinceSpawnStarted = 0;
 }
