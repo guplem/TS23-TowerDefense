@@ -97,6 +97,8 @@ public class ConstructionController : MonoBehaviour
         instantiatedStructure.isPlaced = true;
         instantiatedStructure.team = PropertyController.Team.Player;
         instantiatedStructure.energySource = placeHolderEnergySource;
+        instantiatedStructure.health = 1;
+        instantiatedStructure.FullyHealOverTime(instantiatedStructure.constructionTime);
         Destroy(instantiatedStructure.exclusionArea.gameObject); // To remove no longer used objects
         Debug.Log($"Built structure '{instantiated.ToString()}'.", this);
     }

@@ -15,7 +15,7 @@ public class StructureController : StateController
     public int cost = 20;
 
     [Tooltip("The time it takes to build the structure")] [SerializeField]
-    private float constructionTime = 3;
+    public float constructionTime = 3;
 
     public bool isPlaced
     {
