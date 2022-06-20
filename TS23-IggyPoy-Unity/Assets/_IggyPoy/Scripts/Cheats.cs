@@ -16,6 +16,17 @@ public class Cheats : MonoBehaviour
         {
             Debug.LogError("Not in play mode.");
         }
+    }    [MenuItem("📈 Cheats 🍕/Resources 💲/Get 100.000 Resources 💸")]
+    public static void GetALotOfResources()
+    {
+        if (Application.isPlaying)
+        {
+            GameManager.instance.gameData.resources += 100000;
+        }
+        else
+        {
+            Debug.LogError("Not in play mode.");
+        }
     }
     [MenuItem("📈 Cheats 🍕/Resources 💲/Remove all resources 0️⃣")]
     public static void RemoveAllResources()

@@ -74,6 +74,7 @@ public class HealthController : PropertyController
         while (elapsed < totalTime)
         {
             health += Mathf.CeilToInt(maxHealth / (totalTime* (1/stepInterval)));
+            elapsed += stepInterval;
             yield return new WaitForSeconds(stepInterval);
         }
     }

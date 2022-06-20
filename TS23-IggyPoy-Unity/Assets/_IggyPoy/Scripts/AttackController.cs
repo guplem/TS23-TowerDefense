@@ -93,6 +93,8 @@ public class AttackController : MonoBehaviour
     {
         if (!enabled)
             return;
+        if (other.isTrigger)
+            return;
         
         //Debug.Log("OnTriggerEnter " + other.gameObject.name, this);
         HealthController healthController = other.GetComponent<HealthController>();
@@ -117,6 +119,8 @@ public class AttackController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (!enabled)
+            return;
+        if (other.isTrigger)
             return;
         
         //Debug.Log("OnTriggerExit", this);
