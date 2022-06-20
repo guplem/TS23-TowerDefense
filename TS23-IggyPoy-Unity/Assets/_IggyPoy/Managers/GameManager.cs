@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public bool fullyGenerateMapOnPlay = false;
 
-    [SerializeField] private float spawnClockInterval = 5f; // In seconds
+    [SerializeField] private float spawnClockInterval = 12f; // In seconds
     private bool gameOver = false;
     [NonSerialized] public bool startedEnemiesSpawning = true;
 

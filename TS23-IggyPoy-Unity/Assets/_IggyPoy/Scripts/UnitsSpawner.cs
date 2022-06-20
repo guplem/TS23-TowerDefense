@@ -107,6 +107,6 @@ public class UnitsSpawnConfiguration
         //f(x)=sin(((x)/(t))) x a+a x-d
         //f(x)=sin(((timeSinceStart)/(delayBetweenWaves))) timeSinceStart difficultyIncrement+difficultyIncrement timeSinceStart-spawnDelay
         float functionResult = Mathf.Sin(((timeSinceStart) / (delayBetweenWaves))) * timeSinceStart * difficultyIncrement + difficultyIncrement * timeSinceStart - spawnDelay;
-        return Mathf.Max(0,Mathf.CeilToInt(functionResult));
+        return Mathf.Max(0,Mathf.CeilToInt(functionResult/3));
     }
 }
