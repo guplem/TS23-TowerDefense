@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
@@ -26,7 +27,7 @@ public class ConstructionController : MonoBehaviour
     public bool hasSelectedStructureToBuild => placeHolderBuilding != null;
     [SerializeField] private Transform structuresParent;
     public LayerMask buildingLayers;
-    private bool isValidBuildingPlacement = true;
+    private bool isPlacementOnNavMesh = true;
     private Vector3 buildingPlacement;
     private EnergySource placeHolderEnergySource;
 
@@ -65,7 +66,7 @@ public class ConstructionController : MonoBehaviour
             Debug.Log($"Structure could not be build. No structure is selected");
             return;
         }
-        else if (!isValidBuildingPlacement)
+        else if (!isPlacementOnNavMesh)
         {
             Debug.Log($"Structure could not be build. Invalid placement");
             return;
@@ -79,6 +80,11 @@ public class ConstructionController : MonoBehaviour
         {
             Debug.Log($"Structure could not be build. Energy source not in range");
             return;
+        } else if (!placeHolderBuilding.exclusionArea.hasExclusionAreaFree)
+        {
+            Debug.Log($"Structure could not be build. Other structures are too close.");
+            placeHolderBuilding.exclusionArea.structuresInExclusionArea.DebugLog(", ", "Too close structures: ");
+            return;
         }
 
         MapElement instantiated = GameManager.instance.mapManager.SpawnMapElement(placeHolderBuilding.gameObject, buildingPlacement, Quaternion.identity,
@@ -91,6 +97,7 @@ public class ConstructionController : MonoBehaviour
         instantiatedStructure.isPlaced = true;
         instantiatedStructure.team = PropertyController.Team.Player;
         instantiatedStructure.energySource = placeHolderEnergySource;
+        Destroy(instantiatedStructure.exclusionArea.gameObject); // To remove no longer used objects
         Debug.Log($"Built structure '{instantiated.ToString()}'.", this);
     }
 
@@ -107,18 +114,18 @@ public class ConstructionController : MonoBehaviour
                 if (NavMesh.SamplePosition(hit.point, out navMeshHit, 1.0f, NavMesh.AllAreas))
                 {
                     buildingPlacement = navMeshHit.position;
-                    isValidBuildingPlacement = true;
+                    isPlacementOnNavMesh = true;
                 }
                 else
                 {
                     buildingPlacement = hit.point;
-                    isValidBuildingPlacement = false;
+                    isPlacementOnNavMesh = false;
                 }
             }
             else
             {
                 buildingPlacement = Vector3.one * 10000;
-                isValidBuildingPlacement = false;
+                isPlacementOnNavMesh = false;
             }
 
             placeHolderBuilding.transform.position = buildingPlacement;
@@ -127,7 +134,7 @@ public class ConstructionController : MonoBehaviour
         else
         {
             buildingPlacement = Vector3.one * 10000;
-            isValidBuildingPlacement = false;
+            isPlacementOnNavMesh = false;
         }
     }
 

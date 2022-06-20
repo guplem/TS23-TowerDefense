@@ -9,7 +9,7 @@ public class StructureController : StateController
     [SerializeField] private GameObject construction;
 
     [Tooltip("Minimum allowed distance to the closes building")] [SerializeField]
-    private float exclusionArea = 2;
+    public ExclusionArea exclusionArea;
 
     [Tooltip("The cost to build the structure")] [SerializeField]
     public int cost = 20;
@@ -76,13 +76,6 @@ public class StructureController : StateController
         }
 
         SetNewState();
-    }
-
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, exclusionArea);
     }
 
     public override void SetNewState()

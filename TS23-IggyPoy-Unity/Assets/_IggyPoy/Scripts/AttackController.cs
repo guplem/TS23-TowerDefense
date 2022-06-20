@@ -90,7 +90,8 @@ public class AttackController : MonoBehaviour
         
         //Debug.Log("OnTriggerEnter " + other.gameObject.name, this);
         HealthController healthController = other.GetComponent<HealthController>();
-        if (healthController == null || healthController.enabled == false || !healthController.canBeDamaged) return; // El check de "can be damage" puede provocar errores, pues cuando el placeholder de la estructura se empiece a construir (es decir que se posicione en algun lado), se podrá dañar la estructura pero no se encontrará en la lista de potenciales targets
+        if (healthController == null || healthController.enabled == false || !healthController.canBeDamaged) // El check de "can be damage" puede provocar errores, pues cuando el placeholder de la estructura se empiece a construir (es decir que se posicione en algun lado), se podrá dañar la estructura pero no se encontrará en la lista de potenciales targets
+            return; 
         if (healthController.team != teamToAttack)
             return;
         if (!detectedAttackables.Contains(healthController))
