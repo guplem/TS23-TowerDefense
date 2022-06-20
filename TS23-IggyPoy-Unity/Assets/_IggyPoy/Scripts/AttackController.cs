@@ -155,6 +155,8 @@ public class AttackController : MonoBehaviour
             return false;
         }
 
+        stateController.SetNewState();
+        
         switch (attacksWithProjectile)
         {
             case false:
