@@ -102,10 +102,10 @@ namespace Thoughts.Game.Map
             throw new NotImplementedException();
         }
 
-        public List<MapElement> SpawnMapElementsRandomly(GameObject objectToSpawn, int seed, Vector2 spawningHeightRange, int quantity, Transform parent, bool requireNavMesh)
+        public List<MapElement> SpawnMapElementsRandomly(GameObject objectToSpawn, int seed, Vector2 spawningHeightRange, int quantity, Transform parent, bool requireNavMesh, float minDistanceFromCenterToSpawn)
         {
             Debug.Log($"Spawning x{quantity} '{objectToSpawn.gameObject.name}'");
-            return mapGenerator.SpawnMapElementsRandomly(objectToSpawn, seed, spawningHeightRange, quantity, parent, requireNavMesh);
+            return mapGenerator.SpawnMapElementsRandomly(objectToSpawn, seed, spawningHeightRange, quantity, parent, requireNavMesh, minDistanceFromCenterToSpawn);
         }
         
         public MapElement SpawnMapElement(GameObject objectToSpawn, Vector3 position, Quaternion rotation, Transform parent)

@@ -32,6 +32,7 @@ public class UnitsSpawner : MonoBehaviour
     [Space]
     [SerializeField] private float functionDelayBetweenWaves = 25; // Not in seconds, (25 is a wave every 2 minutes aprox) but it is the "t" in this formula: https://www.geogebra.org/classic/vyrqqpxh
     [SerializeField] public UnitsSpawnConfiguration[] unitsToSpawn;
+    [SerializeField] private float percentageDistanceFromCenterToSpawnUnit = 0.78f;
 
     /// <summary>
     /// The seed used by the VegetationGenerator to generate vegetation. It is an alteration of the main map's seed. 
@@ -64,7 +65,8 @@ public class UnitsSpawner : MonoBehaviour
             spawningHeightRange,
             1,
             this.transform,
-            true
+            true,
+            mapManager.mapConfiguration.mapRadius*percentageDistanceFromCenterToSpawnUnit
         );
         SetupNewUnits(spawned);
     }
@@ -85,7 +87,8 @@ public class UnitsSpawner : MonoBehaviour
                 spawningHeightRange,
                 qtty,
                 this.transform,
-                true
+                true,
+            mapManager.mapConfiguration.mapRadius*percentageDistanceFromCenterToSpawnUnit
             );
 
             SetupNewUnits(spawned);

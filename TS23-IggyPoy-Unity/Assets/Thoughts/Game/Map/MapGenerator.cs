@@ -411,7 +411,7 @@ namespace Thoughts.Game.Map
         /// <summary>
         /// Checks if a MapElement can be spawned or not in a given position.
         /// </summary>
-        /// <param name="positionCheck">The 2D position to check if a Map</param>
+        /// <param name="positionCheck">The 2D position to check in a Map</param>
         /// <param name="spawningHeightRange">The normalized height at which the object can be spawned (-1 means the bottom of the sea. 1 means the highest points in the world. 0 is the shoreline.)</param>
         /// <param name="requireNavMesh">Must the location require a valid NavMeshSurface?</param>
         /// <param name="spawnablePosition">If the given position allows an spawn, this is the 3D position (including the height at which it can be spawned) so there is no need to recalculate it again.</param>
@@ -486,7 +486,7 @@ namespace Thoughts.Game.Map
         /// <param name="parent">The transform that must be the parent of the spawned MapElement</param>
         /// <param name="requireNavMesh">Must the locations where the MapElements will spawn require a valid NavMeshSurface?</param>
         public List<MapElement> SpawnMapElementsRandomly(GameObject objectToSpawn, int seed,
-            Vector2 spawningHeightRange, int quantity, Transform parent, bool requireNavMesh)
+            Vector2 spawningHeightRange, int quantity, Transform parent, bool requireNavMesh, float minDistanceFromCenterToSpawn)
         {
             List<MapElement> spawnedMapElements = new List<MapElement>();
             int totalCountToAvoidInfiniteLoop = 5000 * quantity;
@@ -507,12 +507,15 @@ namespace Thoughts.Game.Map
                 Vector2 checkPosition = randomEssentials.GetRandomVector2(-mapManager.mapConfiguration.mapRadius,
                     mapManager.mapConfiguration.mapRadius);
 
-                if (IsSpawnablePositionOnTerrain(checkPosition, spawningHeightRange, requireNavMesh,
-                    out Vector3 spawnablePosition))
+                if (Vector2.Distance(checkPosition, Vector2.zero) >= minDistanceFromCenterToSpawn)
                 {
-                    spawnedMapElements.Add(SpawnAsMapElement(objectToSpawn, spawnablePosition, Quaternion.identity,
-                        parent));
-                    spawnedCount++;
+                    if (IsSpawnablePositionOnTerrain(checkPosition, spawningHeightRange, requireNavMesh,
+                        out Vector3 spawnablePosition))
+                    {
+                        spawnedMapElements.Add(SpawnAsMapElement(objectToSpawn, spawnablePosition, Quaternion.identity,
+                            parent));
+                        spawnedCount++;
+                    }
                 }
             }
 
