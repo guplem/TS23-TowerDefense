@@ -150,7 +150,12 @@ public class AttackController : MonoBehaviour
     {
         if (target == null)
             return false;
-        
+
+        if (GameManager.instance.gameData.resources < attackCost)
+        {
+            return false;
+        }
+
         if (Vector3.Distance(target.transform.position, this.transform.position) > range)
         {
             return false;
