@@ -89,15 +89,38 @@ public class AttackController : MonoBehaviour
     }
 
 
+    private void OnEnable()
+    {
+        if (attacksWithProjectile && projectilePool == null)
+            projectilePool = new PoolEssentials(projectile, 100);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
+        foreach (Collider hitCollider in hitColliders)
+        {
+            RegisterAsAttackable(hitCollider);
+        }
+    }
+
+    private void OnDisable()
+    {
+        detectedAttackables = new();
+        UpdateTarget();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!enabled)
             return;
-        if (other.isTrigger)
+
+        RegisterAsAttackable(other);
+    }
+
+    private void RegisterAsAttackable(Collider collider)
+    {
+        if (collider.isTrigger)
             return;
         
         //Debug.Log("OnTriggerEnter " + other.gameObject.name, this);
-        HealthController healthController = other.GetComponent<HealthController>();
+        HealthController healthController = collider.GetComponent<HealthController>();
         if (healthController == null || healthController.enabled == false || !healthController.canBeDamaged) // El check de "can be damage" puede provocar errores, pues cuando el placeholder de la estructura se empiece a construir (es decir que se posicione en algun lado), se podrá dañar la estructura pero no se encontrará en la lista de potenciales targets
             return; 
         if (healthController.team != teamToAttack)
