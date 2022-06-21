@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Animancer;
@@ -8,7 +9,12 @@ public class UnitController : StateController
 {
     
     [SerializeField] private AttackController attackController;
-    
+
+    private void Start()
+    {
+        SetNewState();
+    }
+
     public override void SetNewState()
     {
         if (attackController.target == null)
