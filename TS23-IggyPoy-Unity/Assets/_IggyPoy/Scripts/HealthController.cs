@@ -12,7 +12,11 @@ public class HealthController : PropertyController
         get => _currentHealth;
         set
         {
-            _currentHealth = Mathf.Min(value, maxHealth);
+            int newHealth = Mathf.Min(value, maxHealth);
+            if (_currentHealth == newHealth)
+                return;
+
+            _currentHealth = newHealth;
             onHealthUpdate?.Invoke();
             if (_currentHealth <= 0)
             {
