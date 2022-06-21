@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 989793504}
   m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: ee14bb04b94e4fd46bdb38db6e461c87, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 477cc4148fad3449482a3bc3178594e2, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -180,6 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a8734fa3fcf24f41b924a5c21c459c5, type: 3}
+--- !u!108 &989793504 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1577079464, guid: d191f5b046993a849bb135fb9c493552, type: 3}
+  m_PrefabInstance: {fileID: 1334867435}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1334867435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -205,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 983476467269217382, guid: d191f5b046993a849bb135fb9c493552, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.21364431
+      value: 0.21364436
       objectReference: {fileID: 0}
     - target: {fileID: 983476467269217382, guid: d191f5b046993a849bb135fb9c493552, type: 3}
       propertyPath: m_LocalRotation.z
@@ -213,7 +218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1063697187424724391, guid: d191f5b046993a849bb135fb9c493552, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.21364434
+      value: 0.21364436
       objectReference: {fileID: 0}
     - target: {fileID: 1076727679467679801, guid: d191f5b046993a849bb135fb9c493552, type: 3}
       propertyPath: m_AnchorMax.y
@@ -401,15 +406,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8733725094439014963, guid: d191f5b046993a849bb135fb9c493552, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.49886128
+      value: 0.49886122
       objectReference: {fileID: 0}
     - target: {fileID: 8733725094439014963, guid: d191f5b046993a849bb135fb9c493552, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.19666146
+      value: 0.19666141
       objectReference: {fileID: 0}
     - target: {fileID: 8733725094439014963, guid: d191f5b046993a849bb135fb9c493552, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.3095652
+      value: -0.30956522
       objectReference: {fileID: 0}
     - target: {fileID: 9171407118199692487, guid: d191f5b046993a849bb135fb9c493552, type: 3}
       propertyPath: m_RootOrder
