@@ -16,6 +16,7 @@ public class UnitController : StateController
             // Debug.Log("Unit state: to center");
             SetDestination(Vector3.zero); // TODO: Change for the precise location of the main structure
             //Todo: loop and play with ease, not cut
+            // Debug.Log("playing walk animation (a)");
             animancer.Play(walkAnimation, 0.25f, FadeMode.FromStart); // https://kybernetik.com.au/animancer/docs/examples/basics/playing-and-fading/#:~:text=very%20useful%20either.-,Good%20CrossFade%20from%20Start,-Fortunately%2C%20the%20optional
 
         }
@@ -24,6 +25,7 @@ public class UnitController : StateController
             // Debug.Log("Unit state: stop");
             StopMovement();
             //Todo: loop and play with ease, not cut
+            // Debug.Log("playing attack animation");
             animancer.Play(attackAnimation, 0.15f, FadeMode.FromStart); // https://kybernetik.com.au/animancer/docs/examples/basics/playing-and-fading/#:~:text=very%20useful%20either.-,Good%20CrossFade%20from%20Start,-Fortunately%2C%20the%20optional
 
         }
@@ -32,6 +34,7 @@ public class UnitController : StateController
             // Debug.Log("Unit state: to target on the way");
             SetDestination(attackController.target.transform.position);
             //Todo: loop and play with ease, not cut
+            // Debug.Log("playing walk animation (b)");
             animancer.Play(walkAnimation, 0.25f, FadeMode.FromStart); // https://kybernetik.com.au/animancer/docs/examples/basics/playing-and-fading/#:~:text=very%20useful%20either.-,Good%20CrossFade%20from%20Start,-Fortunately%2C%20the%20optional
 
         }
