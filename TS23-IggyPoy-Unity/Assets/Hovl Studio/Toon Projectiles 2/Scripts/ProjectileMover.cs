@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ProjectileMover : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class ProjectileMover : MonoBehaviour
     public GameObject flash;
     private Rigidbody rb;
     public GameObject[] Detached;
+    // public UnityEvent onCollisionEnter = new();
+    private HealthController target;
+    private int damage;
+    private float offset = 0;
 
     void Start()
     {
@@ -38,8 +43,9 @@ public class ProjectileMover : MonoBehaviour
     {
 		if (speed != 0)
         {
-            rb.velocity = transform.forward * speed;
-            //transform.position += transform.forward * (speed * Time.deltaTime);         
+            //rb.velocity = transform.forward * speed;
+            if (target != null)
+                rb.velocity = (target.transform.position + (Vector3.up * (1 - offset)) + Vector3.right * offset - transform.position).normalized * speed;
         }
 	}
 
@@ -79,6 +85,15 @@ public class ProjectileMover : MonoBehaviour
                 detachedPrefab.transform.parent = null;
             }
         }
+        // onCollisionEnter?.Invoke();
+        collision.gameObject.GetComponentRequired<HealthController>().health -= damage;
         Destroy(gameObject);
+    }
+
+    public void SetTarget(HealthController target, int damage, float offset)
+    {
+        this.target = target;
+        this.damage = damage;
+        this.offset = offset;
     }
 }

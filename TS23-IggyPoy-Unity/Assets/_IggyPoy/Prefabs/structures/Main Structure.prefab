@@ -304,7 +304,7 @@ PrefabInstance:
     - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 4762548971861318940, guid: 087a1552778c33b4483a4fa2375bfaef, type: 3}
+      objectReference: {fileID: 2428095838974579740, guid: 2e13157a5c566cb46bcb78dd056d3eb3, type: 3}
     - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: projectileSpeed
       value: 12
@@ -372,10 +372,6 @@ PrefabInstance:
     - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: maxHealth
       value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
-      propertyPath: exclusionArea
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: constructionTime

@@ -125,6 +125,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3.25
       objectReference: {fileID: 0}
+    - target: {fileID: 2957008014492038731, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4545717310700001515, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -188,10 +192,14 @@ PrefabInstance:
     - target: {fileID: 6231532637389738966, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 8041424038837546449, guid: d0cdc6ed7b000834b8ae3fcb011cb5d8, type: 3}
+      objectReference: {fileID: 5171753656335907331, guid: b4cef6bfce1d50d45909ed896c4bc809, type: 3}
     - target: {fileID: 6231532637389738966, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: projectileSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6231532637389738966, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+      propertyPath: projectileLayer.m_Bits
+      value: 1024
       objectReference: {fileID: 0}
     - target: {fileID: 6231532637389738966, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: projectileSpawnLocation

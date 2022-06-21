@@ -32,17 +32,19 @@ public class AttackController : MonoBehaviour
 
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform projectileSpawnLocation;
-    [SerializeField] private float projectileSpeed = 1;
-    private bool attacksWithProjectile => projectile != null && projectileSpawnLocation != null && projectileSpeed > 0;
+    private bool attacksWithProjectile => projectile != null && projectileSpawnLocation != null;
+    [SerializeField] private float maxProjectileOffset = 0.15f;
+    private RandomEssentials rng = new RandomEssentials();
 
-    private PoolEssentials projectilePool;
+    // private PoolEssentials projectilePool;
+    // private int projectilePoolSize => Mathf.CeilToInt(2.5f / cooldown);
 
-    protected void Start()
-    {
-        //base.Start();
-        if (attacksWithProjectile)
-            projectilePool = new PoolEssentials(projectile, 100);
-    }
+    // protected void Start()
+    // {
+    //     //base.Start();
+    //     if (attacksWithProjectile)
+    //         projectilePool = new PoolEssentials(projectile, projectilePoolSize);
+    // }
 
     private void UpdateTarget()
     {
@@ -91,8 +93,8 @@ public class AttackController : MonoBehaviour
 
     private void OnEnable()
     {
-        if (attacksWithProjectile && projectilePool == null)
-            projectilePool = new PoolEssentials(projectile, 5); // TODO: Increase?
+        // if (attacksWithProjectile && projectilePool == null)
+        //     projectilePool = new PoolEssentials(projectile, projectilePoolSize);
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
         foreach (Collider hitCollider in hitColliders)
         {
@@ -207,8 +209,9 @@ public class AttackController : MonoBehaviour
             case true:
             {
                 // Debug.Log($"ATTACKED (projectile) {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.", this);
-                GameObject spawnedGO = projectilePool.Spawn(projectileSpawnLocation.position, projectileSpawnLocation.rotation, Vector3.one, projectileSpawnLocation);
-                spawnedGO.GetComponentRequired<Projectile>().SetTarget(target, projectileSpeed, damage, projectilePool);
+                // GameObject spawnedGO = projectilePool.Spawn(projectileSpawnLocation.position, projectileSpawnLocation.rotation, Vector3.one, projectileSpawnLocation);
+                GameObject spawnedGO = Instantiate(projectile, projectileSpawnLocation.position, projectileSpawnLocation.rotation);
+                spawnedGO.GetComponentRequired<ProjectileMover>().SetTarget(target, damage, rng.GetRandomFloat(-maxProjectileOffset, maxProjectileOffset));
                 break;
             }
         }
@@ -216,7 +219,7 @@ public class AttackController : MonoBehaviour
         GameManager.instance.gameData.resources -= attackCost;
         return true;
     }
-
+    
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;

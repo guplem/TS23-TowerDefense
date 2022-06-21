@@ -44,36 +44,61 @@ public class Cheats : MonoBehaviour
     [MenuItem("📈 Cheats 🍕/Spawn 🆕/Standard Unit 😐", false, 0)]
     public static void SpawnStandard()
     {
-        SpawnUnit(0);
+        SpawnUnit(0, 1);
     }
     [MenuItem("📈 Cheats 🍕/Spawn 🆕/Ranged Unit 🏹", false, 1)]
     public static void SpawnRanged()
     {
-        SpawnUnit(1);
+        SpawnUnit(1, 1);
     }
     [MenuItem("📈 Cheats 🍕/Spawn 🆕/Tank Unit 🦖", false, 2)]
     public static void SpawnTank()
     {
-        SpawnUnit(2);
+        SpawnUnit(2, 1);
     }
     [MenuItem("📈 Cheats 🍕/Spawn 🆕/Healer Unit 👨🏽‍⚕️", false, 3)]
     public static void SpawnHealer()
     {
-        SpawnUnit(3);
+        SpawnUnit(3, 1);
     }
     [MenuItem("📈 Cheats 🍕/Spawn 🆕/Smart Unit 🧠", false, 4)]
     public static void SpawnSmart()
     {
-        SpawnUnit(4);
+        SpawnUnit(4, 1);
+    }
+    [MenuItem("📈 Cheats 🍕/Spawn 🆕/Standard Unit 😐 (x5)", false, 0)]
+    public static void SpawnMultipleStandard()
+    {
+        SpawnUnit(0, 5);
+    }
+    [MenuItem("📈 Cheats 🍕/Spawn 🆕/Ranged Unit 🏹 (x5)", false, 1)]
+    public static void SpawnMultipleRanged()
+    {
+        SpawnUnit(1, 5);
+    }
+    [MenuItem("📈 Cheats 🍕/Spawn 🆕/Tank Unit 🦖 (x5)", false, 2)]
+    public static void SpawnMultipleTank()
+    {
+        SpawnUnit(2, 5);
+    }
+    [MenuItem("📈 Cheats 🍕/Spawn 🆕/Healer Unit 👨🏽‍⚕️ (x5)", false, 3)]
+    public static void SpawnMultipleHealer()
+    {
+        SpawnUnit(3, 5);
+    }
+    [MenuItem("📈 Cheats 🍕/Spawn 🆕/Smart Unit 🧠 (x5)", false, 4)]
+    public static void SpawnMultipleSmart()
+    {
+        SpawnUnit(4, 5);
     }
 
-    private static void SpawnUnit(int i)
+    private static void SpawnUnit(int i, int quantity)
     {
         if (Application.isPlaying)
         {
             GameObject unit = GameManager.instance.unitsSpawner.unitsToSpawn[i].unit;
             Debug.Log($"CHEAT: Spawning unit {unit.gameObject.name}");
-            GameManager.instance.unitsSpawner.SpawnUnit(unit);
+            GameManager.instance.unitsSpawner.SpawnUnit(unit, quantity);
         }
         else
         {
