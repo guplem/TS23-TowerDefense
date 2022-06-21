@@ -188,7 +188,7 @@ PrefabInstance:
     - target: {fileID: 6231532637389738966, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 7563019817647299217, guid: b3d9db2645cb0694a801a1abf6e5b937, type: 3}
+      objectReference: {fileID: 8041424038837546449, guid: d0cdc6ed7b000834b8ae3fcb011cb5d8, type: 3}
     - target: {fileID: 6231532637389738966, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: projectileSpeed
       value: 10
@@ -199,6 +199,10 @@ PrefabInstance:
       objectReference: {fileID: 9083161074587489643}
     - target: {fileID: 7739219691465835837, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: _health
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739219691465835837, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+      propertyPath: maxHealth
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8128732154038855203, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
