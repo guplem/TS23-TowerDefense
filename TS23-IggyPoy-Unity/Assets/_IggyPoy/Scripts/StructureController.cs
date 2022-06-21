@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StructureController : StateController
 {
+    [SerializeField] public Sprite icon;
     [SerializeField] private GameObject visuals;
     [SerializeField] private GameObject blueprint;
     [SerializeField] private GameObject construction;
