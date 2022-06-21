@@ -64,7 +64,7 @@ public class UnitController : StateController
 
     
     /// <summary>
-    /// Reference to the Animator handling the animations of this MapElement.
+    /// Reference to the NavMeshAgent of this Unit
     /// </summary>
     private NavMeshAgent navMeshAgent
     {
