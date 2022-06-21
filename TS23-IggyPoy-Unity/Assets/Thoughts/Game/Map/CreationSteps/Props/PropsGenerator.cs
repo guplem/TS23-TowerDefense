@@ -46,7 +46,7 @@ namespace Thoughts.Game.Map.CreationSteps.Vegetation
 
             if (mapManager.mapGenerator.IsSpawnablePositionOnTerrain(Vector2.zero, Vector2.up, true, out Vector3 spawnablePosition))
             {
-                MapElement mainStructureSpawned = mapManager.mapGenerator.SpawnAsMapElement(mainStructure, spawnablePosition, Quaternion.identity, mainStructureParent);
+                MapElement mainStructureSpawned = mapManager.mapGenerator.SpawnAsMapElement(mainStructure, spawnablePosition, Quaternion.Euler(new Vector3(0, Random.Range(0.0f, 360.0f), 0)), mainStructureParent);
                 StructureController mainStructureSpawnedStructureController = mainStructureSpawned.GetComponentRequired<StructureController>();
                 mainStructureSpawnedStructureController.team = PropertyController.Team.Player;
                 mainStructureSpawnedStructureController.isPlaced = true;

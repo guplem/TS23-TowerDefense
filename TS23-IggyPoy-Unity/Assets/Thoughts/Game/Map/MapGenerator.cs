@@ -8,6 +8,7 @@ using Thoughts.Utils.ThreadsManagement;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace Thoughts.Game.Map
 {
@@ -400,7 +401,7 @@ namespace Thoughts.Game.Map
                         new Vector2(x - mapManager.mapConfiguration.mapRadius,
                             y - mapManager.mapConfiguration.mapRadius), spawningHeightRange, requireNavMesh,
                         out Vector3 spawnablePosition))
-                        spawnedMapElements.Add(SpawnAsMapElement(objectToSpawn, spawnablePosition, Quaternion.identity,
+                        spawnedMapElements.Add(SpawnAsMapElement(objectToSpawn, spawnablePosition, Quaternion.Euler(new Vector3(0, Random.Range(0.0f, 360.0f),0)),
                             parent));
                 }
             }
