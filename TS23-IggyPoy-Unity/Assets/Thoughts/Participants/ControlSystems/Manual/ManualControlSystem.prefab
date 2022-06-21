@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1336113667}
   - component: {fileID: 1336113668}
   - component: {fileID: 202536530713424514}
+  - component: {fileID: 6246498285411516464}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -96,6 +97,26 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &202536530713424514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336113666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &6246498285411516464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -434,7 +455,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2683022035963781032}
-  m_LocalRotation: {x: 0.19666144, y: 0.78525865, z: -0.30956522, w: 0.49886122}
+  m_LocalRotation: {x: 0.19666141, y: 0.78525865, z: -0.30956522, w: 0.49886122}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -478,7 +499,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5791815, y: 1}
+    m_SensorSize: {x: 1.5979477, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -616,7 +637,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5791815, y: 1}
+    m_SensorSize: {x: 1.5979477, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -903,7 +924,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5791815, y: 1}
+    m_SensorSize: {x: 1.5979477, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1164,7 +1185,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7567955944288930170}
-  m_LocalRotation: {x: 0.21364434, y: 0.7741869, z: -0.33629808, w: 0.49182752}
+  m_LocalRotation: {x: 0.21364436, y: 0.7741869, z: -0.33629808, w: 0.49182752}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1208,7 +1229,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5791815, y: 1}
+    m_SensorSize: {x: 1.5979477, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1298,7 +1319,7 @@ MonoBehaviour:
     m_Bits: 8
   overworldCamera: {fileID: 5881396312785150577}
   povCamera: {fileID: 0}
-  moveSpeed: 2.5
+  moveSpeed: 4.5
   rotationSpeed: 0.65
   fastSpeedMultiplier: 2.25
   heightBoost: 2
@@ -1349,6 +1370,7 @@ GameObject:
   - component: {fileID: 4565753709683000823}
   - component: {fileID: 2099384631190627649}
   - component: {fileID: 2003735975750617815}
+  - component: {fileID: 2476412337662561934}
   m_Layer: 0
   m_Name: Camera and Brain
   m_TagString: MainCamera
@@ -1363,7 +1385,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7920776376382676147}
-  m_LocalRotation: {x: 0.21364434, y: 0.77418697, z: -0.33629802, w: 0.49182752}
+  m_LocalRotation: {x: 0.21364436, y: 0.77418697, z: -0.33629802, w: 0.49182752}
   m_LocalPosition: {x: -7.2418337, y: 11, z: 3.3993883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1489,3 +1511,26 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2476412337662561934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7920776376382676147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee01e66702087b4798e633ca34c7956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxUpdateRate: Infinity
+  preview: 0
+  blurAlgorithmSelection: 0
+  blurConfig: {fileID: 11400000, guid: 2347420b79bac5a4bbc9219b1b6bddea, type: 2}
+  downsample: 0
+  blurRegion:
+    serializedVersion: 2
+    x: 0.3
+    y: 0.2
+    width: 0.40000004
+    height: 0.6

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class SelfHealingOverTime : MonoBehaviour
 {
-    [SerializeField] private float timeToFullyHeal = 180;
+    [Tooltip("Important to change to some value (like 180) if you don't want the structure to be indestructible at release")]
+    [SerializeField] private float timeToFullyHeal = 1;
     private HealthController healingObject;
 
     private void Start()

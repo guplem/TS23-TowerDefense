@@ -57,13 +57,13 @@ public class UnitsSpawner : MonoBehaviour
         SpawnUnits(false);
     }
 
-    public void SpawnUnit(GameObject unit)
+    public void SpawnUnit(GameObject unit, int quantity)
     {
         List<MapElement> spawned = mapManager.SpawnMapElementsRandomly(
             unit,
             unitsSeed,
             spawningHeightRange,
-            1,
+            quantity,
             this.transform,
             true,
             mapManager.mapConfiguration.mapRadius*percentageDistanceFromCenterToSpawnUnit
