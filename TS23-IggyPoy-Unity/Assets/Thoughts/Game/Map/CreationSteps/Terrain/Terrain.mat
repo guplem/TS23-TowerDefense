@@ -65,35 +65,35 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture1Normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8b1c20015e5d95441aabf656c8b282b1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2:
-        m_Texture: {fileID: 2800000, guid: 2c3435d97c2e14e47af56abd03d3658e, type: 3}
+        m_Texture: {fileID: 2800000, guid: a558bda7648f12049ae9584f4ae190b5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture3:
-        m_Texture: {fileID: 2800000, guid: 722ddd1ab76255a4c93ca3452f26127c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2af46318bef5412488925b400f50be5c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture3Normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 42979edbb41c7a246926e7ed32fb23cd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture4:
-        m_Texture: {fileID: 2800000, guid: b0ad90f87ad73e0498ae59658ebd0000, type: 3}
+        m_Texture: {fileID: 2800000, guid: f1dc03e4122e19c44a9e674fe616ad20, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture4Normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 89fc467a567ee414ebf3b6e2d9160389, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_1:
-        m_Texture: {fileID: 2800000, guid: 6e0016b48e9a32e45b919320d7d5cc79, type: 3}
+        m_Texture: {fileID: 2800000, guid: 42e3ca2cf314b384ba8e3411b4ec472b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texture2Normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 89fc467a567ee414ebf3b6e2d9160389, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -139,7 +139,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _normal_intensity: 1
+    - _normal_intensity: 1.2
     - color1BaseBlend: 0.04
     - color1Start: 0.155
     - color2BaseBlend: 0.361
@@ -154,7 +154,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Offset_texture: {r: 1, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tiling_Texture1: {r: 1, g: 1, b: 0, a: 0}
+    - _Tiling_Texture1: {r: 5, g: 5, b: 0, a: 0}
     - color0: {r: 0.7607843, g: 0.7146762, b: 0.57058823, a: 1}
     - color1: {r: 0.1900764, g: 0.3019608, b: 0.16909805, a: 0}
     - color2: {r: 0.21176472, g: 0.28235295, b: 0.21176472, a: 0}
