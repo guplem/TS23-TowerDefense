@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fcb38705d483d4e902372db6632d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameData:
+    timeSinceSpawnStarted: 0
   mapManager: {fileID: 150588866}
   fullyGenerateMapOnPlay: 1
   spawnClockInterval: 5
@@ -270,8 +272,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 2786258548067164451}
     m_Modifications:
     - target: {fileID: 6748902951381839742, guid: bb42f7101480e86498d5f0d61e269e0b, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748902951381839742, guid: bb42f7101480e86498d5f0d61e269e0b, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 196014.88
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6748902951381839742, guid: bb42f7101480e86498d5f0d61e269e0b, type: 3}
       propertyPath: m_BoundingSphereOverride.x
@@ -482,7 +488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1103913110373565865, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.6546693
+      value: 1.5923507
       objectReference: {fileID: 0}
     - target: {fileID: 1116539284819365175, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -638,7 +644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2852758819577862408, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.19666141
+      value: 0.19666144
       objectReference: {fileID: 0}
     - target: {fileID: 2852758819577862408, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.y
@@ -894,7 +900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5791742713291779740, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.21364436
+      value: 0.21364434
       objectReference: {fileID: 0}
     - target: {fileID: 5791742713291779740, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.y
@@ -906,7 +912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5881396312785150577, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.6546693
+      value: 1.5923507
       objectReference: {fileID: 0}
     - target: {fileID: 5982301041292961629, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -914,7 +920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5982301041292961629, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.21364436
+      value: 0.21364434
       objectReference: {fileID: 0}
     - target: {fileID: 5982301041292961629, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.y
@@ -922,7 +928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5982301041292961629, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.33629805
+      value: -0.33629802
       objectReference: {fileID: 0}
     - target: {fileID: 6152385923736035460, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -934,7 +940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6215005342825798341, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.6546693
+      value: 1.5923507
       objectReference: {fileID: 0}
     - target: {fileID: 6256156038418635533, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1002,7 +1008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7144583780038589707, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.6546693
+      value: 1.5923507
       objectReference: {fileID: 0}
     - target: {fileID: 7169504580651664164, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_IsActive
