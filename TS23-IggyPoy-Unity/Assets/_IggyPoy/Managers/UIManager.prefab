@@ -57,7 +57,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 31
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 3
   source: {fileID: 0}
-  vibrancy: 1.8
+  vibrancy: 3
   brightness: 0
   flatten: 0.15
   m_spriteBlending: 0.69
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 3
   source: {fileID: 0}
-  vibrancy: 1.8
+  vibrancy: 3
   brightness: 0
   flatten: 0.15
   m_spriteBlending: 0.69
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.01
   source: {fileID: 0}
-  vibrancy: 1.8
+  vibrancy: 3
   brightness: 0
   flatten: 0.15
   m_spriteBlending: 0.69
@@ -1330,6 +1330,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3424725671668307285, guid: 27a1794a697037049913619c357c997e, type: 3}
+      propertyPath: vibrancy
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3557864940612952108, guid: 27a1794a697037049913619c357c997e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1417,6 +1421,14 @@ PrefabInstance:
     - target: {fileID: 4259915331600860942, guid: 27a1794a697037049913619c357c997e, type: 3}
       propertyPath: m_TargetGraphic
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339179504767913284, guid: 27a1794a697037049913619c357c997e, type: 3}
+      propertyPath: structure
+      value: 
+      objectReference: {fileID: 8649726084325875218, guid: e2f354acce3caf74391d3c1b4d0bad91, type: 3}
+    - target: {fileID: 6004333084302407830, guid: 27a1794a697037049913619c357c997e, type: 3}
+      propertyPath: vibrancy
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6008249097731862438, guid: 27a1794a697037049913619c357c997e, type: 3}
       propertyPath: m_Name
@@ -1479,6 +1491,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3424725671668307285, guid: 27a1794a697037049913619c357c997e, type: 3}
+      propertyPath: vibrancy
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3557864940612952108, guid: 27a1794a697037049913619c357c997e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1567,6 +1583,14 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5339179504767913284, guid: 27a1794a697037049913619c357c997e, type: 3}
+      propertyPath: structure
+      value: 
+      objectReference: {fileID: 4208543644825128202, guid: d4820cacac1cca348a57b5fc2883f1c2, type: 3}
+    - target: {fileID: 6004333084302407830, guid: 27a1794a697037049913619c357c997e, type: 3}
+      propertyPath: vibrancy
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6008249097731862438, guid: 27a1794a697037049913619c357c997e, type: 3}
       propertyPath: m_Name
       value: Build - Button
@@ -1627,6 +1651,10 @@ PrefabInstance:
     - target: {fileID: 2938174894126759167, guid: 27a1794a697037049913619c357c997e, type: 3}
       propertyPath: m_fontSize
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424725671668307285, guid: 27a1794a697037049913619c357c997e, type: 3}
+      propertyPath: vibrancy
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3557864940612952108, guid: 27a1794a697037049913619c357c997e, type: 3}
       propertyPath: m_Pivot.x
@@ -1716,6 +1744,14 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5339179504767913284, guid: 27a1794a697037049913619c357c997e, type: 3}
+      propertyPath: structure
+      value: 
+      objectReference: {fileID: 4186431309154977072, guid: 8b16c3c75c045ae4b9413e69d45579b3, type: 3}
+    - target: {fileID: 6004333084302407830, guid: 27a1794a697037049913619c357c997e, type: 3}
+      propertyPath: vibrancy
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6008249097731862438, guid: 27a1794a697037049913619c357c997e, type: 3}
       propertyPath: m_Name
       value: Build - Button (2)
@@ -1776,6 +1812,10 @@ PrefabInstance:
     - target: {fileID: 2938174894126759167, guid: 27a1794a697037049913619c357c997e, type: 3}
       propertyPath: m_fontSize
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424725671668307285, guid: 27a1794a697037049913619c357c997e, type: 3}
+      propertyPath: vibrancy
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3557864940612952108, guid: 27a1794a697037049913619c357c997e, type: 3}
       propertyPath: m_Pivot.x
@@ -1864,6 +1904,14 @@ PrefabInstance:
     - target: {fileID: 4259915331600860942, guid: 27a1794a697037049913619c357c997e, type: 3}
       propertyPath: m_TargetGraphic
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339179504767913284, guid: 27a1794a697037049913619c357c997e, type: 3}
+      propertyPath: structure
+      value: 
+      objectReference: {fileID: 964380347372412307, guid: 63358f8ef4f34fb43be67120926ecb9c, type: 3}
+    - target: {fileID: 6004333084302407830, guid: 27a1794a697037049913619c357c997e, type: 3}
+      propertyPath: vibrancy
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6008249097731862438, guid: 27a1794a697037049913619c357c997e, type: 3}
       propertyPath: m_Name
