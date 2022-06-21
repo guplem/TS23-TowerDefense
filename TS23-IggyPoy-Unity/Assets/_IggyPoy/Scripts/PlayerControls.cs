@@ -89,6 +89,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""FastMove"",
+                    ""type"": ""Button"",
+                    ""id"": ""940dbccf-1d3b-455c-849f-206b36da6a38"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -300,6 +309,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Zoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3d2cc215-2e2a-450b-ae0f-83a603c1afac"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FastMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -315,6 +335,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_RotateL = m_Player.FindAction("RotateL", throwIfNotFound: true);
         m_Player_RotateR = m_Player.FindAction("RotateR", throwIfNotFound: true);
         m_Player_Zoom = m_Player.FindAction("Zoom", throwIfNotFound: true);
+        m_Player_FastMove = m_Player.FindAction("FastMove", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -381,6 +402,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_RotateL;
     private readonly InputAction m_Player_RotateR;
     private readonly InputAction m_Player_Zoom;
+    private readonly InputAction m_Player_FastMove;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -392,6 +414,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @RotateL => m_Wrapper.m_Player_RotateL;
         public InputAction @RotateR => m_Wrapper.m_Player_RotateR;
         public InputAction @Zoom => m_Wrapper.m_Player_Zoom;
+        public InputAction @FastMove => m_Wrapper.m_Player_FastMove;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -422,6 +445,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Zoom.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZoom;
                 @Zoom.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZoom;
                 @Zoom.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZoom;
+                @FastMove.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFastMove;
+                @FastMove.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFastMove;
+                @FastMove.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFastMove;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -447,6 +473,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Zoom.started += instance.OnZoom;
                 @Zoom.performed += instance.OnZoom;
                 @Zoom.canceled += instance.OnZoom;
+                @FastMove.started += instance.OnFastMove;
+                @FastMove.performed += instance.OnFastMove;
+                @FastMove.canceled += instance.OnFastMove;
             }
         }
     }
@@ -460,5 +489,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnRotateL(InputAction.CallbackContext context);
         void OnRotateR(InputAction.CallbackContext context);
         void OnZoom(InputAction.CallbackContext context);
+        void OnFastMove(InputAction.CallbackContext context);
     }
 }

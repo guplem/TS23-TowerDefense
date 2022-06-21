@@ -60,9 +60,8 @@ namespace Thoughts.Participants.ControlSystems.Manual
         /// </summary>
         private void HandleCameraInput()
         {
-            bool isFastSpeed = false;//Input.GetButton("Shift");
-
             var input = InputManager.instance.playerControls.Player;
+            bool isFastSpeed = input.FastMove.ReadValue<float>() > 0.5f;//Input.GetButton("Shift");
             // Movement of the camera
             Vector3 direction = input.Move.ReadValue<Vector2>().ToVector3NewY(0f);//new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")).normalized;
             manualControlSystem.cameraController.Move(direction, isFastSpeed);
