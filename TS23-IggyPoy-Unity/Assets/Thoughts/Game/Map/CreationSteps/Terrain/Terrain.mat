@@ -69,7 +69,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2:
-        m_Texture: {fileID: 2800000, guid: a558bda7648f12049ae9584f4ae190b5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5018dc6a80cd4ea4995d459c3ca2f383, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture3:
@@ -93,7 +93,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texture2Normal:
-        m_Texture: {fileID: 2800000, guid: 89fc467a567ee414ebf3b6e2d9160389, type: 3}
+        m_Texture: {fileID: 2800000, guid: 45b7e3eccbbfdda4090c459fa0624515, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -139,10 +139,12 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _noise_color_scale: 0
+    - _noise_scale: 100
     - _normal_intensity: 1.2
-    - color1BaseBlend: 0.04
-    - color1Start: 0.155
-    - color2BaseBlend: 0.361
+    - color1BaseBlend: 0.05
+    - color1Start: 0.17
+    - color2BaseBlend: 0.06
     - color2Start: 0.324
     - color3BaseBlend: 0.133
     - color3Start: 0.95
@@ -152,6 +154,8 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GrassColor2: {r: 0.20510472, g: 0.4716981, b: 0.16197933, a: 0}
+    - _Grass_color1: {r: 0.3099822, g: 0.6132076, b: 0.2973478, a: 0}
     - _Offset_texture: {r: 1, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Tiling_Texture1: {r: 5, g: 5, b: 0, a: 0}
