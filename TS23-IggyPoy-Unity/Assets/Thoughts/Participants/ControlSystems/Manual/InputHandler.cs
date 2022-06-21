@@ -68,7 +68,7 @@ namespace Thoughts.Participants.ControlSystems.Manual
 
             
             // Rotation
-            manualControlSystem.cameraController.Rotate(new Vector2(input.RotateL.ReadValue<float>()-input.RotateR.ReadValue<float>()/2, input.Zoom.ReadValue<float>()/2*-100), isFastSpeed);
+            manualControlSystem.cameraController.Rotate(new Vector2((input.RotateL.ReadValue<float>() - input.RotateR.ReadValue<float>())/2, input.Zoom.ReadValue<float>()/2*-100), isFastSpeed);
         }
     }
 }
