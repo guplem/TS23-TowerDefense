@@ -30,6 +30,11 @@ public class ConstructionController : MonoBehaviour
     private bool isPlacementOnNavMesh = true;
     private Vector3 buildingPlacement;
     private EnergySource placeHolderEnergySource;
+    [Space]
+    [ColorUsageAttribute(true,true)]
+    [SerializeField] private Color colorBlueprintOk;
+    [ColorUsageAttribute(true,true)]
+    [SerializeField] private Color colorBlueprintWrong;
 
     private void Awake()
     {
@@ -44,6 +49,8 @@ public class ConstructionController : MonoBehaviour
 
     public void SelectStructureToBuild(GameObject structure)
     {
+        UnselectStructure();
+
         if (structure == null)
         {
             Debug.LogWarning("Selecting null structure");
@@ -57,39 +64,20 @@ public class ConstructionController : MonoBehaviour
         placeHolderBuilding = Instantiate(structure, Vector3.one * 10000, Quaternion.identity, this.transform).GetComponentRequired<StructureController>();
         // placeHolderBuilding.GetComponentRequired<StructureController>().isPlaced = false; // Not necessary, default isPlaced is false.
         Debug.Log($"Selected structure '{placeHolderBuilding.ToString()}' to build.", this);
+
+        couldBeBuilt = false;
+        SetBlueprintColor(false);
+    }
+
+    private void SetBlueprintColor(bool b)
+    {
+        placeHolderBuilding.blueprint.transform.GetChild(0).GetComponent<Renderer>().sharedMaterial.SetColor("_Color", b ? colorBlueprintOk : colorBlueprintWrong);
     }
 
     public void BuildSelectedStructure()
     {
-        if (!hasSelectedStructureToBuild)
-        {
-            Debug.Log($"Structure could not be build. No structure is selected");
+        if (!CanBeBuild())
             return;
-        }
-        else if (!isPlacementOnNavMesh)
-        {
-            Debug.Log($"Structure could not be build. Invalid placement");
-            return;
-        }
-        else if (GameManager.instance.gameData.resources < placeHolderBuilding.cost)
-        {
-            Debug.Log($"Structure could not be build. Could not afford the cost ({placeHolderBuilding.cost} needed, player has {GameManager.instance.gameData.resources})");
-            return;
-        }
-        else if (placeHolderEnergySource == null)
-        {
-            Debug.Log($"Structure could not be build. Energy source not in range");
-            return;
-        } else if (placeHolderEnergySource.structure.constructionTime > 0)
-        {
-            Debug.Log($"Structure could not be build. Energy source not built yet");
-            return;
-        } else if (!placeHolderBuilding.exclusionArea.hasExclusionAreaFree)
-        {
-            Debug.Log($"Structure could not be build. Other structures are too close.");
-            placeHolderBuilding.exclusionArea.structuresInExclusionArea.DebugLog(", ", "Too close structures: ");
-            return;
-        }
 
         MapElement instantiated = GameManager.instance.mapManager.SpawnMapElement(placeHolderBuilding.gameObject, buildingPlacement, Quaternion.identity,
             structuresParent);
@@ -105,6 +93,41 @@ public class ConstructionController : MonoBehaviour
         instantiatedStructure.FullyHealOverTime(instantiatedStructure.constructionTime);
         Destroy(instantiatedStructure.exclusionArea.gameObject); // To remove no longer used objects
         Debug.Log($"Built structure '{instantiated.ToString()}'.", this);
+    }
+
+    private bool CanBeBuild()
+    {
+        if (!hasSelectedStructureToBuild)
+        {
+            Debug.Log($"Structure could not be build. No structure is selected");
+            return false;
+        }
+        else if (!isPlacementOnNavMesh)
+        {
+            Debug.Log($"Structure could not be build. Invalid placement");
+            return false;
+        }
+        else if (GameManager.instance.gameData.resources < placeHolderBuilding.cost)
+        {
+            Debug.Log($"Structure could not be build. Could not afford the cost ({placeHolderBuilding.cost} needed, player has {GameManager.instance.gameData.resources})");
+            return false;
+        }
+        else if (placeHolderEnergySource == null)
+        {
+            Debug.Log($"Structure could not be build. Energy source not in range");
+            return false;
+        } else if (placeHolderEnergySource.structure.constructionTime > 0)
+        {
+            Debug.Log($"Structure could not be build. Energy source not built yet");
+            return false;
+        } else if (!placeHolderBuilding.exclusionArea.hasExclusionAreaFree)
+        {
+            Debug.Log($"Structure could not be build. Other structures are too close.");
+            placeHolderBuilding.exclusionArea.structuresInExclusionArea.DebugLog(", ", "Too close structures: ");
+            return false;
+        }
+
+        return true;
     }
 
     private void Update()
@@ -136,6 +159,12 @@ public class ConstructionController : MonoBehaviour
 
             placeHolderBuilding.transform.position = buildingPlacement;
             placeHolderEnergySource = EnergySource.GetBestFor(buildingPlacement, placeHolderBuilding.GetComponent<EnergySource>());
+            bool canBeBuild = CanBeBuild();
+            if (canBeBuild != couldBeBuilt)
+            {
+                SetBlueprintColor(canBeBuild);
+                couldBeBuilt = canBeBuild;
+            }
         }
         else
         {
@@ -143,6 +172,8 @@ public class ConstructionController : MonoBehaviour
             isPlacementOnNavMesh = false;
         }
     }
+
+    private bool couldBeBuilt = false;
 
     public void UnselectStructure()
     {

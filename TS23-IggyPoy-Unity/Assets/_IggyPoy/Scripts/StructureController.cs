@@ -6,7 +6,7 @@ public class StructureController : StateController
 {
     [SerializeField] public Sprite icon;
     [SerializeField] private GameObject visuals;
-    [SerializeField] private GameObject blueprint;
+    [SerializeField] public GameObject blueprint;
     [SerializeField] private GameObject construction;
 
     [Tooltip("Minimum allowed distance to the closes building")] [SerializeField]
