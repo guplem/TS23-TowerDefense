@@ -62,15 +62,34 @@ public class UnitController : StateController
     [SerializeField] private AnimationClip walkAnimation;
     [SerializeField] private AnimationClip attackAnimation;
 
+    
+    /// <summary>
+    /// Reference to the Animator handling the animations of this MapElement.
+    /// </summary>
+    private NavMeshAgent navMeshAgent
+    {
+        get
+        {
+            if (_navMeshAgent == null)
+                _navMeshAgent = this.GetComponentRequired<NavMeshAgent>();
+            return _navMeshAgent;
+        }
+    }
+    private NavMeshAgent _navMeshAgent;
+    
+    
     private void SetDestination(Vector3 destination)
     {
-        gameObject.GetComponentRequired<NavMeshAgent>().destination = destination;
-        gameObject.GetComponentRequired<NavMeshAgent>().isStopped = false; 
+        if (!enabled || !navMeshAgent.isActiveAndEnabled)
+            return;
+        
+        navMeshAgent.destination = destination;
+        navMeshAgent.isStopped = false; 
     }
     
     private void StopMovement()
     {
-        gameObject.GetComponentRequired<NavMeshAgent>().isStopped = true; 
+        navMeshAgent.isStopped = true; 
     }
     
 }
