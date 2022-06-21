@@ -96,7 +96,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5496330621621269956, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5496330621621269956, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -154,6 +154,14 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 7739219691465835837, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+      propertyPath: walkAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: dac2dc143d5a8c644b0ce96dd5c6fb63, type: 2}
+    - target: {fileID: 7739219691465835837, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+      propertyPath: attackAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: adc1991da5577b044be44398c14db3fc, type: 2}
     - target: {fileID: 8128732154038855203, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: m_Name
       value: Healer Unit
