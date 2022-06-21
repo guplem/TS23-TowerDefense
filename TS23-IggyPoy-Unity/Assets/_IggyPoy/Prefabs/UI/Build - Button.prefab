@@ -80,7 +80,7 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 3
   source: {fileID: 0}
-  vibrancy: 1.8
+  vibrancy: 3
   brightness: 0
   flatten: 0.15
   m_spriteBlending: 0.69
@@ -112,7 +112,7 @@ MonoBehaviour:
   spread: 0
   offsetAngle: 210
   offsetDistance: 8
-  offset: {x: -6.9281917, y: 3.9999938}
+  offset: {x: -6.928203, y: 4.0000005}
   color: {r: 0, g: 0, b: 0, a: 0.3}
   inset: 0
   blendMode: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 3
   source: {fileID: 0}
-  vibrancy: 1.8
+  vibrancy: 3
   brightness: 0
   flatten: 0.15
   m_spriteBlending: 0.69
@@ -369,7 +369,7 @@ MonoBehaviour:
   spread: 0
   offsetAngle: 90
   offsetDistance: 8
-  offset: {x: 0.00000047683716, y: -7.9999995}
+  offset: {x: 0.0000004768372, y: -8}
   color: {r: 0, g: 0, b: 0, a: 0.3}
   inset: 0
   blendMode: 0
