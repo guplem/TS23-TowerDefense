@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3031193695381550929
+--- !u!1 &7981704508608076493
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2403556846887415275}
-  - component: {fileID: 1654225839641961038}
-  - component: {fileID: 3535337712258209412}
+  - component: {fileID: 7318179359591202935}
+  - component: {fileID: 5917939710609100754}
+  - component: {fileID: 8485988437866347288}
   m_Layer: 0
-  m_Name: main turret blueprint
+  m_Name: transmission
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2403556846887415275
+--- !u!4 &7318179359591202935
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3031193695381550929}
+  m_GameObject: {fileID: 7981704508608076493}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,21 +33,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1654225839641961038
+--- !u!33 &5917939710609100754
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3031193695381550929}
-  m_Mesh: {fileID: 1344337027531075907, guid: 5a4f9727e75542045b088346717726d2, type: 3}
---- !u!23 &3535337712258209412
+  m_GameObject: {fileID: 7981704508608076493}
+  m_Mesh: {fileID: -6587790575390184430, guid: b3a63356815a7894985bfd056756dfc4, type: 3}
+--- !u!23 &8485988437866347288
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3031193695381550929}
+  m_GameObject: {fileID: 7981704508608076493}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f3270a14031c1e548bfe54fa68cf38bf, type: 2}
+  - {fileID: 2100000, guid: b07754deb784734439a45feae0997f7e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
