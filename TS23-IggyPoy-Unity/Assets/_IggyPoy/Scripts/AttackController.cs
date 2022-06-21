@@ -92,7 +92,7 @@ public class AttackController : MonoBehaviour
     private void OnEnable()
     {
         if (attacksWithProjectile && projectilePool == null)
-            projectilePool = new PoolEssentials(projectile, 100);
+            projectilePool = new PoolEssentials(projectile, 5); // TODO: Increase?
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
         foreach (Collider hitCollider in hitColliders)
         {
@@ -207,7 +207,7 @@ public class AttackController : MonoBehaviour
             case true:
             {
                 // Debug.Log($"ATTACKED (projectile) {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.", this);
-                GameObject spawnedGO = projectilePool.Spawn(projectileSpawnLocation.position, Quaternion.identity, Vector3.one, projectileSpawnLocation);
+                GameObject spawnedGO = projectilePool.Spawn(projectileSpawnLocation.position, projectileSpawnLocation.rotation, Vector3.one, projectileSpawnLocation);
                 spawnedGO.GetComponentRequired<Projectile>().SetTarget(target, projectileSpeed, damage, projectilePool);
                 break;
             }
