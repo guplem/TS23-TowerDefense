@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.Utilities;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class EnergySource : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class EnergySource : MonoBehaviour
     [SerializeField] private float range = 5;
     private HashSet<StructureController> attatchedStructures = new();
     [NonSerialized] public StructureController structure;
+    [SerializeField] private DecalProjector energySourceRangeDecalProjector;
 
     private void OnEnable()
     {
@@ -30,6 +32,19 @@ public class EnergySource : MonoBehaviour
     private void Awake()
     {
         structure = gameObject.GetComponentRequired<StructureController>();
+    }
+
+    private void Update()
+    {
+        if (ConstructionController.instance.hasSelectedStructureToBuild)
+        {
+            energySourceRangeDecalProjector.gameObject.SetActive(true);
+            energySourceRangeDecalProjector.size = new Vector3(range*2, range*2, 50);
+        }
+        else
+        {
+            energySourceRangeDecalProjector.gameObject.SetActive(false);
+        }
     }
 
     public static EnergySource GetBestFor(Vector3 location, EnergySource exclude)

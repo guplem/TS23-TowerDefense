@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 12
+  energySourceRangeDecalProjector: {fileID: 7639021832070297906}
 --- !u!4 &5569895018222623865 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7293259552648991525, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
@@ -120,6 +121,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5242477386435719322, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
   m_PrefabInstance: {fileID: 2916893202642276188}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7639021832070297906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4790038950003504750, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+  m_PrefabInstance: {fileID: 2916893202642276188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7025026027927809398
 PrefabInstance:
   m_ObjectHideFlags: 0

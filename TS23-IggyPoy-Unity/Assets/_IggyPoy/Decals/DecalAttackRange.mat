@@ -112,7 +112,7 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _DecalMeshBiasType: 0
-    - _DecalMeshDepthBias: 0
+    - _DecalMeshDepthBias: 5
     - _DecalMeshViewBias: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
