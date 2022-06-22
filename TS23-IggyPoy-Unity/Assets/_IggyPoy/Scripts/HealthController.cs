@@ -73,7 +73,7 @@ public class HealthController : PropertyController
 
     private IEnumerator HealingCoroutine(float totalTime)
     {
-        float stepInterval = 0.1f;
+        float stepInterval = 0.035f;
         float elapsed = 0;
         while (elapsed < totalTime)
         {
