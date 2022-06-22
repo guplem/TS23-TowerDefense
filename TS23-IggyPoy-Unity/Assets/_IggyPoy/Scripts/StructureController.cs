@@ -95,7 +95,7 @@ public class StructureController : StateController
             if (attackController != null)
             {
                 attackRangeDecalProjector.gameObject.SetActive(true);
-                attackRangeDecalProjector.size = new Vector3(attackController.range, attackController.range, 50);
+                attackRangeDecalProjector.size = new Vector3(attackController.range*2, attackController.range*2, 50);
             }
             else
             {
