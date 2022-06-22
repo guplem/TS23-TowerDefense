@@ -17,7 +17,7 @@ namespace Thoughts.Participants.ControlSystems.Manual
         [Header("Camera Setup")]
         [Tooltip("The Camera to control")]
         [SerializeField] private Camera _camera;
-        public new Camera camera => _camera;
+        public Camera cam => _camera;
         
         /// <summary>
         /// The rig of the overworld camera
@@ -175,7 +175,7 @@ namespace Thoughts.Participants.ControlSystems.Manual
                 cameraHeight = freeLookCamera.m_YAxis.Value;
             } catch (Exception ) { }
             
-            desiredPosition += ((camera.transform.rotation * direction).WithY(0f).normalized * ( (isFastSpeed? moveSpeed*fastSpeedMultiplier : moveSpeed) * (1f+(cameraHeight*heightBoost)) ) ) /50;
+            desiredPosition += ((cam.transform.rotation * direction).WithY(0f).normalized * ( (isFastSpeed? moveSpeed*fastSpeedMultiplier : moveSpeed) * (1f+(cameraHeight*heightBoost)) ) ) /50;
         }
         
         /// <summary>

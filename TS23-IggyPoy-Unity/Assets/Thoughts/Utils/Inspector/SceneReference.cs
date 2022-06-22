@@ -2,11 +2,11 @@ using System;
 using System.IO;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.SceneManagement;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using Object = UnityEngine.Object;
 #if UNITY_EDITOR
+using UnityEditor.SceneManagement;
+using UnityEditor.VersionControl;
 #endif
 
 namespace Thoughts.Utils.Inspector// Tymski

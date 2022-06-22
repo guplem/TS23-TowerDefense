@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 public class Cheats : MonoBehaviour
 {
     [MenuItem("📈 Cheats 🍕/Resources 💲/Get 1.000 Resources 🤑")]
@@ -106,3 +107,4 @@ public class Cheats : MonoBehaviour
         }
     }
 }
+#endif
