@@ -28,7 +28,7 @@ public class TurretHealthUi : MonoBehaviour
     private void UpdateUI()
     {
         float newX = (structure.health + 0.0f) / structure.maxHealth;
-        Debug.Log("UPDATING HEALTH UI TO: " + newX + " / " + structure.gameObject.name, this);
+        // Debug.Log("UPDATING HEALTH UI TO: " + newX + " / " + structure.gameObject.name, this);
         CancelInvoke();
         healthUI.SetActive(true);
         healthBar.anchorMax = new Vector2(newX, 1);

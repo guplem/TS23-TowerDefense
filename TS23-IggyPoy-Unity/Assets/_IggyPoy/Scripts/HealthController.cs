@@ -7,12 +7,12 @@ using UnityEngine.Serialization;
 public class HealthController : PropertyController
 {
     [NonSerialized] public bool canBeDamaged = true; 
-    public int health
+    public float health
     {
         get => _currentHealth;
         set
         {
-            int newHealth = Mathf.Min(value, maxHealth);
+            float newHealth = Mathf.Min(value, maxHealth);
             if (_currentHealth == newHealth)
                 return;
 
@@ -28,7 +28,7 @@ public class HealthController : PropertyController
     
     [FormerlySerializedAs("_health")] [SerializeField]
     public int maxHealth = 10;
-    private int _currentHealth = 1;
+    private float _currentHealth = 1;
 
     protected void Awake()
     {
@@ -77,7 +77,7 @@ public class HealthController : PropertyController
         float elapsed = 0;
         while (elapsed < totalTime)
         {
-            health += Mathf.CeilToInt(maxHealth / (totalTime* (1/stepInterval)));
+            health += maxHealth / (totalTime* (1/stepInterval));
             elapsed += stepInterval;
             yield return new WaitForSeconds(stepInterval);
         }
