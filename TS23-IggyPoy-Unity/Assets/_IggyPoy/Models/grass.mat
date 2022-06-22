@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Terrain
-  m_Shader: {fileID: -6465566751694194690, guid: 935768cb517cb3645a52a9c632aa7024, type: 3}
+  m_Name: grass
+  m_Shader: {fileID: -6465566751694194690, guid: 81134016fd0e80f469bb6da8c2fb1caa, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 6fc8a4865d94e7b4da9082960658fe10, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -45,10 +45,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 6fc8a4865d94e7b4da9082960658fe10, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_map:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -64,40 +68,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Texture1Normal:
-        m_Texture: {fileID: 2800000, guid: 8b1c20015e5d95441aabf656c8b282b1, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture2:
-        m_Texture: {fileID: 2800000, guid: 5018dc6a80cd4ea4995d459c3ca2f383, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture3:
-        m_Texture: {fileID: 2800000, guid: 2af46318bef5412488925b400f50be5c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture3Normal:
-        m_Texture: {fileID: 2800000, guid: 42979edbb41c7a246926e7ed32fb23cd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture4:
-        m_Texture: {fileID: 2800000, guid: f1dc03e4122e19c44a9e674fe616ad20, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture4Normal:
-        m_Texture: {fileID: 2800000, guid: 89fc467a567ee414ebf3b6e2d9160389, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture_1:
-        m_Texture: {fileID: 2800000, guid: 42e3ca2cf314b384ba8e3411b4ec472b, type: 3}
+    - _albedo:
+        m_Texture: {fileID: 2800000, guid: 6fc8a4865d94e7b4da9082960658fe10, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _mask:
         m_Texture: {fileID: 2800000, guid: cecbe2a4f035daf4cb52a4f709809710, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _texture2Normal:
-        m_Texture: {fileID: 2800000, guid: 45b7e3eccbbfdda4090c459fa0624515, type: 3}
+    - _paint_mask:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -114,8 +94,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_1: 1
-    - Vector1_46bbf6c04c044378aaca31f1ef38dcf1: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -143,34 +121,22 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _distortion_amount: 0.5
-    - _noise_color_scale: 0
-    - _noise_scale: 100
-    - _normal_intensity: 1.2
-    - color1BaseBlend: 0.05
-    - color1Start: 0.17
-    - color2BaseBlend: 0.06
-    - color2Start: 0.324
-    - color3BaseBlend: 0.133
-    - color3Start: 0.95
-    - maxHeight: 15
-    - minHeight: 0
+    - _metalic: 0
+    - _normalIntensity: 0
+    - _smothness: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0.4572916, g: 0.764151, b: 0.43542188, a: 0}
+    - _Color2: {r: 0.13980055, g: 0.39622638, b: 0.16798127, a: 0}
+    - _Color_1: {r: 0.13980055, g: 0.39622638, b: 0.16798127, a: 0}
+    - _Color_2: {r: 0.4572916, g: 0.764151, b: 0.43542188, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GrassColor2: {r: 0.59008205, g: 0.8396226, b: 0.54971516, a: 0}
-    - _Grass_color1: {r: 0.23515591, g: 0.5283019, b: 0.22627269, a: 0}
-    - _Offset_texture: {r: 1, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tiling_Texture1: {r: 5, g: 5, b: 0, a: 0}
-    - _tiling_mask: {r: 4, g: 8, b: 0, a: 0}
-    - color0: {r: 0.7607843, g: 0.7146762, b: 0.57058823, a: 1}
-    - color1: {r: 0.1900764, g: 0.3019608, b: 0.16909805, a: 0}
-    - color2: {r: 0.21176472, g: 0.28235295, b: 0.21176472, a: 0}
-    - color3: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 1}
+    - _size_mak: {r: 5, g: 5, b: 0, a: 0}
+    - _tiling_mask: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &3121099465726748143
+--- !u!114 &4743677181797240464
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
