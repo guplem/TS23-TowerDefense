@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class StructureController : StateController
 {
@@ -8,6 +9,7 @@ public class StructureController : StateController
     [SerializeField] private GameObject visuals;
     [SerializeField] public GameObject blueprint;
     [SerializeField] private GameObject construction;
+    [SerializeField] private DecalProjector attackRangeDecalProjector;
 
     [Tooltip("Minimum allowed distance to the closes building")] [SerializeField]
     public ExclusionArea exclusionArea;
@@ -84,24 +86,38 @@ public class StructureController : StateController
     {
         if (!isPlaced)
         {
+            // BLUEPRINT
             canBeDamaged = false;
             visuals.SetActive(false);
             blueprint.SetActive(true);
             construction.SetActive(false);
             if (attackController != null) attackController.enabled = false;
+            if (attackController != null)
+            {
+                attackRangeDecalProjector.gameObject.SetActive(true);
+                attackRangeDecalProjector.size = new Vector3(attackController.range, attackController.range, 50);
+            }
+            else
+            {
+                attackRangeDecalProjector.gameObject.SetActive(false);
+            }
         }
         else
         {
+            // PLACED IN MAP
             canBeDamaged = true;
             blueprint.SetActive(false);
+            attackRangeDecalProjector.gameObject.SetActive(false);
             if (constructionTime <= 0)
             {
+                // -- Built
                 visuals.SetActive(true);
                 construction.SetActive(false);
                 if (attackController != null) attackController.enabled = energySource != null && energySource.structure.constructionTime <= 0;
             }
             else
             {
+                // -- Under Construction
                 visuals.SetActive(false);
                 construction.SetActive(true);
                 if (attackController != null) attackController.enabled = false;
