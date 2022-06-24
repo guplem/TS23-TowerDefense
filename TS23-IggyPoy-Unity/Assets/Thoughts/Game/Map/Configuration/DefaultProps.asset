@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoUpdate: 0
   mapElementsToSpawn:
-  - mapElementPrefab: {fileID: 9009451801997649617, guid: 92f43f4d258d6304dad19a1e85ec25c7, type: 3}
+  - mapElementPrefab: {fileID: 9173181554191903515, guid: 92f43f4d258d6304dad19a1e85ec25c7, type: 3}
     noiseSettings:
       scale: 30
       octaves: 6
@@ -23,9 +23,9 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
     spawningHeightRange: {x: 0.05, y: 0.44}
     probability: 0.249
-    density: 0.061
+    density: 0.07
     centralAreaToAvoid: 10
-  - mapElementPrefab: {fileID: 8620862495578067054, guid: d3646d273ba1cc64186d518ce928ac09, type: 3}
+  - mapElementPrefab: {fileID: 4815597242790362103, guid: d3646d273ba1cc64186d518ce928ac09, type: 3}
     noiseSettings:
       scale: 30
       octaves: 7
@@ -34,9 +34,9 @@ MonoBehaviour:
       offset: {x: 23.37, y: 0}
     spawningHeightRange: {x: 0, y: 0.3}
     probability: 0.249
-    density: 0.084
+    density: 0.07
     centralAreaToAvoid: 10
-  - mapElementPrefab: {fileID: 3181546899187032503, guid: 731c194cf6c697d4ab85df329106a92a, type: 3}
+  - mapElementPrefab: {fileID: 2291498553128056113, guid: 731c194cf6c697d4ab85df329106a92a, type: 3}
     noiseSettings:
       scale: 35
       octaves: 5
@@ -45,9 +45,9 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
     spawningHeightRange: {x: 0.1, y: 0.75}
     probability: 0.276
-    density: 0.093
+    density: 0.07
     centralAreaToAvoid: 10
-  - mapElementPrefab: {fileID: 2894364265702893213, guid: d10f9c4b0af6a894eb092da6c37ce4fe, type: 3}
+  - mapElementPrefab: {fileID: 4225776835665586282, guid: f69fdd44c3c1eb9409125b2214201b46, type: 3}
     noiseSettings:
       scale: 54.29
       octaves: 5
@@ -56,7 +56,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
     spawningHeightRange: {x: 0, y: 0.7}
     probability: 0.809
-    density: 0.046
+    density: 0.15
     centralAreaToAvoid: 0
   - mapElementPrefab: {fileID: 4427495345491089616, guid: f43032e85d10f2d4ab7d713b4f214a82, type: 3}
     noiseSettings:
@@ -69,7 +69,7 @@ MonoBehaviour:
     probability: 0.226
     density: 0.018
     centralAreaToAvoid: 0
-  - mapElementPrefab: {fileID: 5937032494066021447, guid: a4416051db845014796b4ddd22c908c6, type: 3}
+  - mapElementPrefab: {fileID: 4172445087721746802, guid: 90be94bd9050a114ba83bbff267be10e, type: 3}
     noiseSettings:
       scale: 54.29
       octaves: 5
@@ -78,9 +78,9 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
     spawningHeightRange: {x: -0.5379116, y: 0.7}
     probability: 0.785
-    density: 0.116
+    density: 0.15
     centralAreaToAvoid: 0
-  - mapElementPrefab: {fileID: 7855864019797405661, guid: ebfa029dd47ce104795c4f3ba6576c43, type: 3}
+  - mapElementPrefab: {fileID: 4274195996443738919, guid: 8a4806c35794bce47ae50ddc56a630d8, type: 3}
     noiseSettings:
       scale: 54.29
       octaves: 5
@@ -89,27 +89,27 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
     spawningHeightRange: {x: 0.1, y: 1}
     probability: 0.35
-    density: 0.17
+    density: 0.15
     centralAreaToAvoid: 0
-  - mapElementPrefab: {fileID: 2667721146327368077, guid: 2f97fc88e53210a4db7bacf16fcf66eb, type: 3}
+  - mapElementPrefab: {fileID: 3251535489524286043, guid: 9fc32670146ae464da9d5573322b9dd8, type: 3}
     noiseSettings:
       scale: 54.29
       octaves: 5
       lacunarity: 0.6
       persistance: 0.216
       offset: {x: 0, y: 0}
-    spawningHeightRange: {x: -0.2682254, y: 0.6999999}
+    spawningHeightRange: {x: -0.93963426, y: 0.27000004}
     probability: 0.592
-    density: 0.004
+    density: 0.015
     centralAreaToAvoid: 0
-  - mapElementPrefab: {fileID: 4517388305982489450, guid: ecebd39bcc499374fb639005cc7a52a9, type: 3}
+  - mapElementPrefab: {fileID: 1654373822949775258, guid: 76e2ff6f9c471df4689eaa59ec82d8c1, type: 3}
     noiseSettings:
       scale: 54.29
       octaves: 5
       lacunarity: 0.6
       persistance: 0.216
       offset: {x: 0, y: 0}
-    spawningHeightRange: {x: 0.1, y: 0.7}
+    spawningHeightRange: {x: -0.1643832, y: 0.6999999}
     probability: 0.387
-    density: 0.004
+    density: 0.002
     centralAreaToAvoid: 10
