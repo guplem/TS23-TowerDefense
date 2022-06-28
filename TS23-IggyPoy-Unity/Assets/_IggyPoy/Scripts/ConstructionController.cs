@@ -27,6 +27,7 @@ public class ConstructionController : MonoBehaviour
     public bool hasSelectedStructureToBuild => placeHolderBuilding != null;
     [SerializeField] private Transform structuresParent;
     public LayerMask buildingLayers;
+    public LayerMask structureLayers;
     private bool isPlacementOnNavMesh = true;
     private Vector3 buildingPlacement;
     private EnergySource placeHolderEnergySource;

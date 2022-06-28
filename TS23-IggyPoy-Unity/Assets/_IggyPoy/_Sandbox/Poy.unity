@@ -218,7 +218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1063697187424724391, guid: d191f5b046993a849bb135fb9c493552, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.21364436
+      value: 0.21364434
       objectReference: {fileID: 0}
     - target: {fileID: 1076727679467679801, guid: d191f5b046993a849bb135fb9c493552, type: 3}
       propertyPath: m_AnchorMax.y
@@ -415,6 +415,10 @@ PrefabInstance:
     - target: {fileID: 8940277693039393360, guid: d191f5b046993a849bb135fb9c493552, type: 3}
       propertyPath: m_fontSize
       value: 40.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946129025975568808, guid: d191f5b046993a849bb135fb9c493552, type: 3}
+      propertyPath: structureLayers.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 9171407118199692487, guid: d191f5b046993a849bb135fb9c493552, type: 3}
       propertyPath: m_RootOrder

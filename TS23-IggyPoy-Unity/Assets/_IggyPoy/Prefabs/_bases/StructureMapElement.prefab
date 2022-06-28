@@ -334,6 +334,10 @@ PrefabInstance:
       propertyPath: structure
       value: 
       objectReference: {fileID: 7690321064448338955}
+    - target: {fileID: 2285695019057995638, guid: aa4f505b83accdc43841c5e2cb532c8f, type: 3}
+      propertyPath: hpController
+      value: 
+      objectReference: {fileID: 7690321064448338955}
     - target: {fileID: 4639651360951557613, guid: aa4f505b83accdc43841c5e2cb532c8f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -424,6 +428,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa4f505b83accdc43841c5e2cb532c8f, type: 3}
+--- !u!114 &3540479217967576556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2285695019057995638, guid: aa4f505b83accdc43841c5e2cb532c8f, type: 3}
+  m_PrefabInstance: {fileID: 3358036695907363482}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b05b02505b1162e41a8102910b3111ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7821593190574619090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -560,6 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  healthUi: {fileID: 3540479217967576556}
   icon: {fileID: 0}
   visuals: {fileID: 3584904110779811015}
   blueprint: {fileID: 54911899161403688}

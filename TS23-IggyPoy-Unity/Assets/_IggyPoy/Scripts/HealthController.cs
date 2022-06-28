@@ -30,6 +30,8 @@ public class HealthController : PropertyController
     public int maxHealth = 10;
     private float _currentHealth = 1;
 
+    [SerializeField] public HealthUi healthUi;
+    
     protected void Awake()
     {
         _currentHealth = maxHealth;

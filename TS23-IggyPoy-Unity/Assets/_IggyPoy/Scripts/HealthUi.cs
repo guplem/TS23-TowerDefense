@@ -28,10 +28,10 @@ public class HealthUi : MonoBehaviour
 
     private void UpdateUI()
     {
-        DisplayUIFor(5);
+        DisplayUIFor(4);
     }
     
-    private void DisplayUIFor(float timeDisplayed)
+    public void DisplayUIFor(float timeDisplayed)
     {
         float newX = (hpController.health + 0.0f) / hpController.maxHealth;
         // Debug.Log("UPDATING HEALTH UI TO: " + newX + " / " + structure.gameObject.name, this);

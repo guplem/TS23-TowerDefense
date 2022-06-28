@@ -39,6 +39,19 @@ public class UIManager : MonoBehaviour
     
     private void Update()
     {
+        
+        Ray ray = Camera.main.ScreenPointToRay(InputManager.instance.playerControls.Player.MousePosition.ReadValue<Vector2>());
+
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 5000, ConstructionController.instance.structureLayers))
+        {
+            StructureController structure = hit.collider.gameObject.GetComponent<StructureController>();
+            if (structure != null && structure.healthUi != null && structure.isPlaced)
+            {
+                structure.healthUi.DisplayUIFor(0.1f);
+            }
+        }
+        
         ConstructionError reason = ConstructionController.instance.GetReasonWhyCantBeBuilt();
         if (reason == oldReason) return;
         oldReason = reason;

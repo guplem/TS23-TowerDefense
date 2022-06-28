@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  healthUi: {fileID: 1259329084996441944}
   attackController: {fileID: 6231532637389738966}
   walkAnimation: {fileID: 0}
   attackAnimation: {fileID: 0}
@@ -325,3 +326,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa4f505b83accdc43841c5e2cb532c8f, type: 3}
+--- !u!114 &1259329084996441944 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2285695019057995638, guid: aa4f505b83accdc43841c5e2cb532c8f, type: 3}
+  m_PrefabInstance: {fileID: 1063520914589812782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b05b02505b1162e41a8102910b3111ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
