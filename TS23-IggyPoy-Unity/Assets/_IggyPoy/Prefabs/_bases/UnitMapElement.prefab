@@ -209,14 +209,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2186709344538332723, guid: aa4f505b83accdc43841c5e2cb532c8f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1.8
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 2186709344538332723, guid: aa4f505b83accdc43841c5e2cb532c8f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.28
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2285695019057995638, guid: aa4f505b83accdc43841c5e2cb532c8f, type: 3}
       propertyPath: structure
+      value: 
+      objectReference: {fileID: 7739219691465835837}
+    - target: {fileID: 2285695019057995638, guid: aa4f505b83accdc43841c5e2cb532c8f, type: 3}
+      propertyPath: hpController
       value: 
       objectReference: {fileID: 7739219691465835837}
     - target: {fileID: 4233692716231435924, guid: aa4f505b83accdc43841c5e2cb532c8f, type: 3}
