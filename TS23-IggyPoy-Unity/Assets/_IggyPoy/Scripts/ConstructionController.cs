@@ -97,37 +97,42 @@ public class ConstructionController : MonoBehaviour
 
     private bool CanBeBuild()
     {
+        return GetReasonWhyCantBeBuilt() == ConstructionError.None;
+    }
+
+    public ConstructionError GetReasonWhyCantBeBuilt()
+    {
         if (!hasSelectedStructureToBuild)
         {
-            Debug.Log($"Structure could not be build. No structure is selected");
-            return false;
+            // Debug.Log($"Structure could not be build. No structure is selected");
+            return ConstructionError.NotSelected;
         }
         else if (!isPlacementOnNavMesh)
         {
-            Debug.Log($"Structure could not be build. Invalid placement");
-            return false;
+            // Debug.Log($"Structure could not be build. Invalid placement");
+            return ConstructionError.Location;
         }
         else if (GameManager.instance.gameData.resources < placeHolderBuilding.cost)
         {
-            Debug.Log($"Structure could not be build. Could not afford the cost ({placeHolderBuilding.cost} needed, player has {GameManager.instance.gameData.resources})");
-            return false;
+            // Debug.Log($"Structure could not be build. Could not afford the cost ({placeHolderBuilding.cost} needed, player has {GameManager.instance.gameData.resources})");
+            return ConstructionError.Resources;
         }
         else if (placeHolderEnergySource == null)
         {
-            Debug.Log($"Structure could not be build. Energy source not in range");
-            return false;
+            // Debug.Log($"Structure could not be build. Energy source not in range");
+            return ConstructionError.Energy;
         } else if (placeHolderEnergySource.structure.constructionTime > 0)
         {
-            Debug.Log($"Structure could not be build. Energy source not built yet");
-            return false;
+            // Debug.Log($"Structure could not be build. Energy source not built yet");
+            return ConstructionError.Energy;
         } else if (!placeHolderBuilding.exclusionArea.hasExclusionAreaFree)
         {
-            Debug.Log($"Structure could not be build. Other structures are too close.");
+            // Debug.Log($"Structure could not be build. Other structures are too close.");
             placeHolderBuilding.exclusionArea.structuresInExclusionArea.DebugLog(", ", "Too close structures: ");
-            return false;
+            return ConstructionError.Distance;
         }
 
-        return true;
+        return ConstructionError.None;
     }
 
     private void Update()
@@ -181,4 +186,15 @@ public class ConstructionController : MonoBehaviour
             Destroy(placeHolderBuilding.gameObject);
         placeHolderBuilding = null;
     }
+}
+
+public enum ConstructionError
+{
+    None, 
+    NotSelected, 
+    Distance, 
+    Resources,
+    Energy,
+    Other,
+    Location
 }

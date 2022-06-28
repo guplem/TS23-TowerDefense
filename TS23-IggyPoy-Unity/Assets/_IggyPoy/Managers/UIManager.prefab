@@ -970,6 +970,12 @@ MonoBehaviour:
   startSpawningButton: {fileID: 1953248207966814882}
   gameDataStringText: {fileID: 5184566665413479823}
   resourcesText: {fileID: 4781663630274346388}
+  defaultCursor: {fileID: 2800000, guid: 3ad506e974ee92a41aca512acc91df64, type: 3}
+  distanceError: {fileID: 2800000, guid: d02bea4ef86826f42bd8ef3b2082adaf, type: 3}
+  resourcesError: {fileID: 2800000, guid: e78c7e41c68222d45b931a6e7d83abe1, type: 3}
+  energyError: {fileID: 2800000, guid: 49112689f92a9114fab51e35943c9bed, type: 3}
+  generalError: {fileID: 2800000, guid: a87ad9ddeea2f174aada16c011c1005d, type: 3}
+  locationError: {fileID: 2800000, guid: a4f08765888e95842817c6253d6b1709, type: 3}
 --- !u!1 &7340973597035192208
 GameObject:
   m_ObjectHideFlags: 0
