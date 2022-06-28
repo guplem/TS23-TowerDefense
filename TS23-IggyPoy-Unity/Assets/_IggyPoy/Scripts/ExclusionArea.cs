@@ -10,17 +10,27 @@ public class ExclusionArea : MonoBehaviour
     {
         get
         {
-            if (structuresInExclusionArea.Count <= 0)
-                return true;
-            foreach (StructureController structure in structuresInExclusionArea)
+            try
             {
-                if (Vector3.Distance(structure.transform.position, self.transform.position) < exclusionCollider.radius)
+                if (structuresInExclusionArea.Count <= 0)
+                    return true;
+                foreach (StructureController structure in structuresInExclusionArea)
                 {
-                    return false;
+                    if (structure == null)
+                        return false;
+                    
+                    if (Vector3.Distance(structure.transform.position, self.transform.position) < exclusionCollider.radius)
+                    {
+                        return false;
+                    }
                 }
-            }
 
-            return true;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 
