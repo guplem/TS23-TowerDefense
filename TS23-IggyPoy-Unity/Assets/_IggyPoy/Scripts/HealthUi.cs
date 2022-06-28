@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class HealthUi : MonoBehaviour
 {
-    [SerializeField] private HealthController structure;
+    [FormerlySerializedAs("structure")] [SerializeField] private HealthController hpController;
     [SerializeField] private GameObject healthUI;
     [SerializeField] private RectTransform healthBar;
 
@@ -17,12 +18,12 @@ public class HealthUi : MonoBehaviour
 
     private void OnEnable()
     {
-        structure.onHealthUpdate.AddListener(UpdateUI);
+        hpController.onHealthUpdate.AddListener(UpdateUI);
     }
 
     private void OnDisable()
     {
-        structure.onHealthUpdate.RemoveListener(UpdateUI);
+        hpController.onHealthUpdate.RemoveListener(UpdateUI);
     }
 
     private void UpdateUI()
@@ -32,7 +33,7 @@ public class HealthUi : MonoBehaviour
     
     private void DisplayUIFor(float timeDisplayed)
     {
-        float newX = (structure.health + 0.0f) / structure.maxHealth;
+        float newX = (hpController.health + 0.0f) / hpController.maxHealth;
         // Debug.Log("UPDATING HEALTH UI TO: " + newX + " / " + structure.gameObject.name, this);
         CancelInvoke();
         healthUI.SetActive(true);
