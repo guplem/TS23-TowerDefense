@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class ConstructionController : MonoBehaviour
 {
@@ -62,7 +63,7 @@ public class ConstructionController : MonoBehaviour
         if (structureController == null)
             return;
 
-        placeHolderBuilding = Instantiate(structure, Vector3.one * 10000, Quaternion.identity, this.transform).GetComponentRequired<StructureController>();
+        placeHolderBuilding = Instantiate(structure, Vector3.one * 10000, Quaternion.Euler(new Vector3(0, Random.Range(0.0f, 360.0f), 0)), this.transform).GetComponentRequired<StructureController>();
         // placeHolderBuilding.GetComponentRequired<StructureController>().isPlaced = false; // Not necessary, default isPlaced is false.
         Debug.Log($"Selected structure '{placeHolderBuilding.ToString()}' to build.", this);
 
@@ -80,7 +81,7 @@ public class ConstructionController : MonoBehaviour
         if (!CanBeBuild())
             return;
 
-        MapElement instantiated = GameManager.instance.mapManager.SpawnMapElement(placeHolderBuilding.gameObject, buildingPlacement, Quaternion.identity,
+        MapElement instantiated = GameManager.instance.mapManager.SpawnMapElement(placeHolderBuilding.gameObject, buildingPlacement, placeHolderBuilding.transform.rotation,
             structuresParent);
         GameManager.instance.unitsSpawner.RegenerateNavMeshForUnits();
         GameManager.instance.gameData.resources -= placeHolderBuilding.cost;
