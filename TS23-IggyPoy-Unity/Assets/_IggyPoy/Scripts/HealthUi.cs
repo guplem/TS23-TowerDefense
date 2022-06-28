@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TurretHealthUi : MonoBehaviour
+public class HealthUi : MonoBehaviour
 {
-    [SerializeField] private StructureController structure;
+    [SerializeField] private HealthController structure;
     [SerializeField] private GameObject healthUI;
     [SerializeField] private RectTransform healthBar;
 
@@ -27,13 +27,18 @@ public class TurretHealthUi : MonoBehaviour
 
     private void UpdateUI()
     {
+        DisplayUIFor(5);
+    }
+    
+    private void DisplayUIFor(float timeDisplayed)
+    {
         float newX = (structure.health + 0.0f) / structure.maxHealth;
         // Debug.Log("UPDATING HEALTH UI TO: " + newX + " / " + structure.gameObject.name, this);
         CancelInvoke();
         healthUI.SetActive(true);
         healthBar.anchorMax = new Vector2(newX, 1);
         // healthBar.SetAnchors(new MinMax01(0, 0, newX, 1));
-        Invoke(nameof(HideUI), 5);
+        Invoke(nameof(HideUI), timeDisplayed);
     }
 
     private void HideUI()
