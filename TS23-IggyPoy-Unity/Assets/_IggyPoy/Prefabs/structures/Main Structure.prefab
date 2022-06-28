@@ -214,6 +214,18 @@ PrefabInstance:
       propertyPath: projectileSpeed
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 773981098023131799, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Height
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 773981098023131799, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 773981098023131799, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Center.y
+      value: 2.59
+      objectReference: {fileID: 0}
     - target: {fileID: 1325135749665720940, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_Name
       value: Main Structure

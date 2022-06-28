@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 87954208019187994, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Radius
+      value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 773981098023131799, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Height
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 773981098023131799, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Radius
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 773981098023131799, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Center.y
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1325135749665720940, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_Name
       value: Transmision Structure

@@ -186,6 +186,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 87954208019187994, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Radius
+      value: 3.25
+      objectReference: {fileID: 0}
     - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: range
       value: 35
@@ -213,6 +217,14 @@ PrefabInstance:
     - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: projectilePoolSize
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 773981098023131799, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Height
+      value: 5.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 773981098023131799, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Radius
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 1325135749665720940, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_Name
