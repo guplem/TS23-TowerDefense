@@ -160,7 +160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7739219691465835837, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: maxHealth
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7739219691465835837, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: walkAnimation
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f6ff37f1309594586390b2691eba29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBetweenHeals: 2
+  delayBetweenHeals: 1.5
   healingPerSecondPerUnit: 10
   healingRadius: 10
 --- !u!4 &9033001120250716215 stripped
