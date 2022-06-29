@@ -4,6 +4,7 @@ using System.Linq;
 using Thoughts.Game.Map;
 using UnityEngine;
 using Console = System.Console;
+using Random = System.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -44,6 +45,28 @@ public class GameManager : MonoBehaviour
     private bool gameOver = false;
     [NonSerialized] public bool startedEnemiesSpawning = true;
 
+    /// <summary>
+    /// The seed used for the whole world randomness
+    /// </summary>
+    public int seed
+    {
+        get
+        {
+            if (_seed == -1)
+            {
+                Random rnd = new Random();
+                while (_seed == -1)
+                {
+                    _seed = rnd.Next(int.MinValue, int.MaxValue);
+                }
+            }
+
+            return _seed;
+        }
+    }
+
+    public int _seed = -1;
+    
     private void Awake()
     {
         if (instance != null)

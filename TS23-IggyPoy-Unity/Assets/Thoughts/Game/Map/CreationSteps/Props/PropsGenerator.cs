@@ -10,7 +10,7 @@ namespace Thoughts.Game.Map.CreationSteps.Vegetation
         /// The seed used by the VegetationGenerator to generate vegetation. It is an alteration of the main map's seed. 
         /// </summary>
         private int vegetationSeed =>
-            _randomNumberToAlterMainSeed + mapManager.mapConfiguration.seed; //IT MUST NEVER CHANGE
+            _randomNumberToAlterMainSeed + GameManager.instance.seed; //IT MUST NEVER CHANGE
 
         private const int
             _randomNumberToAlterMainSeed =

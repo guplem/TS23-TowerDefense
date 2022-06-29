@@ -85,7 +85,7 @@ namespace Thoughts.Game.Map.CreationSteps.Terrain
         /// </summary>
         private int totalChunksInMapRow => 1 + Mathf.RoundToInt( mapManager.mapConfiguration.mapRadius ) * 2 / MapConfiguration.supportedChunkSizes[mapManager.mapConfiguration.chunkSizeIndex];
         
-        public int terrainSeed => _randomNumberToAlterMainSeed + mapManager.mapConfiguration.seed; //IT MUST NEVER CHANGE
+        public int terrainSeed => _randomNumberToAlterMainSeed + GameManager.instance.seed; //IT MUST NEVER CHANGE
         private const int _randomNumberToAlterMainSeed = 84624; //IT MUST NEVER CHANGE and be completely unique per generator (except the mapGenerator and those that do not need randomness)
         
         /// <summary>

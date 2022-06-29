@@ -18,12 +18,6 @@ namespace Thoughts.Game.Map
     {
 
         /// <summary>
-        /// The seed used for the whole world randomness
-        /// </summary>
-        [Space]
-        public int seed = 420;
-
-        /// <summary>
         /// The index of the size of the chunks (in world space)
         /// Making a chunk smaller will not make it more polygon dense, it will have less polygons overall 
         /// </summary>
