@@ -23,8 +23,11 @@ public class HealthController : PropertyController
             if (_currentHealth <= 0)
             {
                 onDeath?.Invoke();
-                Transform cachedTrans = transform;
-                Destroy(Instantiate(deadObject, cachedTrans.position, cachedTrans.rotation, cachedTrans.parent),5);
+                if (deadObject != null)
+                {
+                    Transform cachedTrans = transform;
+                    Destroy(Instantiate(deadObject, cachedTrans.position, cachedTrans.rotation, cachedTrans.parent),5);
+                }
                 Destroy(this.gameObject);
             }
         }
