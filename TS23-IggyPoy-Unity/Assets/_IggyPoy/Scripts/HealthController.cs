@@ -7,6 +7,8 @@ using UnityEngine.Serialization;
 public class HealthController : PropertyController
 {
     [NonSerialized] public bool canBeDamaged = true; 
+    [SerializeField] private GameObject deadObject;
+    
     public float health
     {
         get => _currentHealth;
@@ -21,6 +23,8 @@ public class HealthController : PropertyController
             if (_currentHealth <= 0)
             {
                 onDeath?.Invoke();
+                Transform cachedTrans = transform;
+                Destroy(Instantiate(deadObject, cachedTrans.position, cachedTrans.rotation, cachedTrans.parent),5);
                 Destroy(this.gameObject);
             }
         }

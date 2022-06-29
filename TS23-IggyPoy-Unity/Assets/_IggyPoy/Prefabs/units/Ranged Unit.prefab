@@ -159,6 +159,10 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7739219691465835837, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+      propertyPath: deadObject
+      value: 
+      objectReference: {fileID: 7934365043381318519, guid: 8cd6493c09b9ad843ac5f7e1db6c082c, type: 3}
+    - target: {fileID: 7739219691465835837, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: walkAnimation
       value: 
       objectReference: {fileID: 7400000, guid: 8bfcd78989591444b807922241c9c8f1, type: 2}
