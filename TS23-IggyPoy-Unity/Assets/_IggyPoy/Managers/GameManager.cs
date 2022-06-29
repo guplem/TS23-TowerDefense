@@ -92,6 +92,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void StartNewGame()
     {
+        UIManager.instance.ShowLoadingScreen();
+        
         // Delete the previously generated world
         if (!fullyGenerateMapOnPlay)
             mapManager.DeleteMap();

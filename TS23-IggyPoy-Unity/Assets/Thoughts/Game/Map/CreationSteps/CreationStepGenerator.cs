@@ -130,6 +130,7 @@ namespace Thoughts.Game.Map.CreationSteps
             {
                 mapManager.mapGenerator.isGenerated = true;
                 Debug.Log(" ====== Finished map generation ====== ");
+                UIManager.instance.HideLoadingScreen();
             }
         }
     

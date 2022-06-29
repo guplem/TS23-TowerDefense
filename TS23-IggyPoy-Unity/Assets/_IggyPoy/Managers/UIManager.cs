@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text resourcesText;
     private ConstructionError oldReason;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject loadingScreen;
     [Header("Cursors")]
     [SerializeField] private Texture2D defaultCursor;
     [SerializeField] private Texture2D distanceError;
@@ -112,5 +113,15 @@ public class UIManager : MonoBehaviour
             HidePauseMenu();
         else
             DisplayPauseMenu();
+    }
+
+    public void ShowLoadingScreen()
+    {
+        loadingScreen.SetActive(true);
+    }
+
+    public void HideLoadingScreen()
+    {
+        loadingScreen.SetActive(false);
     }
 }
