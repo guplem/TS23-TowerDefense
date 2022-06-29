@@ -24,7 +24,7 @@ MonoBehaviour:
     spawningHeightRange: {x: 0.3, y: 0.81}
     probability: 0.2
     density: 0.4
-    centralAreaToAvoid: 5
+    centralAreaToAvoid: 0
   - mapElementPrefab: {fileID: 7576368060138573393, guid: 8fc60cce11ff0e54b8151483bd4f449d, type: 3}
     noiseSettings:
       scale: 30
@@ -35,7 +35,7 @@ MonoBehaviour:
     spawningHeightRange: {x: 0.3, y: 0.6}
     probability: 0.2
     density: 0.3
-    centralAreaToAvoid: 5
+    centralAreaToAvoid: 0
   - mapElementPrefab: {fileID: 6791915637195987803, guid: 56be9341c95459c48bbaa19c00853251, type: 3}
     noiseSettings:
       scale: 35
@@ -46,7 +46,7 @@ MonoBehaviour:
     spawningHeightRange: {x: 0.3, y: 0.5}
     probability: 0.2
     density: 0.35
-    centralAreaToAvoid: 5
+    centralAreaToAvoid: 0
   - mapElementPrefab: {fileID: 2667721146327368077, guid: bad44f7ed82eee2469ff208ba6adf3f3, type: 3}
     noiseSettings:
       scale: 54.29
@@ -101,7 +101,7 @@ MonoBehaviour:
     spawningHeightRange: {x: -0.1, y: 0.27}
     probability: 0.592
     density: 0.015
-    centralAreaToAvoid: 3
+    centralAreaToAvoid: 2
   - mapElementPrefab: {fileID: 4517388305982489450, guid: 0156732eb16b3a64abb2b351d7216dda, type: 3}
     noiseSettings:
       scale: 54.29
@@ -112,4 +112,4 @@ MonoBehaviour:
     spawningHeightRange: {x: 0.3, y: 0.7}
     probability: 0.387
     density: 0.002
-    centralAreaToAvoid: 10
+    centralAreaToAvoid: 0
