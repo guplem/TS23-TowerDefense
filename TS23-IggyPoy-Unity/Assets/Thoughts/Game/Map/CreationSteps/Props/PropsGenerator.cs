@@ -54,7 +54,8 @@ namespace Thoughts.Game.Map.CreationSteps.Vegetation
             }
             else
             {
-                Debug.LogError("No location found to spawn the initial/main structure");
+                Debug.LogWarning("No location found to spawn the initial/main structure. ResetScene in UIManager being called.");
+                UIManager.instance.ResetScene();
             }
 
             InvokeOnFinishStepGeneration();

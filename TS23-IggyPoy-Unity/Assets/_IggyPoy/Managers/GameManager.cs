@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
     public GameData gameData;
-    public GameConfiguration gameConfiguration;
+    [SerializeField] private GameObject gameOverEffects;
 
     public UnitsSpawner unitsSpawner
     {
@@ -105,12 +105,15 @@ public class GameManager : MonoBehaviour
         StartCoroutine(UnitsSpawnClock());
     }
 
-
+    [ContextMenu("GameOver")]
     public void GameOver()
     {
         if (gameOver) Debug.LogError("Game over already set!");
         Debug.LogWarning(" ====== GAME OVER ====== ");
         gameOver = true;
+        Vector3 location = new Vector3(0, mapManager.GetHeightAt(Vector2.zero), 0);
+        Instantiate(gameOverEffects, location, Quaternion.identity, this.transform);
+        
     }
 
     public void StartSpawning()
