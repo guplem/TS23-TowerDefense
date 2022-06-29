@@ -17,34 +17,34 @@ MonoBehaviour:
   - mapElementPrefab: {fileID: 2853856220113408131, guid: f6e3c97c93e2f1f4ea85183c4191e2d2, type: 3}
     noiseSettings:
       scale: 30
-      octaves: 2
-      lacunarity: 2
-      persistance: 0.1
+      octaves: 3
+      lacunarity: 1
+      persistance: 0.061
       offset: {x: 0, y: 0}
-    spawningHeightRange: {x: 0.2, y: 0.81}
-    probability: 0.15
+    spawningHeightRange: {x: 0.3, y: 0.81}
+    probability: 0.2
     density: 0.4
     centralAreaToAvoid: 5
   - mapElementPrefab: {fileID: 7576368060138573393, guid: 8fc60cce11ff0e54b8151483bd4f449d, type: 3}
     noiseSettings:
       scale: 30
       octaves: 3
-      lacunarity: 2.5
-      persistance: 0.216
+      lacunarity: 1
+      persistance: 0.094
       offset: {x: 23.37, y: 69.83}
-    spawningHeightRange: {x: 0.2, y: 0.6}
-    probability: 0.15
+    spawningHeightRange: {x: 0.3, y: 0.6}
+    probability: 0.2
     density: 0.3
     centralAreaToAvoid: 5
   - mapElementPrefab: {fileID: 6791915637195987803, guid: 56be9341c95459c48bbaa19c00853251, type: 3}
     noiseSettings:
       scale: 35
       octaves: 3
-      lacunarity: 3
-      persistance: 0.216
+      lacunarity: 1
+      persistance: 0.051
       offset: {x: -27.72, y: -21.63}
-    spawningHeightRange: {x: 0.2, y: 0.5}
-    probability: 0.15
+    spawningHeightRange: {x: 0.3, y: 0.5}
+    probability: 0.2
     density: 0.35
     centralAreaToAvoid: 5
   - mapElementPrefab: {fileID: 2667721146327368077, guid: bad44f7ed82eee2469ff208ba6adf3f3, type: 3}
@@ -98,7 +98,7 @@ MonoBehaviour:
       lacunarity: 0.6
       persistance: 0.216
       offset: {x: 0, y: 0}
-    spawningHeightRange: {x: -0.93963426, y: 0.27000004}
+    spawningHeightRange: {x: -0.1, y: 0.27}
     probability: 0.592
     density: 0.015
     centralAreaToAvoid: 3
@@ -109,7 +109,7 @@ MonoBehaviour:
       lacunarity: 0.6
       persistance: 0.216
       offset: {x: 0, y: 0}
-    spawningHeightRange: {x: -0.1643832, y: 0.6999999}
+    spawningHeightRange: {x: 0.3, y: 0.7}
     probability: 0.387
     density: 0.002
     centralAreaToAvoid: 10
