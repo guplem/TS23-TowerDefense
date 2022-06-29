@@ -561,7 +561,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2683022035963781032}
-  m_LocalRotation: {x: 0.2096312, y: 0.7769005, z: -0.329981, w: 0.49355146}
+  m_LocalRotation: {x: 0.20963116, y: 0.77690053, z: -0.329981, w: 0.4935514}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -605,7 +605,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7782102, y: 1}
+    m_SensorSize: {x: 1.7118781, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -743,7 +743,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7782102, y: 1}
+    m_SensorSize: {x: 1.7118781, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -986,7 +986,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5315538285022102934}
-  m_LocalRotation: {x: 0.2465659, y: 0.7495497, z: -0.38811997, w: 0.47617593}
+  m_LocalRotation: {x: 0.24656591, y: 0.7495497, z: -0.38812, w: 0.4761759}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1030,7 +1030,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7782102, y: 1}
+    m_SensorSize: {x: 1.7118781, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1484,7 +1484,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7782102, y: 1}
+    m_SensorSize: {x: 1.7118781, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1574,10 +1574,10 @@ MonoBehaviour:
     m_Bits: 8
   overworldCamera: {fileID: 5881396312785150577}
   povCamera: {fileID: 0}
-  moveSpeed: 2.65
+  moveSpeed: 2.7
   rotationSpeed: 0.7
-  fastSpeedMultiplier: 1.8
-  heightBoost: 2.5
+  fastSpeedMultiplier: 2.2
+  heightBoost: 2.8
   movementSmoothing: 97
 --- !u!1 &7857299903807504001
 GameObject:
@@ -1640,7 +1640,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7920776376382676147}
-  m_LocalRotation: {x: 0.22642452, y: 0.7651339, z: -0.3564154, w: 0.48607624}
+  m_LocalRotation: {x: 0.22642455, y: 0.76513386, z: -0.3564154, w: 0.4860763}
   m_LocalPosition: {x: -9.052292, y: 15, z: 4.249235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
