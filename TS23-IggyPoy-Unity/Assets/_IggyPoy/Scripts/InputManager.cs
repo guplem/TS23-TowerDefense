@@ -42,6 +42,10 @@ public class InputManager : MonoBehaviour
         {
             ConstructionController.instance.UnselectStructure();
         }
+        else
+        {
+            UIManager.instance.SwitchPauseMenu();
+        }
     }
 
     private void Click(InputAction.CallbackContext context)

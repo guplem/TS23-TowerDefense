@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text gameDataStringText;
     [SerializeField] private TMP_Text resourcesText;
     private ConstructionError oldReason;
+    [SerializeField] private GameObject pauseMenu;
     [Header("Cursors")]
     [SerializeField] private Texture2D defaultCursor;
     [SerializeField] private Texture2D distanceError;
@@ -25,6 +27,7 @@ public class UIManager : MonoBehaviour
             Debug.LogWarning("Possible residual UIManager.", instance);
         
         instance = this;
+        HidePauseMenu();
     }
 
     public void FullRefresh()
@@ -81,5 +84,33 @@ public class UIManager : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+
+    public void DisplayPauseMenu()
+    {
+        pauseMenu.SetActive(true);
+    }
+
+    public void HidePauseMenu()
+    {
+        pauseMenu.SetActive(false);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
+    public void ResetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex) ;
+    }
+
+    public void SwitchPauseMenu()
+    {
+        if (pauseMenu.activeSelf)
+            HidePauseMenu();
+        else
+            DisplayPauseMenu();
     }
 }
