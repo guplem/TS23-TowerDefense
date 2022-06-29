@@ -430,3 +430,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 10
   energySourceRangeDecalProjector: {fileID: 2492665050687896057}
+  constructionDecalMaterial: {fileID: 2100000, guid: 5e36683dfebb8d6448d640d1a143f5f6, type: 2}
+  builtDecalMaterial: {fileID: 2100000, guid: e65b95b0c0674d44c9e58c93159fc7f7, type: 2}

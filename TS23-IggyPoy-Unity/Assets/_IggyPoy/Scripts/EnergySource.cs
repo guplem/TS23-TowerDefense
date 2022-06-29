@@ -12,6 +12,8 @@ public class EnergySource : MonoBehaviour
     private HashSet<StructureController> attatchedStructures = new();
     [NonSerialized] public StructureController structure;
     [SerializeField] private DecalProjector energySourceRangeDecalProjector;
+    [SerializeField] private Material constructionDecalMaterial;
+    [SerializeField] private Material builtDecalMaterial;
 
     private void OnEnable()
     {
@@ -38,6 +40,7 @@ public class EnergySource : MonoBehaviour
     {
         if (ConstructionController.instance.hasSelectedStructureToBuild)
         {
+            energySourceRangeDecalProjector.material = structure.constructionTime <= 0 ? builtDecalMaterial : constructionDecalMaterial;
             energySourceRangeDecalProjector.gameObject.SetActive(true);
             energySourceRangeDecalProjector.size = new Vector3(range*2, range*2, 50);
         }

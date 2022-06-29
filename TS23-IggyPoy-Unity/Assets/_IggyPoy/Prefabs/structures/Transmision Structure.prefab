@@ -127,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 12
   energySourceRangeDecalProjector: {fileID: 7639021832070297906}
+  constructionDecalMaterial: {fileID: 2100000, guid: 5e36683dfebb8d6448d640d1a143f5f6, type: 2}
+  builtDecalMaterial: {fileID: 2100000, guid: e65b95b0c0674d44c9e58c93159fc7f7, type: 2}
 --- !u!4 &5569895018222623865 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7293259552648991525, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
