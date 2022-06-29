@@ -58,7 +58,7 @@ public class EnergySource : MonoBehaviour
             float candidateDistance = Vector3.Distance(location, candidate.transform.position);
             if (candidateDistance > candidate.range)
                 continue;
-            if (candidateDistance < bestDistance)
+            if (candidateDistance < bestDistance && candidate.structure.constructionTime<=0)
             {
                 best = candidate;
                 bestDistance = candidateDistance;
