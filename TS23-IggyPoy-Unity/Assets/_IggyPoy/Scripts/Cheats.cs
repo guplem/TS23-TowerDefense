@@ -92,6 +92,15 @@ public class Cheats : MonoBehaviour
     {
         SpawnUnit(4, 5);
     }
+    [MenuItem("📈 Cheats 🍕/Spawn 🆕/Mega horda 🏋 (5x10)", false, 50)]
+    public static void SpawnMultipleAll()
+    {
+        SpawnUnit(0, 10);
+        SpawnUnit(1, 10);
+        SpawnUnit(2, 10);
+        SpawnUnit(3, 10);
+        SpawnUnit(4, 10);
+    }
 
     private static void SpawnUnit(int i, int quantity)
     {
