@@ -12,41 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44868bf3229421e96ffa1650f4d1d49, type: 3}
   m_Name: DefaultProps
   m_EditorClassIdentifier: 
-  autoUpdate: 0
+  autoUpdate: 1
   mapElementsToSpawn:
   - mapElementPrefab: {fileID: 2853856220113408131, guid: f6e3c97c93e2f1f4ea85183c4191e2d2, type: 3}
     noiseSettings:
       scale: 30
-      octaves: 6
-      lacunarity: 5
-      persistance: 0.216
+      octaves: 2
+      lacunarity: 2
+      persistance: 0.1
       offset: {x: 0, y: 0}
-    spawningHeightRange: {x: 0.05, y: 0.44}
-    probability: 0.249
-    density: 0.07
-    centralAreaToAvoid: 10
+    spawningHeightRange: {x: 0.2, y: 0.81}
+    probability: 0.15
+    density: 0.4
+    centralAreaToAvoid: 5
   - mapElementPrefab: {fileID: 7576368060138573393, guid: 8fc60cce11ff0e54b8151483bd4f449d, type: 3}
     noiseSettings:
       scale: 30
-      octaves: 7
-      lacunarity: 4
+      octaves: 3
+      lacunarity: 2.5
       persistance: 0.216
-      offset: {x: 23.37, y: 0}
-    spawningHeightRange: {x: 0, y: 0.3}
-    probability: 0.249
-    density: 0.07
-    centralAreaToAvoid: 10
+      offset: {x: 23.37, y: 69.83}
+    spawningHeightRange: {x: 0.2, y: 0.6}
+    probability: 0.15
+    density: 0.3
+    centralAreaToAvoid: 5
   - mapElementPrefab: {fileID: 6791915637195987803, guid: 56be9341c95459c48bbaa19c00853251, type: 3}
     noiseSettings:
       scale: 35
-      octaves: 5
-      lacunarity: 5
+      octaves: 3
+      lacunarity: 3
       persistance: 0.216
-      offset: {x: 0, y: 0}
-    spawningHeightRange: {x: 0.1, y: 0.75}
-    probability: 0.276
-    density: 0.07
-    centralAreaToAvoid: 10
+      offset: {x: -27.72, y: -21.63}
+    spawningHeightRange: {x: 0.2, y: 0.5}
+    probability: 0.15
+    density: 0.35
+    centralAreaToAvoid: 5
   - mapElementPrefab: {fileID: 2667721146327368077, guid: bad44f7ed82eee2469ff208ba6adf3f3, type: 3}
     noiseSettings:
       scale: 54.29
@@ -101,7 +101,7 @@ MonoBehaviour:
     spawningHeightRange: {x: -0.93963426, y: 0.27000004}
     probability: 0.592
     density: 0.015
-    centralAreaToAvoid: 0
+    centralAreaToAvoid: 3
   - mapElementPrefab: {fileID: 4517388305982489450, guid: 0156732eb16b3a64abb2b351d7216dda, type: 3}
     noiseSettings:
       scale: 54.29

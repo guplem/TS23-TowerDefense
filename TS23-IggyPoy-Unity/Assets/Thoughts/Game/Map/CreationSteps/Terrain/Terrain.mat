@@ -149,10 +149,10 @@ Material:
     - _normal_intensity: 1.2
     - color1BaseBlend: 0.05
     - color1Start: 0.17
-    - color2BaseBlend: 0.06
-    - color2Start: 0.324
-    - color3BaseBlend: 0.133
-    - color3Start: 0.95
+    - color2BaseBlend: 0.127
+    - color2Start: 0.671
+    - color3BaseBlend: 0.039
+    - color3Start: 0.888
     - maxHeight: 15
     - minHeight: 0
     m_Colors:
