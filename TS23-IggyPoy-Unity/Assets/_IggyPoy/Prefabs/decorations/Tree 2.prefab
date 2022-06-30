@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6173669673846087094}
     m_Modifications:
+    - target: {fileID: 1136524661054527036, guid: d3646d273ba1cc64186d518ce928ac09, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.030363427
+      objectReference: {fileID: 0}
     - target: {fileID: 4815597242790362103, guid: d3646d273ba1cc64186d518ce928ac09, type: 3}
       propertyPath: m_Name
       value: tree2
