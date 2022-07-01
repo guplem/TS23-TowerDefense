@@ -75,7 +75,7 @@ namespace Thoughts.Participants.ControlSystems.Manual
         /// Multiplier of the speed when the camera is at its highest position. 0 is none, 1 is double.
         /// </summary>
         [Tooltip("Multiplier of the speed when the camera is at its highest position. 0 is none, 1 is double.")]
-        [SerializeField] private float heightBoost = 1.2f;
+        [SerializeField] private float heightBoost = 1.25f;
         
         /// <summary>
         /// The smoothness on the movement of the camera
@@ -98,6 +98,8 @@ namespace Thoughts.Participants.ControlSystems.Manual
         /// The MapElement followed by the camera
         /// </summary>
         private MapElement followedMapElement;
+
+        [SerializeField] private float minHeight = 3.75f;
 
         /// <summary>
         /// Initial setup
@@ -157,7 +159,9 @@ namespace Thoughts.Participants.ControlSystems.Manual
                 }
             }
 
-            cameraRig.position = cameraRigNewPosition;
+            float y = Mathf.Max(cameraRigNewPosition.y, minHeight);
+            
+            cameraRig.position = cameraRigNewPosition.WithY(y);
         }
         
         /// <summary>
