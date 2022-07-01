@@ -130,7 +130,7 @@ public class ConstructionController : MonoBehaviour
         } else if (!placeHolderBuilding.exclusionArea.hasExclusionAreaFree)
         {
             // Debug.Log($"Structure could not be build. Other structures are too close.");
-            placeHolderBuilding.exclusionArea.structuresInExclusionArea.DebugLog(", ", "Too close structures: ");
+            //placeHolderBuilding.exclusionArea.structuresInExclusionArea.DebugLog(", ", "Too close structures: ");
             return ConstructionError.Distance;
         }
 
