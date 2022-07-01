@@ -18,6 +18,7 @@ public class DestroyAfterTimeIfNotCloseToCenter : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, Vector3.zero) > distToKill)
         {
+            Debug.LogWarning($"Destroying {this.gameObject.name} because it was too far from the center after {time} seconds of spawning. Probably no path was found to go to the center.");
             Destroy(gameObject);
         }
     }
