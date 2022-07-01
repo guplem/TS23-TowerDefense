@@ -181,6 +181,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 412a5ee6e8f560145ac9c96cef186ad0, type: 2}
+    - target: {fileID: 4849340391574864146, guid: b7f36f98227962f42ab5c782ebe1d701, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 412a5ee6e8f560145ac9c96cef186ad0, type: 2}
     - target: {fileID: 5024950612481082010, guid: b7f36f98227962f42ab5c782ebe1d701, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -463,6 +467,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: {x: 0, y: 0, z: -70}
+--- !u!114 &4740516674667518175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5626882919729717958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69a37df185c51947889548d032a7397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  height: 0.125
 --- !u!1 &6469189159024122924 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2634623070199643068, guid: b7f36f98227962f42ab5c782ebe1d701, type: 3}
@@ -481,6 +499,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: {x: 0, y: 0, z: 150}
+--- !u!114 &3776905236857720220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6469189159024122924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69a37df185c51947889548d032a7397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  height: 0.125
 --- !u!1 &8361902757416544201 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 674502811610808409, guid: b7f36f98227962f42ab5c782ebe1d701, type: 3}
@@ -499,3 +531,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: {x: 0, y: 0, z: -70}
+--- !u!114 &8919889315236931994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361902757416544201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69a37df185c51947889548d032a7397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  height: 0.125
