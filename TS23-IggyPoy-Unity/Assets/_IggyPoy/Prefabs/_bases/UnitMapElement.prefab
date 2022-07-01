@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadObject: {fileID: 0}
-  deadObjectTimeToDestroy: 5
+  deadObjectTimeToDestroy: 8
   maxHealth: 10
   healthUi: {fileID: 1259329084996441944}
   attackController: {fileID: 6231532637389738966}

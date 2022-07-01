@@ -92,7 +92,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5151567394797829470, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: resourcesDelta
-      value: 85
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 5496330621621269956, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: m_RootOrder
@@ -116,7 +116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5665872442510267843, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5665872442510267843, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: m_AnchoredPosition.y
