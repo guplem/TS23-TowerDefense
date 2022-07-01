@@ -20,7 +20,7 @@ public class AimToTarget : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(attController.target.transform.position - transform.position);
         //transform.LookAt(attController.target.transform);
         
-        Quaternion rotation = transform.rotation;
+        // Quaternion rotation = transform.rotation;
 
         // if (lock_x)
         //     rotation.x = 0;
@@ -31,7 +31,7 @@ public class AimToTarget : MonoBehaviour
 
         //transform.rotation = rotation;
 
-        transform.rotation = Quaternion.Euler(new Vector3(lock_x ? 0f : rotation.eulerAngles.x, lock_y ? 0f : rotation.eulerAngles.y, lock_z ? 0f : rotation.eulerAngles.z));
+        transform.rotation = Quaternion.Euler(new Vector3(lock_x ? 0f : targetRotation.eulerAngles.x, lock_y ? 0f : targetRotation.eulerAngles.y, lock_z ? 0f : targetRotation.eulerAngles.z));
         
         // transform.rotation = Quaternion.Euler(new Vector3(lock_x ? 0f : transform.rotation.eulerAngles.x, lock_y ? 0f : transform.rotation.eulerAngles.y, lock_z ? 0f : transform.rotation.eulerAngles.z) );
     }
