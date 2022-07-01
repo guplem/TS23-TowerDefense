@@ -53,19 +53,26 @@ public class EnergySource : MonoBehaviour
     public static EnergySource GetBestFor(Vector3 location, EnergySource exclude)
     {
         EnergySource best = null;
-        float bestDistance = float.PositiveInfinity;
-        foreach (EnergySource candidate in energySources)
+        try
         {
-            if (candidate == exclude)
-                continue;
-            float candidateDistance = Vector3.Distance(location, candidate.transform.position);
-            if (candidateDistance > candidate.range)
-                continue;
-            if (candidateDistance < bestDistance && candidate.structure.constructionTime<=0)
+            float bestDistance = float.PositiveInfinity;
+            foreach (EnergySource candidate in energySources)
             {
-                best = candidate;
-                bestDistance = candidateDistance;
+                if (candidate == exclude)
+                    continue;
+                float candidateDistance = Vector3.Distance(location, candidate.transform.position);
+                if (candidateDistance > candidate.range)
+                    continue;
+                if (candidateDistance < bestDistance && candidate.structure.constructionTime <= 0)
+                {
+                    best = candidate;
+                    bestDistance = candidateDistance;
+                }
             }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error trying to find the best energy source in the location {location}. {e.Message}\n{e.StackTrace}");
         }
 
         return best;

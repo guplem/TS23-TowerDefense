@@ -54,6 +54,10 @@ public class UIManager : MonoBehaviour
             {
                 structure.healthUi.DisplayUIFor(0.1f);
             }
+            if (structure != null && structure.attackController != null && structure.attackRangeDecalProjector != null && structure.isPlaced && structure.attackRangeDecalUi)
+            {
+                structure.attackRangeDecalUi.DisplayUIFor(0.1f);
+            }
         }
         
         ConstructionError reason = ConstructionController.instance.GetReasonWhyCantBeBuilt();

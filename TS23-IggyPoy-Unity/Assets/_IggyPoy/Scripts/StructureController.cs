@@ -9,7 +9,8 @@ public class StructureController : StateController
     [SerializeField] private GameObject visuals;
     [SerializeField] public GameObject blueprint;
     [SerializeField] private GameObject construction;
-    [SerializeField] private DecalProjector attackRangeDecalProjector;
+    [SerializeField] public DecalProjector attackRangeDecalProjector;
+    [SerializeField] public AttackRangeDecalVisualizationUI attackRangeDecalUi;
 
     [Tooltip("Minimum allowed distance to the closes building")] [SerializeField]
     public ExclusionArea exclusionArea;
@@ -35,7 +36,7 @@ public class StructureController : StateController
 
     private bool _isPlaced = false;
 
-    [SerializeField] private AttackController attackController;
+    [SerializeField] public AttackController attackController;
 
     public EnergySource energySource
     {
