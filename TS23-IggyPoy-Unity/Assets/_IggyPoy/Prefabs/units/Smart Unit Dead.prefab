@@ -19,6 +19,18 @@ PrefabInstance:
       propertyPath: hpController
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6932077838485009761, guid: 6679855cf2d1c8849b7dab134d2f7129, type: 3}
+      propertyPath: m_Color.b
+      value: 0.31764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932077838485009761, guid: 6679855cf2d1c8849b7dab134d2f7129, type: 3}
+      propertyPath: m_Color.g
+      value: 0.34901962
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932077838485009761, guid: 6679855cf2d1c8849b7dab134d2f7129, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5019608
+      objectReference: {fileID: 0}
     - target: {fileID: 7109389223064067538, guid: 6679855cf2d1c8849b7dab134d2f7129, type: 3}
       propertyPath: m_RootOrder
       value: 0

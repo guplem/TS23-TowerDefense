@@ -24,7 +24,10 @@ public class DestroyAfterTimeIfNotCloseToCenter : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(Vector3.zero, distToKill);
+        if (GameManager.instance != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawSphere(Vector3.zero, distToKill);   
+        }
     }
 }
