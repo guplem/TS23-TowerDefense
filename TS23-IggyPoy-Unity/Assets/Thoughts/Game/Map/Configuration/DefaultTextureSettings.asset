@@ -22,5 +22,5 @@ MonoBehaviour:
   color2Start: 0.671
   color2BaseBlend: 0.127
   color3: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 1}
-  color3Start: 0.888
+  color3Start: 0.919
   color3BaseBlend: 0.039

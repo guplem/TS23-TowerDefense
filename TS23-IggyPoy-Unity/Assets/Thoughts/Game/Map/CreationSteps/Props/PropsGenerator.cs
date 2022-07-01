@@ -37,7 +37,8 @@ namespace Thoughts.Game.Map.CreationSteps.Vegetation
                     this.transform,
                     mapManager.mapConfiguration.propsSettings.mapElementsToSpawn[v].noiseSettings,
                     false,
-                    mapManager.mapConfiguration.propsSettings.mapElementsToSpawn[v].centralAreaToAvoid
+                    mapManager.mapConfiguration.propsSettings.mapElementsToSpawn[v].centralAreaToAvoid,
+                    mapManager.mapConfiguration.propsSettings.mapElementsToSpawn[v].maxDistanceFromCenter
                 );
             }
 

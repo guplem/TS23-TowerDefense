@@ -152,8 +152,8 @@ Material:
     - color2BaseBlend: 0.127
     - color2Start: 0.671
     - color3BaseBlend: 0.039
-    - color3Start: 0.888
-    - maxHeight: 15
+    - color3Start: 0.919
+    - maxHeight: 13
     - minHeight: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

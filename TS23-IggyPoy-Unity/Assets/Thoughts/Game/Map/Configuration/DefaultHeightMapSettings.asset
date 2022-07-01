@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856493cb02e94f5499d06bdb0be4e2c2, type: 3}
   m_Name: DefaultHeightMapSettings
   m_EditorClassIdentifier: 
-  autoUpdate: 1
+  autoUpdate: 0
   noiseMapSettings:
     scale: 50
     octaves: 8
-    lacunarity: 2
-    persistance: 0.46
+    lacunarity: 1.7
+    persistance: 0.5
     offset: {x: 0, y: 0}
   useFalloff: 1
   freeOfFalloffAreaNormalized: 0.75
@@ -69,7 +69,7 @@ MonoBehaviour:
     lacunarity: 2.26
     persistance: 0.634
     offset: {x: 0, y: 0}
-  heightMultiplier: 15
+  heightMultiplier: 13
   aboveWaterHeightCurve:
     serializedVersion: 2
     m_Curve:

@@ -48,5 +48,11 @@ namespace Thoughts.Game.Map
         /// </summary>
         [Tooltip("Space in the middle of the map that can not be occupied by this MapElement")]
         public float centralAreaToAvoid = 0;
+        
+        /// <summary>
+        /// Maximum distance from this element to the center of the map
+        /// </summary>
+        [Tooltip("Space in the middle of the map that can not be occupied by this MapElement")]
+        public float maxDistanceFromCenter = -1;
     }
 }
