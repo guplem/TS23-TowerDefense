@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Texture2D energyError;
     [SerializeField] private Texture2D generalError;
     [SerializeField] private Texture2D locationError;
+    [SerializeField] private TMP_Text timer;
 
     private void Awake()
     {
@@ -43,6 +44,11 @@ public class UIManager : MonoBehaviour
     
     private void Update()
     {
+        bool timerWorking = !GameManager.instance.gameOver && GameManager.instance.startedEnemiesSpawning;
+        // Debug.Log($"timerWorking = {timerWorking}, gameOver = {GameManager.instance.gameOver}, startedEnemiesSpawning = {GameManager.instance.startedEnemiesSpawning}");
+        timer.gameObject.SetActive(timerWorking);
+        if (timerWorking)
+            timer.text = GameManager.instance.timeFormatted;
         
         Ray ray = Camera.main.ScreenPointToRay(InputManager.instance.playerControls.Player.MousePosition.ReadValue<Vector2>());
 

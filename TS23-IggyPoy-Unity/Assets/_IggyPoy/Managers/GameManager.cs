@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     public bool fullyGenerateMapOnPlay = false;
 
     [SerializeField] private float spawnClockInterval = 12f; // In seconds
-    private bool gameOver = false;
+    [NonSerialized] public bool gameOver = false;
     [NonSerialized] public bool startedEnemiesSpawning = true;
 
     /// <summary>
@@ -66,6 +66,14 @@ public class GameManager : MonoBehaviour
     }
 
     public int _seed = -1;
+    public string timeFormatted => FormatTime(timeSeconds);
+    public float timeSeconds;
+
+    public string FormatTime( float time )
+    {
+        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
+        return $"{timeSpan.Hours:D2}:{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
+    }
     
     private void Awake()
     {
@@ -85,6 +93,12 @@ public class GameManager : MonoBehaviour
     {
         StartNewGame();
         UIManager.instance.FullRefresh();
+    }
+
+    private void Update()
+    {
+        if (!gameOver && startedEnemiesSpawning)
+            timeSeconds += Time.deltaTime;
     }
 
     /// <summary>
