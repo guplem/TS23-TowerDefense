@@ -190,6 +190,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 54911899161403688, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: range
       value: 10
@@ -253,6 +257,10 @@ PrefabInstance:
     - target: {fileID: 2707569144857776497, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_Radius
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758884281994805944, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3431910858768126412, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_RootOrder
@@ -327,8 +335,16 @@ PrefabInstance:
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: deadObject
+      value: 
+      objectReference: {fileID: 3031193695381550929, guid: 9dd38df18acc306408e011e0b5426502, type: 3}
+    - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: constructionTime
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: deadObjectTimeToDestroy
+      value: 999999
       objectReference: {fileID: 0}
     - target: {fileID: 7996561984548255607, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_AnchoredPosition.y

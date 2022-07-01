@@ -8,7 +8,8 @@ public class HealthController : PropertyController
 {
     [NonSerialized] public bool canBeDamaged = true; 
     [SerializeField] private GameObject deadObject;
-    
+    [SerializeField] private float deadObjectTimeToDestroy = 5;
+
     public float health
     {
         get => _currentHealth;
@@ -26,7 +27,7 @@ public class HealthController : PropertyController
                 if (deadObject != null)
                 {
                     Transform cachedTrans = transform;
-                    Destroy(Instantiate(deadObject, cachedTrans.position, cachedTrans.rotation, cachedTrans.parent),5);
+                    Destroy(Instantiate(deadObject, cachedTrans.position, cachedTrans.rotation, cachedTrans.parent),deadObjectTimeToDestroy);
                 }
                 Destroy(this.gameObject);
             }
@@ -66,6 +67,7 @@ public class HealthController : PropertyController
         }
     }
     private HasSelfEnergySource _isEnergySource = HasSelfEnergySource.unknown;
+
     private enum HasSelfEnergySource
     {
         unknown, 

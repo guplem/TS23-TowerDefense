@@ -574,6 +574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691d841a38ea0ce40a17a7891ab43500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadObject: {fileID: 0}
+  deadObjectTimeToDestroy: 15
   maxHealth: 10
   healthUi: {fileID: 3540479217967576556}
   icon: {fileID: 0}

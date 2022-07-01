@@ -73,7 +73,7 @@ public class ConstructionController : MonoBehaviour
 
     private void SetBlueprintColor(bool b)
     {
-        placeHolderBuilding.blueprint.transform.GetChild(0).GetComponent<Renderer>().sharedMaterial.SetColor("_Color", b ? colorBlueprintOk : colorBlueprintWrong);
+        placeHolderBuilding.blueprint.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>().sharedMaterial.SetColor("_Color", b ? colorBlueprintOk : colorBlueprintWrong);
     }
 
     public void BuildSelectedStructure()
