@@ -55,10 +55,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree3
       objectReference: {fileID: 0}
-    - target: {fileID: 5970865797541271802, guid: 731c194cf6c697d4ab85df329106a92a, type: 3}
-      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.030363427
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 731c194cf6c697d4ab85df329106a92a, type: 3}
 --- !u!1001 &7424211137274797775
