@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank Unit Dead
       objectReference: {fileID: 0}
+    - target: {fileID: 4203395422553837490, guid: 770a518161936d44b9ebb48d51775d55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4571207359306290697, guid: 770a518161936d44b9ebb48d51775d55, type: 3}
       propertyPath: m_IsActive
       value: 0

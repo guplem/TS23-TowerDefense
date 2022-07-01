@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ranged Unit Dead
       objectReference: {fileID: 0}
+    - target: {fileID: 8715656612512695610, guid: 05c93fa3a946b054f9e1cf5e9092ec6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9066166615390018689, guid: 05c93fa3a946b054f9e1cf5e9092ec6b, type: 3}
       propertyPath: m_IsActive
       value: 0
