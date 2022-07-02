@@ -198,7 +198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: range
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: damage
@@ -238,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2707569144857776497, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_Radius
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5765151399186714460, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -290,7 +290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: cost
-      value: 500
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: icon

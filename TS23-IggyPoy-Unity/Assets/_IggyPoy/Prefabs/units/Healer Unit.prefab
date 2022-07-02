@@ -132,7 +132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6231532637389738966, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: damage
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6231532637389738966, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: cooldown
@@ -202,8 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f6ff37f1309594586390b2691eba29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBetweenHeals: 1.5
-  healingPerSecondPerUnit: 10
+  delayBetweenHeals: 1.75
+  healingPerSecondPerUnit: 20
   healingRadius: 10
 --- !u!4 &9033001120250716215 stripped
 Transform:
