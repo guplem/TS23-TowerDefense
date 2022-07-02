@@ -11,10 +11,10 @@ public class ConstructionController : MonoBehaviour
 {
     public static ConstructionController instance { get; private set; }
 
-    private StructureController placeHolderBuilding
+    public StructureController placeHolderBuilding
     {
         get => _placeHolderBuilding;
-        set
+        private set
         {
             if (_placeHolderBuilding != value)
             {

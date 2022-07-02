@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.Utilities;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.Rendering.Universal;
 
 public class EnergySource : MonoBehaviour
@@ -36,12 +37,18 @@ public class EnergySource : MonoBehaviour
         structure = gameObject.GetComponentRequired<StructureController>();
     }
 
+    static public EnergySource closesToBlueprintStructure = null;
+    
     private void Update()
     {
         if (ConstructionController.instance.hasSelectedStructureToBuild)
         {
+            if (ConstructionController.instance.placeHolderBuilding != structure && structure.constructionTime <= 0)
+                if (closesToBlueprintStructure == null || Vector3.Distance(closesToBlueprintStructure.transform.position, ConstructionController.instance.placeHolderBuilding.transform.position) > Vector3.Distance(transform.position, ConstructionController.instance.placeHolderBuilding.transform.position))
+                    closesToBlueprintStructure = this;
+            
             energySourceRangeDecalProjector.material = structure.constructionTime <= 0 ? builtDecalMaterial : constructionDecalMaterial;
-            energySourceRangeDecalProjector.gameObject.SetActive(true);
+            energySourceRangeDecalProjector.gameObject.SetActive(closesToBlueprintStructure == this || structure.constructionTime > 0);
             energySourceRangeDecalProjector.size = new Vector3(range*2, range*2, 50);
         }
         else

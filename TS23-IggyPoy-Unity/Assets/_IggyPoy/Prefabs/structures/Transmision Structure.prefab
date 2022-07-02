@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f9c1c7ac744b364485f4ae6ee4f7344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 12
+  range: 11
   energySourceRangeDecalProjector: {fileID: 7639021832070297906}
   constructionDecalMaterial: {fileID: 2100000, guid: 5e36683dfebb8d6448d640d1a143f5f6, type: 2}
   builtDecalMaterial: {fileID: 2100000, guid: e65b95b0c0674d44c9e58c93159fc7f7, type: 2}

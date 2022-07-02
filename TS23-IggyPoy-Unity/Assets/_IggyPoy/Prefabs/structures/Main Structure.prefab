@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f9c1c7ac744b364485f4ae6ee4f7344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
+  range: 11
   energySourceRangeDecalProjector: {fileID: 2492665050687896057}
   constructionDecalMaterial: {fileID: 2100000, guid: 5e36683dfebb8d6448d640d1a143f5f6, type: 2}
   builtDecalMaterial: {fileID: 2100000, guid: 28dbd2f184b791448852fca199ab6b32, type: 2}
