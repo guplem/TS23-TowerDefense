@@ -6,7 +6,7 @@ public class AimToTarget : MonoBehaviour
 {
     [SerializeField] private AttackController attController;
     [Space]
-    [SerializeField] private float speed = 4;
+    [SerializeField] private float speed = 400;
     [Space]
     [SerializeField] private bool lock_x = false;
     [SerializeField] private bool lock_y = false;
@@ -18,21 +18,10 @@ public class AimToTarget : MonoBehaviour
             return;
         
         Quaternion targetRotation = Quaternion.LookRotation(attController.target.transform.position - transform.position);
-        //transform.LookAt(attController.target.transform);
-        
-        // Quaternion rotation = transform.rotation;
+        float step = speed * Time.deltaTime;
+        // transform.rotation = Quaternion.Euler(new Vector3(lock_x ? 0f : targetRotation.eulerAngles.x, lock_y ? 0f : targetRotation.eulerAngles.y, lock_z ? 0f : targetRotation.eulerAngles.z));
 
-        // if (lock_x)
-        //     rotation.x = 0;
-        // if (lock_y)
-        //     rotation.y = 0;
-        // if (lock_z)
-        //     rotation.z = 0;
-
-        //transform.rotation = rotation;
-
-        transform.rotation = Quaternion.Euler(new Vector3(lock_x ? 0f : targetRotation.eulerAngles.x, lock_y ? 0f : targetRotation.eulerAngles.y, lock_z ? 0f : targetRotation.eulerAngles.z));
-        
-        // transform.rotation = Quaternion.Euler(new Vector3(lock_x ? 0f : transform.rotation.eulerAngles.x, lock_y ? 0f : transform.rotation.eulerAngles.y, lock_z ? 0f : transform.rotation.eulerAngles.z) );
+        Quaternion targetFilteredRotation = Quaternion.Euler(new Vector3(lock_x ? 0f : targetRotation.eulerAngles.x, lock_y ? 0f : targetRotation.eulerAngles.y, lock_z ? 0f : targetRotation.eulerAngles.z));
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetFilteredRotation, step);
     }
 }

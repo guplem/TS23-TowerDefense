@@ -247,11 +247,8 @@ MonoBehaviour:
   attController: {fileID: 0}
   speed: 5
   lock_x: 0
-  x_lockValue: 0
   lock_y: 1
-  y_lockValue: 0
   lock_z: 1
-  z_lockValue: 0
 --- !u!1 &2709872884908086677
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,13 +783,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attController: {fileID: 0}
-  speed: 5
+  speed: 420
   lock_x: 1
-  x_lockValue: 0
   lock_y: 0
-  y_lockValue: 0
   lock_z: 1
-  z_lockValue: 0
 --- !u!1 &7534720977679094225
 GameObject:
   m_ObjectHideFlags: 0
