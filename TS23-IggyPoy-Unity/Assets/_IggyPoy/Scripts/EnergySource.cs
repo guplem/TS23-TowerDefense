@@ -28,7 +28,8 @@ public class EnergySource : MonoBehaviour
         cachedAttatchedStructures.AddRange(attatchedStructures);
         foreach (StructureController structureController in cachedAttatchedStructures)
         {
-            structureController.energySource = null;
+            if (structureController != null)
+                structureController.energySource = null;
         }
     }
 

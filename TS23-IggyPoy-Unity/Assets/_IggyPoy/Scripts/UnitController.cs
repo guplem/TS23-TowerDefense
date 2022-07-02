@@ -23,8 +23,8 @@ public class UnitController : StateController
             SetDestination(Vector3.zero); // TODO: Change for the precise location of the main structure
             //Todo: loop and play with ease, not cut
             // Debug.Log("playing walk animation (a)");
-            animancer.Play(walkAnimation, 0.25f, FadeMode.FromStart); // https://kybernetik.com.au/animancer/docs/examples/basics/playing-and-fading/#:~:text=very%20useful%20either.-,Good%20CrossFade%20from%20Start,-Fortunately%2C%20the%20optional
-
+            if (!animancer.IsPlayingClip(walkAnimation))
+                animancer.Play(walkAnimation, 0.25f, FadeMode.FromStart); // https://kybernetik.com.au/animancer/docs/examples/basics/playing-and-fading/#:~:text=very%20useful%20either.-,Good%20CrossFade%20from%20Start,-Fortunately%2C%20the%20optional
         }
         else if (Vector3.Distance(attackController.target.transform.position, this.transform.position) <= attackController.range)
         {
@@ -32,7 +32,8 @@ public class UnitController : StateController
             StopMovement();
             //Todo: loop and play with ease, not cut
             // Debug.Log("playing attack animation");
-            animancer.Play(attackAnimation, 0.15f, FadeMode.FromStart); // https://kybernetik.com.au/animancer/docs/examples/basics/playing-and-fading/#:~:text=very%20useful%20either.-,Good%20CrossFade%20from%20Start,-Fortunately%2C%20the%20optional
+            if (!animancer.IsPlayingClip(attackAnimation))
+                animancer.Play(attackAnimation, 0.15f, FadeMode.FromStart); // https://kybernetik.com.au/animancer/docs/examples/basics/playing-and-fading/#:~:text=very%20useful%20either.-,Good%20CrossFade%20from%20Start,-Fortunately%2C%20the%20optional
 
         }
         else
@@ -41,8 +42,8 @@ public class UnitController : StateController
             SetDestination(attackController.target.transform.position);
             //Todo: loop and play with ease, not cut
             // Debug.Log("playing walk animation (b)");
-            animancer.Play(walkAnimation, 0.25f, FadeMode.FromStart); // https://kybernetik.com.au/animancer/docs/examples/basics/playing-and-fading/#:~:text=very%20useful%20either.-,Good%20CrossFade%20from%20Start,-Fortunately%2C%20the%20optional
-
+            if (!animancer.IsPlayingClip(walkAnimation))
+                animancer.Play(walkAnimation, 0.25f, FadeMode.FromStart); // https://kybernetik.com.au/animancer/docs/examples/basics/playing-and-fading/#:~:text=very%20useful%20either.-,Good%20CrossFade%20from%20Start,-Fortunately%2C%20the%20optional
         }
     }
     

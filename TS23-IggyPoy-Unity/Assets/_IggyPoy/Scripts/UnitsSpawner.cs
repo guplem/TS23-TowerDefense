@@ -100,10 +100,24 @@ public class UnitsSpawner : MonoBehaviour
     {
         foreach (MapElement mapElement in spawned)
         {
-            NavMeshAgent nmAgent = mapElement.gameObject.GetComponentRequired<NavMeshAgent>();
-            nmAgent.destination = Vector3.zero;
-            nmAgent.isStopped = false;
             mapElement.GetComponentRequired<PropertyController>().team = PropertyController.Team.Enemy;
+
+            NavMeshAgent nmAgent = mapElement.gameObject.GetComponentRequired<NavMeshAgent>();
+            nmAgent.CalculatePath(Vector3.zero, nmAgent.path);
+            if (nmAgent.pathStatus == NavMeshPathStatus.PathComplete) {
+                // There is a valid path to the target position.
+                nmAgent.destination = Vector3.zero;
+                nmAgent.isStopped = false;
+            }
+            else
+            {
+                Debug.LogWarning($"No path found to destination for {mapElement.gameObject.name}", mapElement);
+                NavMeshHit hit;
+                if (NavMesh.FindClosestEdge(Vector3.zero, out hit, NavMesh.GetAreaFromName("Walkable")))
+                {
+                    Debug.DrawRay(hit.position, Vector3.up, Color.red);
+                }
+            }
         }
     }
 

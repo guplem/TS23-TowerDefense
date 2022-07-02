@@ -23,7 +23,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
     spawningHeightRange: {x: 0.6, y: 1}
     probability: 0.42
-    density: 0.4
+    density: 0.45
     centralAreaToAvoid: 0
     maxDistanceFromCenter: 85
   - mapElementPrefab: {fileID: 7576368060138573393, guid: 8fc60cce11ff0e54b8151483bd4f449d, type: 3}
@@ -35,7 +35,7 @@ MonoBehaviour:
       offset: {x: 2000, y: 5000}
     spawningHeightRange: {x: 0.33, y: 0.53}
     probability: 0.39
-    density: 0.3
+    density: 0.35
     centralAreaToAvoid: 0
     maxDistanceFromCenter: 80
   - mapElementPrefab: {fileID: 6791915637195987803, guid: 56be9341c95459c48bbaa19c00853251, type: 3}
@@ -47,7 +47,7 @@ MonoBehaviour:
       offset: {x: -1000, y: -1000}
     spawningHeightRange: {x: 0, y: 0.28}
     probability: 0.35
-    density: 0.35
+    density: 0.4
     centralAreaToAvoid: 0
     maxDistanceFromCenter: 75
   - mapElementPrefab: {fileID: 2667721146327368077, guid: bad44f7ed82eee2469ff208ba6adf3f3, type: 3}

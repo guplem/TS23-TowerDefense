@@ -414,7 +414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5151567394797829470, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: resourcesDelta
-      value: 165
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5496330621621269956, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: m_RootOrder

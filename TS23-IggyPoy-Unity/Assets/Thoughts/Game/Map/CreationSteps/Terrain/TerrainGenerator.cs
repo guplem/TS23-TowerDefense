@@ -133,7 +133,7 @@ namespace Thoughts.Game.Map.CreationSteps.Terrain
             // Debug.Log($"Creating and/or updating TerrainChunks {(clearPreviousTerrain? "previously deleting" : "without destroying")} the existing ones.");
             if (loadingChunks > 0) // TODO: Check possible error in Thoughts. Use this Debug message to find it and debug it
             {
-                Debug.LogWarning($"Chunk Update called while there are still {loadingChunks} loading chunks. May be normal while updating the LOD of the chunks.");
+                //Debug.LogWarning($"Chunk Update called while there are still {loadingChunks} loading chunks. May be normal while updating the LOD of the chunks.");
             }
 
             if (clearPreviousTerrain)
