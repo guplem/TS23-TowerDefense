@@ -57,7 +57,7 @@ QualitySettings:
     skinWeights: 4
     textureQuality: 0
     anisotropicTextures: 1
-    antiAliasing: 2
+    antiAliasing: 0
     softParticles: 0
     softVegetation: 0
     realtimeReflectionProbes: 0
@@ -76,7 +76,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: 476051645b298734f8fe18d9d9eb5ca4, type: 2}
+    customRenderPipeline: {fileID: 11400000, guid: 26f2503fae3a5fd48aa6081b8e0906a3, type: 2}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: High
