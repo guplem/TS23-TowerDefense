@@ -101,8 +101,8 @@ public class Cheats : MonoBehaviour
         SpawnUnit(3, 10);
         SpawnUnit(4, 10);
     }
-    [MenuItem("📈 Cheats 🍕/Spawn 🆕/Stress Test 🥵 (5x50)", false, 50)]
-    public static void SpawnMultipleAll()
+    [MenuItem("📈 Cheats 🍕/Spawn 🆕/Stress Test 🥵 (5x50)", false, 70)]
+    public static void SpawnForStressTestAll()
     {
         SpawnUnit(0, 50);
         SpawnUnit(1, 50);
