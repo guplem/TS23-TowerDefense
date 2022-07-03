@@ -11,6 +11,8 @@ public class ProjectileMover : MonoBehaviour
     public Vector3 rotationOffset = new Vector3(0, 0, 0);
     public GameObject hit;
     public GameObject flash;
+    public GameObject impactSoundPrefab;
+    public AudioClip impactClip;
     private Rigidbody rb;
     public GameObject[] Detached;
     // public UnityEvent onCollisionEnter = new();
@@ -66,12 +68,12 @@ public class ProjectileMover : MonoBehaviour
 
         if (hit != null)
         {
-            var hitInstance = Instantiate(hit, pos, rot);
+            GameObject hitInstance = Instantiate(hit, pos, rot);
             if (UseFirePointRotation) { hitInstance.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 180f, 0); }
             else if (rotationOffset != Vector3.zero) { hitInstance.transform.rotation = Quaternion.Euler(rotationOffset); }
             else { hitInstance.transform.LookAt(contact.point + contact.normal); }
 
-            var hitPs = hitInstance.GetComponent<ParticleSystem>();
+            ParticleSystem hitPs = hitInstance.GetComponent<ParticleSystem>();
             if (hitPs != null)
             {
                 Destroy(hitInstance, hitPs.main.duration);
@@ -80,6 +82,15 @@ public class ProjectileMover : MonoBehaviour
             {
                 var hitPsParts = hitInstance.transform.GetChild(0).GetComponent<ParticleSystem>();
                 Destroy(hitInstance, hitPsParts.main.duration);
+            }
+
+            if (impactSoundPrefab != null && impactClip != null)
+            {
+                GameObject soundInstance = Instantiate(impactSoundPrefab, pos, rot);
+                AudioSource audioSource = soundInstance.GetComponent<AudioSource>();
+                audioSource.clip = impactClip;
+                audioSource.Play();
+                Destroy(soundInstance, impactClip.length);   
             }
         }
         foreach (var detachedPrefab in Detached)
