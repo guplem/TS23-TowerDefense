@@ -9,6 +9,8 @@ public class HealUnitsAround : MonoBehaviour
     [SerializeField] private float delayBetweenHeals = 2;
     [SerializeField] private int healingPerSecondPerUnit = 10;
     [SerializeField] private float healingRadius = 10;
+    [SerializeField] private GameObject healingEffectPrefab;
+    [SerializeField] private AudioSource healingAudioSource;
     
     void Start()
     {
@@ -36,6 +38,9 @@ public class HealUnitsAround : MonoBehaviour
 
             if (unitsToHeal.Count > 0)
             {
+                Destroy(Instantiate(healingEffectPrefab, transform.position, transform.rotation, null), 2.5f);
+                healingAudioSource.Play();
+                
                 unitsToHeal.DebugLog(", ", "Healing " + unitsToHeal.Count + " units: ");
 
                 foreach (UnitController unitController in unitsToHeal)
