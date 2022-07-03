@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5189383196351433013, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: attackAudioSource
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6753566475038569636, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -110,6 +114,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2707569144857776497, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
     - {fileID: 284363118947755037, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+    - {fileID: 2063600790793559179, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
 --- !u!4 &3597188178196188788 stripped
 Transform:

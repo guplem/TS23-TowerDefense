@@ -236,6 +236,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fast Structure
       objectReference: {fileID: 0}
+    - target: {fileID: 2063600790793559179, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063600790793559179, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8be9dd5a99d90a84589cfbba908a21a0, type: 3}
     - target: {fileID: 2707569144857776497, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_Radius
       value: 12

@@ -17,8 +17,9 @@ public class MapElement : MonoBehaviour
 
     public void PlayAttackAudio()
     {
-        walkAudioSource.pitch = Random.Range(1-pitchModification, 1+pitchModification);
+        attackAudioSource.pitch = Random.Range(1-pitchModification, 1+pitchModification);
         attackAudioSource.Play();
-        attackController.AttackTarget();
+        if (attackController != null)
+            attackController.AttackTarget();
     }
 }

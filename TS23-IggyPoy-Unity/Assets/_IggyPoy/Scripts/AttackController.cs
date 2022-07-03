@@ -37,6 +37,7 @@ public class AttackController : MonoBehaviour
     private RandomEssentials rng = new RandomEssentials();
     [SerializeField] private MapElement mapElementRef;
     [SerializeField] private bool attackWithAnimation = false;
+    [SerializeField] private bool playAttackSoundOnAttack = false;
 
     // private PoolEssentials projectilePool;
     // private int projectilePoolSize => Mathf.CeilToInt(2.5f / cooldown);
@@ -217,7 +218,10 @@ public class AttackController : MonoBehaviour
         {
             case false:
             {
-                target.health -= damage;
+                if (target != null)
+                    target.health -= damage;
+                else
+                    Debug.LogWarning("Trying to attack a null target");
                 // Debug.Log($"ATTACKED (mele) {target.gameObject} with {damage} damage. Now {target.health} hp are still remaining.", this);
                 break;
             }
@@ -232,6 +236,10 @@ public class AttackController : MonoBehaviour
         }
 
         GameManager.instance.gameData.resources -= attackCost;
+        
+        if (playAttackSoundOnAttack)
+            mapElementRef.PlayAttackAudio();
+        
         return true;
     }
     
