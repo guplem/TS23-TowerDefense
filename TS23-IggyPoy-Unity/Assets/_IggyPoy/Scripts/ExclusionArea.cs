@@ -17,7 +17,7 @@ public class ExclusionArea : MonoBehaviour
                 foreach (StructureController structure in structuresInExclusionArea)
                 {
                     if (structure == null)
-                        return false;
+                        continue;
                     
                     if (Vector3.Distance(structure.transform.position, self.transform.position) < exclusionCollider.radius)
                     {
