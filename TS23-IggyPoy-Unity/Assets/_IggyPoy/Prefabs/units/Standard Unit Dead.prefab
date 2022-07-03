@@ -69,11 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2877280601221818178, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2877280601221818178, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
       propertyPath: MaxDistance
-      value: 60
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 2877280601221818178, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
       propertyPath: m_audioClip

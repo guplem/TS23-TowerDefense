@@ -189,6 +189,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6a15a27728e3ef746ba95968d3ccbfa9, type: 2}
+    - target: {fileID: 6116322217983265657, guid: f73daa67f6647c445a8e19968c2b51e0, type: 3}
+      propertyPath: speed
+      value: 455
+      objectReference: {fileID: 0}
     - target: {fileID: 7022166502403678780, guid: f73daa67f6647c445a8e19968c2b51e0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -374,6 +378,10 @@ PrefabInstance:
     - target: {fileID: 1325135749665720940, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_Name
       value: Sniper Structure
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063600790793559179, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2063600790793559179, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_audioClip
