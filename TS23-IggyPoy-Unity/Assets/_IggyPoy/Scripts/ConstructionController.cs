@@ -72,6 +72,7 @@ public class ConstructionController : MonoBehaviour
 
         placeHolderBuilding = Instantiate(structure, Vector3.one * 10000, Quaternion.Euler(new Vector3(0, Random.Range(0.0f, 360.0f), 0)), this.transform).GetComponentRequired<StructureController>();
         // placeHolderBuilding.GetComponentRequired<StructureController>().isPlaced = false; // Not necessary, default isPlaced is false.
+        placeHolderBuilding.gameObject.layer = LayerMask.NameToLayer("Default");
         Debug.Log($"Selected structure '{placeHolderBuilding.ToString()}' to build.", this);
         GameManager.instance.generalAudioSource.PlayClip(selectStructureClip);
         couldBeBuilt = false;
@@ -93,6 +94,7 @@ public class ConstructionController : MonoBehaviour
 
         MapElement instantiated = GameManager.instance.mapManager.SpawnMapElement(placeHolderBuilding.gameObject, buildingPlacement, placeHolderBuilding.transform.rotation,
             structuresParent);
+        instantiated.gameObject.layer = LayerMask.NameToLayer("Structure");
         GameManager.instance.unitsSpawner.RegenerateNavMeshForUnits();
         GameManager.instance.gameData.resources -= placeHolderBuilding.cost;
         UnselectStructureNoSound();
