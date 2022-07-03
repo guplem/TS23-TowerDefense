@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
             Debug.LogWarning("Possible residual UIManager.", instance);
         
         instance = this;
-        HidePauseMenu();
+        pauseMenu.SetActive(false);
     }
 
     public void FullRefresh()
@@ -39,11 +39,8 @@ public class UIManager : MonoBehaviour
         startSpawningButton.SetActive(!GameManager.instance.startedEnemiesSpawning);
         gameDataStringText.text = GameManager.instance.gameDataString;
         resourcesText.text = GameManager.instance.gameData.resources.ToString();
-        
     }
 
-    
-    
     private void Update()
     {
         bool timerWorking = !GameManager.instance.gameOver && GameManager.instance.startedEnemiesSpawning;

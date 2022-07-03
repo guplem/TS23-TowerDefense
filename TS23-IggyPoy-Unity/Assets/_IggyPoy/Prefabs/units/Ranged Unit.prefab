@@ -42,6 +42,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3.25
       objectReference: {fileID: 0}
+    - target: {fileID: 489590061014917308, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f3ded02e36ace4ae98fe5b5d8de22900, type: 3}
     - target: {fileID: 2957008014492038731, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -150,6 +154,14 @@ PrefabInstance:
       propertyPath: projectileSpawnLocation
       value: 
       objectReference: {fileID: 9083161074587489643}
+    - target: {fileID: 7676477468302729025, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676477468302729025, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f44dd69794bc47e794385f78587a660, type: 3}
     - target: {fileID: 7739219691465835837, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: _health
       value: 40

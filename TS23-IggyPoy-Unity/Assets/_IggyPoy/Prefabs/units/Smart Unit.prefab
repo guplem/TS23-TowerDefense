@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 5.5
       objectReference: {fileID: 0}
+    - target: {fileID: 489590061014917308, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e4ec3a6b02f2f45cc8489e88e0bbac7f, type: 3}
     - target: {fileID: 2957008014492038731, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -93,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6231532637389738966, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: damage
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6231532637389738966, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: cooldown
@@ -103,6 +107,10 @@ PrefabInstance:
       propertyPath: targetOnlyEnergySources
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7676477468302729025, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c5751679bcb634045b336f5660a3a629, type: 3}
     - target: {fileID: 7739219691465835837, guid: 89003b97b6853f04fb8caaf7fe995e1e, type: 3}
       propertyPath: _health
       value: 30

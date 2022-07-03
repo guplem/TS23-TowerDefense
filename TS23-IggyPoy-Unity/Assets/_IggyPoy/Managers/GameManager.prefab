@@ -54,6 +54,9 @@ MonoBehaviour:
     timeSinceSpawnStarted: 0
   gameOverEffects: {fileID: 7938850130654816237, guid: 346d174dbbb339b40b36dcfae0f8df04, type: 3}
   generalAudioSource: {fileID: 1496052725444694564}
+  startNewGameClip: {fileID: 8300000, guid: bdc51111497d4404c8537364f0de92fc, type: 3}
+  gameOverClip: {fileID: 8300000, guid: d6c3b28176fa44272aa0a730a9500dbd, type: 3}
+  startSpawningClip: {fileID: 8300000, guid: a6e532651f94b426897586d2876578eb, type: 3}
   mapManager: {fileID: 150588866}
   fullyGenerateMapOnPlay: 1
   spawnClockInterval: 5
@@ -530,11 +533,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2852758819577862408, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000022625084
+      value: 0.000000022625072
       objectReference: {fileID: 0}
     - target: {fileID: 2852758819577862408, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000008956836
+      value: -0.000000008956832
       objectReference: {fileID: 0}
     - target: {fileID: 3434504880941145899, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_FollowOffset.y
@@ -642,11 +645,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5982301041292961629, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000051947135
+      value: 0.0000000051947113
       objectReference: {fileID: 0}
     - target: {fileID: 5982301041292961629, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000000645045
+      value: -0.0000000064504473
       objectReference: {fileID: 0}
     - target: {fileID: 6215005342825798341, guid: 8f6dcd935d327dc4c9204ef6c99f72f8, type: 3}
       propertyPath: m_Lens.m_SensorSize.x

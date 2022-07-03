@@ -8,7 +8,7 @@ public class AttackController : MonoBehaviour
 {
     [SerializeField] private PropertyController.Team teamToAttack = PropertyController.Team.Player;
     
-    [Tooltip("In seconds")] [SerializeField]
+    [Tooltip("NO LONGER IN USE. ANIMATION DEFINES CD NOW")] [SerializeField]
     private float cooldown = 1;
 
     [Tooltip("Damage (or healing if negative)")] [SerializeField]
@@ -35,6 +35,8 @@ public class AttackController : MonoBehaviour
     private bool attacksWithProjectile => projectile != null && projectileSpawnLocation != null;
     [SerializeField] private float maxProjectileOffset = 0.15f;
     private RandomEssentials rng = new RandomEssentials();
+    [SerializeField] private MapElement mapElementRef;
+    [SerializeField] private bool attackWithAnimation = false;
 
     // private PoolEssentials projectilePool;
     // private int projectilePoolSize => Mathf.CeilToInt(2.5f / cooldown);
@@ -167,37 +169,50 @@ public class AttackController : MonoBehaviour
         while (!detectedAttackables.IsNullOrEmpty() && this.enabled)
         {
             UpdateTarget();
-            // Debug.Log($"Attack end of cooldown. Enemies in range = {attackables.Count}", this);
-            if (PerformAttack(target))
+
+
+            if (attackWithAnimation)
             {
-                yield return new WaitForSeconds(cooldown);
+                if (target == null)
+                {
+                    yield return new WaitForSeconds(1f);
+                    continue;
+                }
+
+                if (GameManager.instance.gameData.resources < attackCost)
+                {
+                    yield return new WaitForSeconds(0.5f);
+                    continue;
+                }
+
+                if (Vector3.Distance(target.transform.position, this.transform.position) > range)
+                {
+                    yield return new WaitForSeconds(0.75f);
+                    continue;
+                }
+
+                stateController.SetNewState();
+                yield return new WaitForSeconds(0.5f); // Mode delay if there is no target
             }
             else
             {
-                yield return new WaitForSeconds(target != null? 0.5f : 1f); // Mode delay if there is no target
+                if (PerformAttack(target))
+                    yield return new WaitForSeconds(cooldown);
+                else
+                    yield return new WaitForSeconds(target != null? 0.5f : 1f); // Mode delay if there is no target   
             }
         }
 
         running_attackCoroutine = false;
     }
 
+    public void AttackTarget()
+    {
+        PerformAttack(target);
+    }
+    
     private bool PerformAttack(HealthController target)
     {
-        if (target == null)
-            return false;
-
-        if (GameManager.instance.gameData.resources < attackCost)
-        {
-            return false;
-        }
-
-        if (Vector3.Distance(target.transform.position, this.transform.position) > range)
-        {
-            return false;
-        }
-
-        stateController.SetNewState();
-        
         switch (attacksWithProjectile)
         {
             case false:

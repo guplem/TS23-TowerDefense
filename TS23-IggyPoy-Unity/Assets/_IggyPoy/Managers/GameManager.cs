@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public GameData gameData;
     [SerializeField] private GameObject gameOverEffects;
     [SerializeField] public AudioSourceManager generalAudioSource;
+    [Header("Sounds")]
+    [SerializeField] private AudioClip gameOverClip;
+    [SerializeField] private AudioClip startSpawningClip;
 
     public UnitsSpawner unitsSpawner
     {
@@ -108,7 +111,7 @@ public class GameManager : MonoBehaviour
     public void StartNewGame()
     {
         UIManager.instance.ShowLoadingScreen();
-        
+
         // Delete the previously generated world
         if (!fullyGenerateMapOnPlay)
             mapManager.DeleteMap();
@@ -125,16 +128,17 @@ public class GameManager : MonoBehaviour
     {
         if (gameOver) Debug.LogError("Game over already set!");
         Debug.LogWarning(" ====== GAME OVER ====== ");
+        generalAudioSource.PlayClip(gameOverClip);
         gameOver = true;
         Vector3 location = new Vector3(0, mapManager.GetHeightAt(Vector2.zero), 0);
         Instantiate(gameOverEffects, location, Quaternion.identity, this.transform);
-        
     }
 
     public void StartSpawning()
     {
         GameManager.instance.startedEnemiesSpawning = true;
         UIManager.instance.FullRefresh();
+        generalAudioSource.PlayClip(startSpawningClip);
     }
     
     IEnumerator UnitsSpawnClock()
