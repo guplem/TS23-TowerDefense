@@ -19,6 +19,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4807087743741356103, guid: 770a518161936d44b9ebb48d51775d55, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807087743741356103, guid: 770a518161936d44b9ebb48d51775d55, type: 3}
+      propertyPath: MaxDistance
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807087743741356103, guid: 770a518161936d44b9ebb48d51775d55, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 189e602943ad9483e9bbac0b797f4d34, type: 3}
+    - target: {fileID: 4807087743741356103, guid: 770a518161936d44b9ebb48d51775d55, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6126974004512858019, guid: 770a518161936d44b9ebb48d51775d55, type: 3}
       propertyPath: hpController
       value: 
@@ -91,6 +107,7 @@ PrefabInstance:
     - {fileID: 3226928308157628259, guid: 770a518161936d44b9ebb48d51775d55, type: 3}
     - {fileID: 3394113274483756486, guid: 770a518161936d44b9ebb48d51775d55, type: 3}
     - {fileID: 5477943613718538785, guid: 770a518161936d44b9ebb48d51775d55, type: 3}
+    - {fileID: 3383673167518373818, guid: 770a518161936d44b9ebb48d51775d55, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 770a518161936d44b9ebb48d51775d55, type: 3}
 --- !u!1 &621011822251481302 stripped
 GameObject:

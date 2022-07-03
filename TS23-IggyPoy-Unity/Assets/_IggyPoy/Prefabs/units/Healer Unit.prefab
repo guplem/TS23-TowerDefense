@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBetweenHeals: 1.75
-  healingPerSecondPerUnit: 20
+  healingPerSecondPerUnit: 5
   healingRadius: 10
 --- !u!4 &9033001120250716215 stripped
 Transform:

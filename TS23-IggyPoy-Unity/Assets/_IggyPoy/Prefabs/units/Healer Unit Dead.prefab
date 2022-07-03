@@ -79,6 +79,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4023428252100113743, guid: 4f53814ec5df4f743907393a91a5ac45, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023428252100113743, guid: 4f53814ec5df4f743907393a91a5ac45, type: 3}
+      propertyPath: MaxDistance
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023428252100113743, guid: 4f53814ec5df4f743907393a91a5ac45, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 189e602943ad9483e9bbac0b797f4d34, type: 3}
+    - target: {fileID: 4023428252100113743, guid: 4f53814ec5df4f743907393a91a5ac45, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4723352225973690526, guid: 4f53814ec5df4f743907393a91a5ac45, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -107,6 +123,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599210143635786418, guid: 4f53814ec5df4f743907393a91a5ac45, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7451083358382573093, guid: 4f53814ec5df4f743907393a91a5ac45, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -128,6 +148,7 @@ PrefabInstance:
     - {fileID: 6519649246896853198, guid: 4f53814ec5df4f743907393a91a5ac45, type: 3}
     - {fileID: 4723352225973690526, guid: 4f53814ec5df4f743907393a91a5ac45, type: 3}
     - {fileID: 4135908411905996585, guid: 4f53814ec5df4f743907393a91a5ac45, type: 3}
+    - {fileID: 6599210143635786418, guid: 4f53814ec5df4f743907393a91a5ac45, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4f53814ec5df4f743907393a91a5ac45, type: 3}
 --- !u!1 &868462680505491128 stripped
 GameObject:

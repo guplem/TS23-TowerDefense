@@ -63,6 +63,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2877280601221818178, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
+      propertyPath: m_Pitch
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877280601221818178, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877280601221818178, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
+      propertyPath: MaxDistance
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877280601221818178, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 189e602943ad9483e9bbac0b797f4d34, type: 3}
     - target: {fileID: 3485629732835168422, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
       propertyPath: hpController
       value: 
@@ -91,6 +107,7 @@ PrefabInstance:
     - {fileID: 5300817644780761190, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
     - {fileID: 5350913702380847811, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
     - {fileID: 2980682643205825828, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
+    - {fileID: 5453062495173384383, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
 --- !u!1 &266261401569054266 stripped
 GameObject:

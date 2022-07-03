@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6608658915910351, guid: 05c93fa3a946b054f9e1cf5e9092ec6b, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608658915910351, guid: 05c93fa3a946b054f9e1cf5e9092ec6b, type: 3}
+      propertyPath: MaxDistance
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608658915910351, guid: 05c93fa3a946b054f9e1cf5e9092ec6b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 189e602943ad9483e9bbac0b797f4d34, type: 3}
+    - target: {fileID: 6608658915910351, guid: 05c93fa3a946b054f9e1cf5e9092ec6b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1704098137326687531, guid: 05c93fa3a946b054f9e1cf5e9092ec6b, type: 3}
       propertyPath: hpController
       value: 
@@ -95,6 +111,7 @@ PrefabInstance:
     - {fileID: 7955912671716095467, guid: 05c93fa3a946b054f9e1cf5e9092ec6b, type: 3}
     - {fileID: 7906946922873833294, guid: 05c93fa3a946b054f9e1cf5e9092ec6b, type: 3}
     - {fileID: 1055213327797035177, guid: 05c93fa3a946b054f9e1cf5e9092ec6b, type: 3}
+    - {fileID: 7805994409471614258, guid: 05c93fa3a946b054f9e1cf5e9092ec6b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 05c93fa3a946b054f9e1cf5e9092ec6b, type: 3}
 --- !u!1 &301733702663684504 stripped
 GameObject:
