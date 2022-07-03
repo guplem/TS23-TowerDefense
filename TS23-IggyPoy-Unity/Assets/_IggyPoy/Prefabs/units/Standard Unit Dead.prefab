@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 189e602943ad9483e9bbac0b797f4d34, type: 3}
+    - target: {fileID: 2877280601221818178, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3485629732835168422, guid: 19e24ceae5f349c4d84723c35fa59483, type: 3}
       propertyPath: hpController
       value: 
