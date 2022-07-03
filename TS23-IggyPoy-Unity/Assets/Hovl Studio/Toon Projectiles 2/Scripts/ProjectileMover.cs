@@ -17,6 +17,7 @@ public class ProjectileMover : MonoBehaviour
     private HealthController target;
     private int damage;
     private float offset = 0;
+    private Vector3 latestPosTarget;
 
     void Start()
     {
@@ -45,7 +46,10 @@ public class ProjectileMover : MonoBehaviour
         {
             //rb.velocity = transform.forward * speed;
             if (target != null)
-                rb.velocity = (target.transform.position + (Vector3.up * (1 - offset)) + Vector3.right * offset - transform.position).normalized * speed;
+                latestPosTarget = target.transform.position;
+            if (target == null && Vector3.Distance(latestPosTarget, transform.position) <= speed)
+                Destroy(gameObject);
+            rb.velocity = (latestPosTarget + (Vector3.up * (1 - offset)) + Vector3.right * offset - transform.position).normalized * speed;
         }
 	}
 
