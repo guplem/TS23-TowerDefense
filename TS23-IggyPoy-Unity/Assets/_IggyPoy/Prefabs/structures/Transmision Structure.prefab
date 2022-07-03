@@ -32,8 +32,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2063600790793559179, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
+      propertyPath: m_Pitch
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063600790793559179, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: m_Volume
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2063600790793559179, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: MaxDistance
@@ -113,7 +117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: maxHealth
-      value: 40
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 7690321064448338955, guid: 54f43814ecd1880458d62c5eb48c905b, type: 3}
       propertyPath: deadObject

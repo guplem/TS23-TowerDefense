@@ -67,6 +67,18 @@ PrefabInstance:
       propertyPath: impactSoundPrefab
       value: 
       objectReference: {fileID: 2766093648763152224, guid: 82dae0d454af3ea48a4db381a41ba407, type: 3}
+    - target: {fileID: 114983921841163604, guid: 489b3a2ec3e7cf949925d1b34247d1a9, type: 3}
+      propertyPath: Detached.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114983921841163604, guid: 489b3a2ec3e7cf949925d1b34247d1a9, type: 3}
+      propertyPath: Detached.Array.data[0]
+      value: 
+      objectReference: {fileID: 3763986711933776834}
+    - target: {fileID: 114983921841163604, guid: 489b3a2ec3e7cf949925d1b34247d1a9, type: 3}
+      propertyPath: Detached.Array.data[1]
+      value: 
+      objectReference: {fileID: 3764363434530776470}
     - target: {fileID: 198256678872639084, guid: 489b3a2ec3e7cf949925d1b34247d1a9, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
       value: 1
@@ -91,3 +103,13 @@ PrefabInstance:
     - {fileID: 5306911687353071536, guid: 489b3a2ec3e7cf949925d1b34247d1a9, type: 3}
     - {fileID: 108994128628677702, guid: 489b3a2ec3e7cf949925d1b34247d1a9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 489b3a2ec3e7cf949925d1b34247d1a9, type: 3}
+--- !u!1 &3763986711933776834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1451113998316474, guid: 489b3a2ec3e7cf949925d1b34247d1a9, type: 3}
+  m_PrefabInstance: {fileID: 3763173375023743096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3764363434530776470 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1353114394469870, guid: 489b3a2ec3e7cf949925d1b34247d1a9, type: 3}
+  m_PrefabInstance: {fileID: 3763173375023743096}
+  m_PrefabAsset: {fileID: 0}

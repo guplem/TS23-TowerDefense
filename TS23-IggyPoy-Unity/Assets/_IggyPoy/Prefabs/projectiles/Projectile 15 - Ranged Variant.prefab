@@ -63,6 +63,14 @@ PrefabInstance:
       propertyPath: speed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114192220273504172, guid: a4ecf9bba65b0b84286159aa10fc4bc2, type: 3}
+      propertyPath: impactClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3deae39cb97adb84fa51871f8088812f, type: 3}
+    - target: {fileID: 114192220273504172, guid: a4ecf9bba65b0b84286159aa10fc4bc2, type: 3}
+      propertyPath: impactSoundPrefab
+      value: 
+      objectReference: {fileID: 2766093648763152224, guid: 82dae0d454af3ea48a4db381a41ba407, type: 3}
     m_RemovedComponents:
     - {fileID: 710344486368486852, guid: a4ecf9bba65b0b84286159aa10fc4bc2, type: 3}
     - {fileID: 108488655433331256, guid: a4ecf9bba65b0b84286159aa10fc4bc2, type: 3}

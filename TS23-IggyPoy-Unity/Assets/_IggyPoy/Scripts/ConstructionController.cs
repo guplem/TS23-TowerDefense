@@ -39,6 +39,10 @@ public class ConstructionController : MonoBehaviour
     [ColorUsageAttribute(true, true)] [SerializeField]
     private Color colorBlueprintWrong;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip selectStructureClip;
+    [SerializeField] private AudioClip buildStructureClip;
+    
     private void Awake()
     {
         if (instance != null)
@@ -67,7 +71,7 @@ public class ConstructionController : MonoBehaviour
         placeHolderBuilding = Instantiate(structure, Vector3.one * 10000, Quaternion.Euler(new Vector3(0, Random.Range(0.0f, 360.0f), 0)), this.transform).GetComponentRequired<StructureController>();
         // placeHolderBuilding.GetComponentRequired<StructureController>().isPlaced = false; // Not necessary, default isPlaced is false.
         Debug.Log($"Selected structure '{placeHolderBuilding.ToString()}' to build.", this);
-
+        GameManager.instance.generalAudioSource.PlayClip(selectStructureClip);
         couldBeBuilt = false;
         SetBlueprintColor(false);
     }
@@ -95,6 +99,7 @@ public class ConstructionController : MonoBehaviour
         instantiatedStructure.health = 1;
         instantiatedStructure.FullyHealOverTime(instantiatedStructure.constructionTime);
         Destroy(instantiatedStructure.exclusionArea.gameObject); // To remove no longer used objects
+        GameManager.instance.generalAudioSource.PlayClip(buildStructureClip);
         Debug.Log($"Built structure '{instantiated.ToString()}'.", this);
     }
 
