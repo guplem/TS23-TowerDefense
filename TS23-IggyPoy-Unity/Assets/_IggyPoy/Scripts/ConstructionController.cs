@@ -42,6 +42,8 @@ public class ConstructionController : MonoBehaviour
     [Header("Sounds")]
     [SerializeField] private AudioClip selectStructureClip;
     [SerializeField] private AudioClip buildStructureClip;
+    [SerializeField] private AudioClip unselectStructureClip;
+    [SerializeField] private AudioClip errorBuildStructureClip;
     
     private void Awake()
     {
@@ -56,7 +58,7 @@ public class ConstructionController : MonoBehaviour
 
     public void SelectStructureToBuild(GameObject structure)
     {
-        UnselectStructure();
+        UnselectStructureNoSound();
 
         if (structure == null)
         {
@@ -84,13 +86,16 @@ public class ConstructionController : MonoBehaviour
     public void BuildSelectedStructure()
     {
         if (!CanBeBuild())
+        {
+            GameManager.instance.generalAudioSource.PlayClip(errorBuildStructureClip);
             return;
+        }
 
         MapElement instantiated = GameManager.instance.mapManager.SpawnMapElement(placeHolderBuilding.gameObject, buildingPlacement, placeHolderBuilding.transform.rotation,
             structuresParent);
         GameManager.instance.unitsSpawner.RegenerateNavMeshForUnits();
         GameManager.instance.gameData.resources -= placeHolderBuilding.cost;
-        UnselectStructure();
+        UnselectStructureNoSound();
 
         StructureController instantiatedStructure = instantiated.gameObject.GetComponentRequired<StructureController>();
         instantiatedStructure.isPlaced = true;
@@ -166,6 +171,12 @@ public class ConstructionController : MonoBehaviour
     private bool couldBeBuilt = false;
 
     public void UnselectStructure()
+    {
+        GameManager.instance.generalAudioSource.PlayClip(unselectStructureClip);
+        UnselectStructureNoSound();
+    }
+    
+    public void UnselectStructureNoSound()
     {
         if (placeHolderBuilding != null)
             Destroy(placeHolderBuilding.gameObject);
