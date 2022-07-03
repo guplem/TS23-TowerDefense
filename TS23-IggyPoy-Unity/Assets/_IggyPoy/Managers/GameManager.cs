@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     public GameData gameData;
     [SerializeField] private GameObject gameOverEffects;
+    [SerializeField] public AudioSourceManager generalAudioSource;
 
     public UnitsSpawner unitsSpawner
     {

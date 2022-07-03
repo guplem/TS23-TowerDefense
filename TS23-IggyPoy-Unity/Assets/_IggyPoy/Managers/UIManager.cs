@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,6 +20,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Texture2D generalError;
     [SerializeField] private Texture2D locationError;
     [SerializeField] private TMP_Text timer;
+    [Header("Sounds")]
+    [SerializeField] private AudioClip openPauseMenuClip;
+    [SerializeField] private AudioClip closePauseMenuClip;
+    [SerializeField] private AudioClip loadingFinishedClip;
 
     private void Awake()
     {
@@ -99,11 +101,13 @@ public class UIManager : MonoBehaviour
 
     public void DisplayPauseMenu()
     {
+        GameManager.instance.generalAudioSource.PlayClip(openPauseMenuClip);
         pauseMenu.SetActive(true);
     }
 
     public void HidePauseMenu()
     {
+        GameManager.instance.generalAudioSource.PlayClip(closePauseMenuClip);
         pauseMenu.SetActive(false);
     }
 
@@ -132,6 +136,7 @@ public class UIManager : MonoBehaviour
 
     public void HideLoadingScreen()
     {
+        GameManager.instance.generalAudioSource.PlayClip(loadingFinishedClip);
         loadingScreen.SetActive(false);
     }
 }
