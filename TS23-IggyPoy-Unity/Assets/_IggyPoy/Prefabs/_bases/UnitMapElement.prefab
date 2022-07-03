@@ -298,6 +298,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7365173359050056517, guid: 133b554db2c2d9946804a3033fbeb60f, type: 3}
+      propertyPath: m_Height
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365173359050056517, guid: 133b554db2c2d9946804a3033fbeb60f, type: 3}
+      propertyPath: m_Radius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365173359050056517, guid: 133b554db2c2d9946804a3033fbeb60f, type: 3}
+      propertyPath: m_Center.y
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 9144614437451166654, guid: 133b554db2c2d9946804a3033fbeb60f, type: 3}
       propertyPath: m_Name
       value: UnitMapElement
@@ -619,6 +631,7 @@ MonoBehaviour:
   maxProjectileOffset: 0.15
   mapElementRef: {fileID: 3073910875877254522}
   attackWithAnimation: 1
+  playAttackSoundOnAttack: 0
 --- !u!114 &7544991139828234136
 MonoBehaviour:
   m_ObjectHideFlags: 0
