@@ -1,4 +1,5 @@
-﻿using Unity.AI.Navigation;
+﻿using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,6 +20,7 @@ namespace Thoughts.Game.Map.CreationSteps.Vegetation
         [SerializeField] public UnitsSpawner unitsSpawner;
         [SerializeField] private Transform mainStructureParent;
         [SerializeField] private GameObject mainStructure;
+        [SerializeField] private GameObject testPathAgent;
 
         // ReSharper disable Unity.PerformanceAnalysis
         private void GenerateProps(bool clearPrevious)
@@ -60,7 +62,53 @@ namespace Thoughts.Game.Map.CreationSteps.Vegetation
                 UIManager.instance.ResetScene();
             }
 
+            if (!AreAllPathsPossible())
+            {
+                Debug.LogWarning("Not all paths to the main structure are possible. ResetScene in UIManager being called.");
+                UIManager.instance.ResetScene();
+            }
+            
             InvokeOnFinishStepGeneration();
+        }
+
+        private bool AreAllPathsPossible()
+        {
+            int issuesFound = 0;
+            int totalPathsToTry = 20;
+            List<MapElement> spawned = mapManager.SpawnMapElementsRandomly(
+                testPathAgent,
+                42069, // random
+                new Vector2(0.0f, 0.2f), // Hardcoded. Values copied from prefab "Units" (UnitsSpawner)
+                totalPathsToTry,
+                this.transform,
+                true,
+                mapManager.mapConfiguration.mapRadius*0.78f // Hardcoded. Values copied from prefab "Units" (UnitsSpawner)
+            );
+
+            for (int i = 0; i < spawned.Count; i++)
+            {
+                
+                NavMeshAgent spawnedAgent = spawned[i].GetComponentRequired<NavMeshAgent>();
+                spawnedAgent.SetDestination(Vector3.zero);
+                // print("New path calculated");
+                if (spawnedAgent.pathStatus != NavMeshPathStatus.PathComplete) {
+                    // Debug.LogWarning("Calculated path to check reachability of main tower is not complete. A new map should be generated.");
+                    Debug.LogWarning(spawnedAgent.pathStatus + $" found. isOnNavMesh = {spawnedAgent.isOnNavMesh}. navMeshOwner = {spawnedAgent.navMeshOwner}" , spawnedAgent);
+                    issuesFound ++;
+                }
+            }
+
+            foreach (MapElement mapElement in spawned)
+            {
+                Destroy(mapElement.gameObject);
+            }
+            
+            if (issuesFound == 0)
+                Debug.Log("The main structure can be perfectly reached!!!");
+            else
+                Debug.LogWarning($"The main structure can be reached by {totalPathsToTry-issuesFound}/{totalPathsToTry}");
+            
+            return issuesFound == 0;
         }
 
 

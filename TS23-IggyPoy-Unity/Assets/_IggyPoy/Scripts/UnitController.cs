@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Animancer;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -87,11 +88,11 @@ public class UnitController : StateController
         navMeshAgent.destination = destination;
         navMeshAgent.isStopped = false; 
     }
-    
+
     private void StopMovement()
     {
-        navMeshAgent.isStopped = true; 
+        navMeshAgent.isStopped = true;
     }
-    
+
 }
 

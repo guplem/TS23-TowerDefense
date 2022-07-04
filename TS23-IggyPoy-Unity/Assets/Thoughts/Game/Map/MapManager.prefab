@@ -1741,6 +1741,7 @@ MonoBehaviour:
   unitsSpawner: {fileID: 1532978883509466272}
   mainStructureParent: {fileID: 6084204391893870574}
   mainStructure: {fileID: 8254475048019625467, guid: 411b6cecbf3684048824f37ea69afeae, type: 3}
+  testPathAgent: {fileID: 6986682143971711950, guid: ea2ce18ca9d1312408f56b49339d78f6, type: 3}
 --- !u!1 &6748902952329811190
 GameObject:
   m_ObjectHideFlags: 0
