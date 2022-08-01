@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 2766093648763152224, guid: 82dae0d454af3ea48a4db381a41ba407, type: 3}
     - target: {fileID: 114983921841163604, guid: 489b3a2ec3e7cf949925d1b34247d1a9, type: 3}
       propertyPath: Detached.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114983921841163604, guid: 489b3a2ec3e7cf949925d1b34247d1a9, type: 3}
       propertyPath: Detached.Array.data[0]

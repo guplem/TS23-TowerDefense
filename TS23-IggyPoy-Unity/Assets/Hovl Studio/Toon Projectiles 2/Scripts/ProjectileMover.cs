@@ -98,6 +98,7 @@ public class ProjectileMover : MonoBehaviour
             if (detachedPrefab != null)
             {
                 detachedPrefab.transform.parent = null;
+                Destroy(detachedPrefab, 3.5f);
             }
         }
         // onCollisionEnter?.Invoke();
